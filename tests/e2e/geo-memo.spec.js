@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+import { devices, expect, test } from '@playwright/test'
 import {
   expectNoClientErrors,
   openHome,
@@ -135,4 +135,88 @@ test('quiz image', async ({ page }) => {
   const nextButton = page.getByRole('button', { name: /Question suivante/i })
   await expect(nextButton).toBeVisible()
   await expect(nextButton).toBeInViewport()
+})
+
+test.describe('mobile iPhone 13', () => {
+  const iphone13 = devices['iPhone 13']
+
+  test.use({
+    deviceScaleFactor: iphone13.deviceScaleFactor,
+    hasTouch: iphone13.hasTouch,
+    userAgent: iphone13.userAgent,
+    viewport: iphone13.viewport,
+  })
+
+  async function expectNoHorizontalOverflow(page) {
+    const hasHorizontalOverflow = await page.evaluate(() => {
+      const documentElement = document.documentElement
+
+      return documentElement.scrollWidth > documentElement.clientWidth + 1
+    })
+
+    expect(hasHorizontalOverflow).toBe(false)
+  }
+
+  test('accueil visible sur iPhone', async ({ page }) => {
+    await openHome(page)
+
+    await expect(page.getByRole('heading', { name: /Geo M.mo/i })).toBeVisible()
+    await expect(page.getByRole('button', { name: /Carte|Map/i })).toBeInViewport()
+    await expect(page.getByRole('button', { name: /Quiz/i })).toBeInViewport()
+    await expectNoHorizontalOverflow(page)
+  })
+
+  test('quiz image utilisable sur iPhone', async ({ page }) => {
+    await page.route('https://**/*', async (route) => {
+      if (route.request().resourceType() === 'image') {
+        await route.fulfill({
+          body: Buffer.from(
+            'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/p9sAAAAASUVORK5CYII=',
+            'base64',
+          ),
+          contentType: 'image/png',
+        })
+        return
+      }
+
+      await route.continue()
+    })
+
+    await openHome(page)
+    await openModule(page, /Quiz/i)
+    await selectQuizType(page, 'Trouver le pays avec une image')
+
+    await expect(page.locator('.quiz-image')).toBeVisible()
+    await page.locator('.answer-grid button').first().click()
+
+    const nextButton = page.getByRole('button', { name: /Question suivante/i })
+
+    await expect(nextButton).toBeVisible()
+    await expect(nextButton).toBeInViewport()
+    await expectNoHorizontalOverflow(page)
+  })
+
+  test('quiz carte Océanie visible sur iPhone', async ({ page }) => {
+    await openHome(page)
+    await openModule(page, /Quiz/i)
+
+    await selectQuizType(page, 'Trouver le pays sur la carte + territoires')
+    await page.locator('.quiz-controls select').nth(1).selectOption({ index: 5 })
+    await page.getByRole('button', { name: /D.marrer le quiz carte/i }).click()
+
+    const map = page.locator('.quiz-shape-map.leaflet-container')
+
+    await waitForMapReady(page, '.quiz-shape-map.leaflet-container')
+    await expect(page.locator('.quiz-map-fullscreen')).toBeVisible()
+    await expect(page.locator('.quiz-map-hud')).toBeInViewport()
+    await expect(
+      page.locator('.quiz-map-fullscreen svg path.leaflet-interactive').first(),
+    ).toBeVisible()
+
+    const mapBox = await map.boundingBox()
+    const viewport = page.viewportSize()
+
+    expect(mapBox.height).toBeGreaterThan((viewport?.height || 0) - 8)
+    await expectNoHorizontalOverflow(page)
+  })
 })
