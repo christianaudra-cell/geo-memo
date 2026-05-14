@@ -21,6 +21,8 @@ const quizTypes = [
   { id: 'map-mixed' },
 ]
 
+const FLAG_QUIZ_MAX_QUESTIONS = 50
+
 const mapSettingsByContinent = {
   Europe: { center: [50, 15], zoom: 4 },
   Afrique: { center: [2, 20], zoom: 3 },
@@ -366,6 +368,10 @@ function getUnansweredItems(items, answeredCorrectItems) {
   const answeredIds = new Set(answeredCorrectItems.map(getItemId))
 
   return items.filter((item) => !answeredIds.has(getItemId(item)))
+}
+
+function getFlagSessionItems(items) {
+  return shuffleList(items).slice(0, FLAG_QUIZ_MAX_QUESTIONS)
 }
 
 function isAnsweredCorrectItem(item, answeredCorrectItems) {
@@ -746,6 +752,8 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
   const [answeredCorrectCountries, setAnsweredCorrectCountries] = useState([])
   const [answeredCorrectTerritories, setAnsweredCorrectTerritories] = useState([])
   const [answeredCorrectLandmarks, setAnsweredCorrectLandmarks] = useState([])
+  const [answeredFlagItems, setAnsweredFlagItems] = useState([])
+  const [flagSessionItems, setFlagSessionItems] = useState([])
   const [smartCapitalCategory, setSmartCapitalCategory] = useState('all')
   const [failedLandmarkImages, setFailedLandmarkImages] = useState({})
   const [isQuizFinished, setIsQuizFinished] = useState(false)
@@ -777,7 +785,7 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     )
   }, [quizContinent])
 
-  const questionItems = useMemo(() => {
+  const availableQuestionItems = useMemo(() => {
     if (quizType === 'smart-capital') {
       return getSmartCapitalItems(countries, smartCapitalCategory)
     }
@@ -796,6 +804,7 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     quizType,
     smartCapitalCategory,
   ])
+  const questionItems = quizType === 'flag' ? flagSessionItems : availableQuestionItems
   const [question, setQuestion] = useState(() =>
     makeQuestion(
       countries.map(getCountryItem),
@@ -846,6 +855,14 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
           ),
         }
       : { done: 0, total: 0, remaining: 0 }
+  const flagStats =
+    quizType === 'flag'
+      ? {
+          done: correctAnswers,
+          total: questionItems.length,
+          remaining: Math.max(questionItems.length - answeredFlagItems.length, 0),
+        }
+      : { done: 0, total: 0, remaining: 0 }
   const isMapQuizFinished =
     isMapQuizType(quizType) &&
     questionItems.length > 0 &&
@@ -854,9 +871,16 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
 
   useEffect(() => {
     const nextQuestionItems =
-      quizType === 'landmark'
-        ? getUnansweredItems(questionItems, answeredCorrectLandmarks)
-        : questionItems
+      quizType === 'flag'
+        ? getFlagSessionItems(availableQuestionItems)
+        : quizType === 'landmark'
+          ? getUnansweredItems(availableQuestionItems, answeredCorrectLandmarks)
+          : availableQuestionItems
+
+    if (quizType === 'flag') {
+      setFlagSessionItems(nextQuestionItems)
+      setAnsweredFlagItems([])
+    }
 
     setQuestion(
       makeQuestion(
@@ -872,8 +896,8 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     setWrongMapTerritory(null)
     setIsQuizFinished(false)
   }, [
+    availableQuestionItems,
     continents,
-    questionItems,
     quizCountries,
     quizTerritories,
     quizType,
@@ -881,9 +905,14 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
   ])
 
   useEffect(() => {
+    if (quizType === 'flag') {
+      setCorrectAnswers(0)
+      setWrongAnswers(0)
+    }
     setAnsweredCorrectCountries([])
     setAnsweredCorrectTerritories([])
     setAnsweredCorrectLandmarks([])
+    setAnsweredFlagItems([])
     setFailedLandmarkImages({})
     setIsQuizFinished(false)
   }, [quizContinent, quizType])
@@ -905,8 +934,16 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     const isCorrect = answer === question.correctAnswer
     setSelectedAnswer(answer)
 
+    if (quizType === 'flag' && question.item) {
+      setAnsweredFlagItems((currentFlags) =>
+        currentFlags.some((currentFlag) => getItemId(currentFlag) === getItemId(question.item))
+          ? currentFlags
+          : [...currentFlags, question.item],
+      )
+    }
+
     if (isCorrect) {
-      setCorrectAnswers(correctAnswers + 1)
+      setCorrectAnswers((currentCorrectAnswers) => currentCorrectAnswers + 1)
       if (quizType === 'landmark' && question.item) {
         setAnsweredCorrectLandmarks((currentLandmarks) =>
           currentLandmarks.some(
@@ -918,7 +955,7 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
       }
       setFeedback(t('quiz.feedback.correct', { correction: getCorrection(question, quizType, t) }))
     } else {
-      setWrongAnswers(wrongAnswers + 1)
+      setWrongAnswers((currentWrongAnswers) => currentWrongAnswers + 1)
       setFeedback(t('quiz.feedback.incorrect', { correction: getCorrection(question, quizType, t) }))
     }
   }
@@ -1099,6 +1136,8 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
   function goToNextQuestion() {
     const nextItems = isMapQuizType(quizType)
       ? getUnansweredItems(questionItems, answeredCorrectItems)
+      : quizType === 'flag'
+        ? getUnansweredItems(questionItems, answeredFlagItems)
       : quizType === 'landmark'
         ? getUnansweredItems(questionItems, answeredCorrectLandmarks)
         : questionItems
@@ -1106,7 +1145,9 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     if (
       questionItems.length > 0 &&
       (nextItems.length === 0 ||
+        (quizType === 'flag' && nextItems.length === 0) ||
         (!isMapQuizType(quizType) &&
+          quizType !== 'flag' &&
           quizType !== 'landmark' &&
           totalAnswers >= questionItems.length))
     ) {
@@ -1135,6 +1176,9 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
   }
 
   function resetQuiz() {
+    const nextQuestionItems =
+      quizType === 'flag' ? getFlagSessionItems(availableQuestionItems) : questionItems
+
     setCorrectAnswers(0)
     setWrongAnswers(0)
     setSelectedAnswer('')
@@ -1144,11 +1188,15 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     setAnsweredCorrectCountries([])
     setAnsweredCorrectTerritories([])
     setAnsweredCorrectLandmarks([])
+    setAnsweredFlagItems([])
+    if (quizType === 'flag') {
+      setFlagSessionItems(nextQuestionItems)
+    }
     setFailedLandmarkImages({})
     setIsQuizFinished(false)
     setQuestion(
       makeQuestion(
-        questionItems,
+        nextQuestionItems,
         quizCountries,
         continents,
         quizType,
@@ -1165,6 +1213,7 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     setWrongMapTerritory(null)
     setIsQuizFinished(false)
     setAnsweredCorrectLandmarks([])
+    setAnsweredFlagItems([])
     setFailedLandmarkImages({})
     setQuestion(
       makeQuestion(
@@ -1177,6 +1226,9 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
   }
 
   function changeQuiz() {
+    const nextQuestionItems =
+      quizType === 'flag' ? getFlagSessionItems(availableQuestionItems) : questionItems
+
     setCorrectAnswers(0)
     setWrongAnswers(0)
     setIsQuizFinished(false)
@@ -1188,10 +1240,14 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     setAnsweredCorrectCountries([])
     setAnsweredCorrectTerritories([])
     setAnsweredCorrectLandmarks([])
+    setAnsweredFlagItems([])
+    if (quizType === 'flag') {
+      setFlagSessionItems(nextQuestionItems)
+    }
     setFailedLandmarkImages({})
     setQuestion(
       makeQuestion(
-        questionItems,
+        nextQuestionItems,
         quizCountries,
         continents,
         quizType,
@@ -1231,6 +1287,14 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
                 {t('quiz.stats.landmarkDone')} : {landmarkStats.done}/{landmarkStats.total}
               </p>
               <p>{t('quiz.stats.landmarkRemaining')} : {landmarkStats.remaining}</p>
+            </>
+          )}
+          {quizType === 'flag' && (
+            <>
+              <p>
+                {t('quiz.stats.flagDone')} : {flagStats.done} / {flagStats.total}
+              </p>
+              <p>{t('quiz.stats.flagRemaining')} : {flagStats.remaining}</p>
             </>
           )}
           <p>{t('common.score')} : {scorePercent} %</p>

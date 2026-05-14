@@ -217,6 +217,8 @@ export const translations = {
         remaining: 'Total restant',
         landmarkDone: 'Images réussies',
         landmarkRemaining: 'Images restantes',
+        flagDone: 'Drapeaux réussis',
+        flagRemaining: 'Restants',
       },
       prompts: {
         flag: 'Quel pays correspond à ce drapeau ?',
@@ -498,6 +500,8 @@ export const translations = {
         remaining: 'Remaining total',
         landmarkDone: 'Images solved',
         landmarkRemaining: 'Images remaining',
+        flagDone: 'Flags solved',
+        flagRemaining: 'Remaining',
       },
       prompts: {
         flag: 'Which country matches this flag?',

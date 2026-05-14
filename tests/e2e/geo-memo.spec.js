@@ -292,6 +292,28 @@ test('drapeaux visibles sur fond clair', async ({ page }) => {
   expect(flagStyles.boxShadow).not.toBe('none')
 })
 
+test('quiz drapeaux avec session limitée sans répétition immédiate', async ({ page }) => {
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+  await selectQuizType(page, 'Trouver le pays avec son drapeau')
+
+  await expect(page.getByText(/Drapeaux réussis\s*:\s*\d+\s*\/\s*50/i)).toBeVisible()
+  await expect(page.getByText(/Restants\s*:\s*50/i)).toBeVisible()
+
+  const firstFlagClass = await page.locator('.flag-visual .fi').first().getAttribute('class')
+
+  await page.locator('.answer-grid button').first().click()
+  await expect(page.getByText(/Restants\s*:\s*49/i)).toBeVisible()
+
+  const nextButton = page.getByRole('button', { name: /Question suivante/i })
+  await expect(nextButton).toBeVisible()
+  await nextButton.click()
+
+  const secondFlagClass = await page.locator('.flag-visual .fi').first().getAttribute('class')
+
+  expect(secondFlagClass).not.toBe(firstFlagClass)
+})
+
 test.describe('mobile iPhone 13', () => {
   const iphone13 = devices['iPhone 13']
 
@@ -342,6 +364,23 @@ test.describe('mobile iPhone 13', () => {
     await selectQuizType(page, 'Trouver le pays avec une image')
 
     await expect(page.locator('.quiz-image')).toBeVisible()
+    await page.locator('.answer-grid button').first().click()
+
+    const nextButton = page.getByRole('button', { name: /Question suivante/i })
+
+    await expect(nextButton).toBeVisible()
+    await expect(nextButton).toBeInViewport()
+    await expectNoHorizontalOverflow(page)
+  })
+
+  test('quiz drapeaux utilisable sur iPhone', async ({ page }) => {
+    await openHome(page)
+    await openModule(page, /Quiz/i)
+    await selectQuizType(page, 'Trouver le pays avec son drapeau')
+
+    await expect(page.getByText(/Drapeaux réussis\s*:\s*\d+\s*\/\s*50/i)).toBeVisible()
+    await expect(page.locator('.flag-visual .country-flag').first()).toBeVisible()
+
     await page.locator('.answer-grid button').first().click()
 
     const nextButton = page.getByRole('button', { name: /Question suivante/i })
