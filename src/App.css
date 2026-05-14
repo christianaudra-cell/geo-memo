@@ -1676,6 +1676,50 @@ select:focus {
   min-height: 150px;
 }
 
+.flag,
+.country-flag,
+.flag-image,
+.flag-frame {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.country-flag,
+.flag-frame {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.country-flag .fi,
+.flag-frame .fi {
+  background-color: #f8fafc;
+  display: block;
+  font-size: inherit;
+  height: 0.75em;
+  line-height: 1;
+  width: 1.333em;
+}
+
+.flag-visual .country-flag {
+  border-radius: 10px;
+  padding: 0.08em;
+}
+
+.flag-visual .country-flag .fi {
+  border-radius: 7px;
+}
+
+.flag-emoji {
+  display: inline-flex;
+  font-size: 1.35em;
+  padding: 0.12em 0.18em;
+}
+
 .landmark-visual {
   display: grid;
   gap: 6px;

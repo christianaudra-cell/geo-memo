@@ -934,7 +934,9 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
       return (
         <div className="quiz-visual flag-visual" aria-label={t('quiz.labels.flagToRecognize')}>
           {flagCode ? (
-            <span className={`fi fi-${flagCode}`}></span>
+            <span className="country-flag flag-frame">
+              <span className={`fi fi-${flagCode}`}></span>
+            </span>
           ) : (
             <span className="flag-missing">{t('quiz.feedback.flagMissing')}</span>
           )}

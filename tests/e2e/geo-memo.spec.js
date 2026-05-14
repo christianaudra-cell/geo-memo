@@ -264,6 +264,34 @@ test('quiz image', async ({ page }) => {
   await expect(nextButton).toBeInViewport()
 })
 
+test('drapeaux visibles sur fond clair', async ({ page }) => {
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+  await selectQuizType(page, 'Trouver le pays avec son drapeau')
+
+  const flagFrame = page.locator('.flag-visual .country-flag').first()
+
+  await expect(flagFrame).toBeVisible()
+
+  const flagStyles = await flagFrame.evaluate((element) => {
+    const styles = window.getComputedStyle(element)
+
+    return {
+      backgroundColor: styles.backgroundColor,
+      borderColor: styles.borderColor,
+      borderStyle: styles.borderStyle,
+      borderWidth: styles.borderWidth,
+      boxShadow: styles.boxShadow,
+    }
+  })
+
+  expect(flagStyles.backgroundColor).not.toBe('rgba(0, 0, 0, 0)')
+  expect(flagStyles.borderStyle).toBe('solid')
+  expect(flagStyles.borderWidth).not.toBe('0px')
+  expect(flagStyles.borderColor).not.toBe('rgba(0, 0, 0, 0)')
+  expect(flagStyles.boxShadow).not.toBe('none')
+})
+
 test.describe('mobile iPhone 13', () => {
   const iphone13 = devices['iPhone 13']
 
