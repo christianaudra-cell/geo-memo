@@ -105,6 +105,50 @@ test('quiz Océanie centré avec marqueurs visibles', async ({ page }) => {
   expect(markerCenterRatio).toBeLessThan(0.85)
 })
 
+test('couleurs différentes pour pays voisins en Europe', async ({ page }) => {
+  await openHome(page)
+  await openModule(page, /Carte|Map/i)
+  await waitForMapReady(page, '.world-map.leaflet-container')
+
+  const colors = await page.locator('.world-map').evaluate((mapElement) => {
+    const countryIds = [
+      'belgique',
+      'allemagne',
+      'france',
+      'espagne',
+      'suisse',
+      'autriche',
+      'pays-bas',
+    ]
+
+    return Object.fromEntries(
+      countryIds.map((countryId) => {
+        const shape = mapElement.querySelector(
+          `path[data-map-node-id="country:${countryId}"]`,
+        )
+
+        return [countryId, shape?.getAttribute('fill') || '']
+      }),
+    )
+  })
+
+  expect(colors.belgique).toBeTruthy()
+  expect(colors.allemagne).toBeTruthy()
+  expect(colors.france).toBeTruthy()
+  expect(colors.espagne).toBeTruthy()
+  expect(colors.suisse).toBeTruthy()
+  expect(colors.autriche).toBeTruthy()
+  expect(colors['pays-bas']).toBeTruthy()
+
+  expect(colors.belgique).not.toBe(colors.allemagne)
+  expect(colors.france).not.toBe(colors.allemagne)
+  expect(colors.france).not.toBe(colors.belgique)
+  expect(colors.espagne).not.toBe(colors.france)
+  expect(colors.suisse).not.toBe(colors.france)
+  expect(colors.autriche).not.toBe(colors.allemagne)
+  expect(colors['pays-bas']).not.toBe(colors.allemagne)
+})
+
 test('quiz image', async ({ page }) => {
   await page.route('https://**/*', async (route) => {
     if (route.request().resourceType() === 'image') {

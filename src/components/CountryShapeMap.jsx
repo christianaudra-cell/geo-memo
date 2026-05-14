@@ -96,23 +96,15 @@ const SMALL_COUNTRY_MARKERS = {
   ...SMALL_OCEANIA_COUNTRY_MARKERS,
 }
 const MAP_COLORS = [
-  '#9be7c1',
   '#ffe08a',
   '#f7a8c7',
+  '#93c5fd',
+  '#9be7c1',
+  '#ffd1a8',
   '#cbb7ff',
-  '#ffc078',
   '#78ddd4',
   '#c7ea7c',
-  '#ffd1a8',
-]
-const QUIZ_COUNTRY_COLORS = [
-  '#ffe08a',
-  '#f7a8c7',
-  '#cbb7ff',
   '#ffc078',
-  '#78ddd4',
-  '#ffd1a8',
-  '#93c5fd',
   '#f0abfc',
 ]
 const OCEANIA_MARKER_COUNTRY_COLORS = [
@@ -214,56 +206,100 @@ function getFeatureCountryId(shapeFeature) {
   return shapeFeature?.properties?.countryId || shapeFeature?.properties?.id
 }
 
-function getCountryAdjacency(shapeFeatures) {
+function getCountryMapNodeId(country) {
+  return `country:${getCountryId(country)}`
+}
+
+function getTerritoryMapNodeId(territory) {
+  return `territory:${territory?.id}`
+}
+
+function getFeatureMapNodeId(shapeFeature) {
+  if (shapeFeature?.properties?.mapNodeId) {
+    return shapeFeature.properties.mapNodeId
+  }
+
+  if (shapeFeature?.properties?.territoryId) {
+    return `territory:${shapeFeature.properties.territoryId}`
+  }
+
+  const countryId = getFeatureCountryId(shapeFeature)
+
+  return countryId ? `country:${countryId}` : null
+}
+
+function getMapNodeStableKey(mapNodeId) {
+  return String(mapNodeId || '').replace(/^(country|territory):/, '')
+}
+
+function getStableColorRank(mapNodeId, color) {
+  const stableKey = getMapNodeStableKey(mapNodeId)
+  const colorSeed = [...`${stableKey}-${color}`].reduce(
+    (total, character) => total + character.charCodeAt(0),
+    0,
+  )
+
+  return colorSeed
+}
+
+function getPreferredColors(mapNodeId) {
+  return [...MAP_COLORS].sort(
+    (firstColor, secondColor) =>
+      getStableColorRank(mapNodeId, firstColor) -
+      getStableColorRank(mapNodeId, secondColor),
+  )
+}
+
+function getAreaAdjacency(shapeFeatures) {
   const adjacency = {}
-  const countryIdsBySegment = new Map()
+  const nodeIdsBySegment = new Map()
 
   for (const shapeFeature of shapeFeatures) {
-    const countryId = getFeatureCountryId(shapeFeature)
+    const nodeId = getFeatureMapNodeId(shapeFeature)
 
-    if (!countryId) {
+    if (!nodeId) {
       continue
     }
 
-    adjacency[countryId] ||= new Set()
+    adjacency[nodeId] ||= new Set()
 
     for (const ring of getGeometryRings(shapeFeature.geometry)) {
       for (let index = 1; index < ring.length; index += 1) {
         const segmentKey = getSegmentKey(ring[index - 1], ring[index])
 
-        if (!countryIdsBySegment.has(segmentKey)) {
-          countryIdsBySegment.set(segmentKey, new Set())
+        if (!nodeIdsBySegment.has(segmentKey)) {
+          nodeIdsBySegment.set(segmentKey, new Set())
         }
 
-        countryIdsBySegment.get(segmentKey).add(countryId)
+        nodeIdsBySegment.get(segmentKey).add(nodeId)
       }
     }
   }
 
-  for (const countryIds of countryIdsBySegment.values()) {
-    const uniqueCountryIds = [...countryIds]
+  for (const nodeIds of nodeIdsBySegment.values()) {
+    const uniqueNodeIds = [...nodeIds]
 
-    if (uniqueCountryIds.length < 2) {
+    if (uniqueNodeIds.length < 2) {
       continue
     }
 
-    for (let firstIndex = 0; firstIndex < uniqueCountryIds.length; firstIndex += 1) {
+    for (let firstIndex = 0; firstIndex < uniqueNodeIds.length; firstIndex += 1) {
       for (
         let secondIndex = firstIndex + 1;
-        secondIndex < uniqueCountryIds.length;
+        secondIndex < uniqueNodeIds.length;
         secondIndex += 1
       ) {
-        const firstCountryId = uniqueCountryIds[firstIndex]
-        const secondCountryId = uniqueCountryIds[secondIndex]
+        const firstNodeId = uniqueNodeIds[firstIndex]
+        const secondNodeId = uniqueNodeIds[secondIndex]
 
-        if (firstCountryId === secondCountryId) {
+        if (firstNodeId === secondNodeId) {
           continue
         }
 
-        adjacency[firstCountryId] ||= new Set()
-        adjacency[secondCountryId] ||= new Set()
-        adjacency[firstCountryId].add(secondCountryId)
-        adjacency[secondCountryId].add(firstCountryId)
+        adjacency[firstNodeId] ||= new Set()
+        adjacency[secondNodeId] ||= new Set()
+        adjacency[firstNodeId].add(secondNodeId)
+        adjacency[secondNodeId].add(firstNodeId)
       }
     }
   }
@@ -271,61 +307,61 @@ function getCountryAdjacency(shapeFeatures) {
   return adjacency
 }
 
-function getNextCountryToColor(countryIds, adjacency, colorByCountryId) {
-  return countryIds
-    .filter((countryId) => !colorByCountryId[countryId])
-    .sort((firstCountryId, secondCountryId) => {
-      const firstNeighbors = adjacency[firstCountryId] || new Set()
-      const secondNeighbors = adjacency[secondCountryId] || new Set()
+function getNextAreaToColor(nodeIds, adjacency, colorByNodeId) {
+  return nodeIds
+    .filter((nodeId) => !colorByNodeId[nodeId])
+    .sort((firstNodeId, secondNodeId) => {
+      const firstNeighbors = adjacency[firstNodeId] || new Set()
+      const secondNeighbors = adjacency[secondNodeId] || new Set()
       const firstNeighborColors = new Set(
-        [...firstNeighbors].map((neighborId) => colorByCountryId[neighborId]).filter(Boolean),
+        [...firstNeighbors].map((neighborId) => colorByNodeId[neighborId]).filter(Boolean),
       )
       const secondNeighborColors = new Set(
-        [...secondNeighbors].map((neighborId) => colorByCountryId[neighborId]).filter(Boolean),
+        [...secondNeighbors].map((neighborId) => colorByNodeId[neighborId]).filter(Boolean),
       )
 
       return (
         secondNeighborColors.size - firstNeighborColors.size ||
         secondNeighbors.size - firstNeighbors.size ||
-        firstCountryId.localeCompare(secondCountryId)
+        firstNodeId.localeCompare(secondNodeId)
       )
     })[0]
 }
 
-function canUseColor(countryId, color, adjacency, colorByCountryId) {
-  return ![...(adjacency[countryId] || [])].some(
-    (neighborId) => colorByCountryId[neighborId] === color,
+function canUseColor(nodeId, color, adjacency, colorByNodeId) {
+  return ![...(adjacency[nodeId] || [])].some(
+    (neighborId) => colorByNodeId[neighborId] === color,
   )
 }
 
-function colorCountryGraph(adjacency) {
-  const countryIds = Object.keys(adjacency).sort(
-    (firstCountryId, secondCountryId) =>
-      (adjacency[secondCountryId]?.size || 0) -
-        (adjacency[firstCountryId]?.size || 0) ||
-      firstCountryId.localeCompare(secondCountryId),
+function colorAreaGraph(adjacency) {
+  const nodeIds = Object.keys(adjacency).sort(
+    (firstNodeId, secondNodeId) =>
+      (adjacency[secondNodeId]?.size || 0) -
+        (adjacency[firstNodeId]?.size || 0) ||
+      firstNodeId.localeCompare(secondNodeId),
   )
-  const colorByCountryId = {}
+  const colorByNodeId = {}
 
   function assignColor() {
-    const countryId = getNextCountryToColor(countryIds, adjacency, colorByCountryId)
+    const nodeId = getNextAreaToColor(nodeIds, adjacency, colorByNodeId)
 
-    if (!countryId) {
+    if (!nodeId) {
       return true
     }
 
-    for (const color of MAP_COLORS) {
-      if (!canUseColor(countryId, color, adjacency, colorByCountryId)) {
+    for (const color of getPreferredColors(nodeId)) {
+      if (!canUseColor(nodeId, color, adjacency, colorByNodeId)) {
         continue
       }
 
-      colorByCountryId[countryId] = color
+      colorByNodeId[nodeId] = color
 
       if (assignColor()) {
         return true
       }
 
-      delete colorByCountryId[countryId]
+      delete colorByNodeId[nodeId]
     }
 
     return false
@@ -333,15 +369,19 @@ function colorCountryGraph(adjacency) {
 
   assignColor()
 
-  return colorByCountryId
+  return colorByNodeId
 }
 
-function getCountryColorMap(shapeFeatures) {
-  return colorCountryGraph(getCountryAdjacency(shapeFeatures))
+function getAreaColorMap(shapeFeatures) {
+  return colorAreaGraph(getAreaAdjacency(shapeFeatures))
 }
 
-function getCountryColor(countryId, countryColorById) {
-  return countryColorById?.[countryId] || MAP_COLORS[0]
+function getAreaColor(mapNodeId, areaColorById) {
+  return (
+    areaColorById?.[mapNodeId] ||
+    getPreferredColors(mapNodeId)[0] ||
+    MAP_COLORS[0]
+  )
 }
 
 function getStablePaletteColor(value, palette) {
@@ -352,10 +392,6 @@ function getStablePaletteColor(value, palette) {
   ) % palette.length
 
   return palette[colorIndex]
-}
-
-function getQuizCountryColor(country) {
-  return getStablePaletteColor(getCountryId(country) || country?.name, QUIZ_COUNTRY_COLORS)
 }
 
 function getOceaniaCountryMarkerColor(country) {
@@ -904,8 +940,8 @@ function getShapeStyle(feature, countryByShapeName, options) {
       ...COUNTRY_PATH_STYLE,
       color: COUNTRY_BORDER_COLOR,
       fillColor: options.isQuizMode
-        ? getQuizCountryColor(country)
-        : getCountryColor(countryId, options.countryColorById),
+        ? getAreaColor(getCountryMapNodeId(country), options.areaColorById)
+        : getAreaColor(getCountryMapNodeId(country), options.areaColorById),
       fillOpacity: options.isQuizMode ? 0.64 : 0.74,
       opacity: 0.9,
       weight: options.isQuizMode ? 0.8 : 0.9,
@@ -922,8 +958,11 @@ function getShapeStyle(feature, countryByShapeName, options) {
   }
 }
 
-function getTerritoryStyle() {
-  return TERRITORY_BASE_STYLE
+function getTerritoryStyle(territory, areaColorById) {
+  return {
+    ...TERRITORY_BASE_STYLE,
+    fillColor: getAreaColor(getTerritoryMapNodeId(territory), areaColorById),
+  }
 }
 
 function getAnsweredTerritoryStyle() {
@@ -1140,16 +1179,13 @@ function CountryShapeMap({
                   id: getCountryId(country),
                   countryId: getCountryId(country),
                   countryName: country.name,
+                  mapNodeId: getCountryMapNodeId(country),
                 },
               }
             }),
           ).filter(Boolean)
         : [],
     [displayCountries, isOceaniaMap, showCountryShapes],
-  )
-  const countryColorById = useMemo(
-    () => getCountryColorMap(visibleCountryFeatures),
-    [visibleCountryFeatures],
   )
   const highlightedCountryIds = useMemo(
     () => new Set(highlightedCountries.map(getCountryId)),
@@ -1174,14 +1210,35 @@ function CountryShapeMap({
         ? {
             ...territoryFeatureItem,
             feature: {
-              ...territoryFeatureItem.feature,
-              geometry: normalizeGeometryForOceania(
-                territoryFeatureItem.feature.geometry,
-              ),
+            ...territoryFeatureItem.feature,
+            geometry: normalizeGeometryForOceania(
+              territoryFeatureItem.feature.geometry,
+            ),
+            properties: {
+              ...territoryFeatureItem.feature.properties,
+              mapNodeId: getTerritoryMapNodeId(territoryFeatureItem.territory),
             },
-          }
-        : territoryFeatureItem,
+          },
+        }
+        : {
+            ...territoryFeatureItem,
+            feature: {
+              ...territoryFeatureItem.feature,
+              properties: {
+                ...territoryFeatureItem.feature.properties,
+                mapNodeId: getTerritoryMapNodeId(territoryFeatureItem.territory),
+              },
+            },
+          },
     )
+  const areaColorById = useMemo(
+    () =>
+      getAreaColorMap([
+        ...visibleCountryFeatures,
+        ...visibleTerritoryFeatureItems.map(({ feature: shapeFeature }) => shapeFeature),
+      ]),
+    [visibleCountryFeatures, visibleTerritoryFeatureItems],
+  )
   const visibleSmallClickableTerritories = displayTerritories
     .filter(
       (territory) =>
@@ -1337,6 +1394,13 @@ function CountryShapeMap({
           }
 
           layer.on({
+            add: () => {
+              const element = layer.getElement?.()
+
+              if (element) {
+                element.dataset.mapNodeId = getCountryMapNodeId(country)
+              }
+            },
             click: () => {
               if (import.meta.env.DEV && isUnitedStatesCountry(country)) {
                 console.log('CLICK USA', getCountryId(country), currentQuestionId)
@@ -1356,7 +1420,7 @@ function CountryShapeMap({
           getShapeStyle(shapeFeature, countryByShapeName, {
             correctCountry,
             answeredCorrectCountries,
-            countryColorById,
+            areaColorById,
             countryProgress,
             isQuizMode,
             wrongCountry,
@@ -1420,6 +1484,7 @@ function CountryShapeMap({
 
                   if (element) {
                     element.style.pointerEvents = 'auto'
+                    element.dataset.mapNodeId = getTerritoryMapNodeId(resolvedTerritory)
                   }
                 },
                 mouseover: () => {
@@ -1433,7 +1498,7 @@ function CountryShapeMap({
                       answeredCorrectTerritories,
                     )
                       ? getAnsweredTerritoryStyle()
-                      : getTerritoryStyle(),
+                      : getTerritoryStyle(resolvedTerritory, areaColorById),
                   )
                 },
                 click: () => {
@@ -1465,7 +1530,7 @@ function CountryShapeMap({
                 return getAnsweredTerritoryStyle()
               }
 
-              return getTerritoryStyle()
+              return getTerritoryStyle(territory, areaColorById)
             }}
           />
         </Pane>
@@ -1520,7 +1585,7 @@ function CountryShapeMap({
                   }}
                   fillColor={isAnsweredCorrect
                     ? TERRITORY_VALIDATED_STYLE.fillColor
-                    : TERRITORY_BASE_STYLE.fillColor}
+                    : getAreaColor(getTerritoryMapNodeId(territory), areaColorById)}
                   fillOpacity={isAnsweredCorrect ? 0.94 : 0.34}
                   fill
                   interactive
@@ -1576,7 +1641,7 @@ function CountryShapeMap({
                   ? '#facc15'
                   : isOceaniaMap
                     ? getOceaniaCountryMarkerColor(country)
-                    : getCountryColor(getCountryId(country), countryColorById)
+                    : getAreaColor(getCountryMapNodeId(country), areaColorById)
             const markerStrokeColor =
               isAnsweredCorrect
                 ? COUNTRY_VALIDATED_STYLE.color
