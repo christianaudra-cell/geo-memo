@@ -1,0 +1,1383 @@
+export const countries = [
+	{
+		name: "Albanie",
+		capital: "Tirana",
+		continent: "Europe",
+		geography: "Un pays des Balkans, au bord de la mer Adriatique.",
+		mnemonic: "Imagine un aigle qui descend les Balkans jusqu’à Tirana, près de l’Adriatique."
+	},
+	{
+		name: "Allemagne",
+		capital: "Berlin",
+		continent: "Europe",
+		geography: "Un pays d’Europe centrale entouré de nombreux voisins.",
+		mnemonic: "Imagine l’Allemagne comme un bouton au centre de l’Europe, entouré de nombreux voisins."
+	},
+	{
+		name: "Andorre",
+		capital: "Andorre-la-Vieille",
+		continent: "Europe",
+		geography: "Un petit pays dans les Pyrénées, entre la France et l’Espagne.",
+		mnemonic: "Imagine une porte dans les Pyrénées : elle s’ouvre entre France et Espagne sur Andorre."
+	},
+	{
+		name: "Autriche",
+		capital: "Vienne",
+		continent: "Europe",
+		geography: "Un pays alpin d’Europe centrale, sans accès à la mer.",
+		mnemonic: "Vois l’Autriche comme un violon posé dans les Alpes, juste à l’est de la Suisse."
+	},
+	{
+		name: "Belgique",
+		capital: "Bruxelles",
+		continent: "Europe",
+		geography: "Un pays d’Europe de l’Ouest, entre la France, les Pays-Bas et l’Allemagne.",
+		mnemonic: "Bruxelles est comme une gaufre posée entre France, Pays-Bas et Allemagne."
+	},
+	{
+		name: "Biélorussie",
+		capital: "Minsk",
+		continent: "Europe",
+		geography: "Un pays d’Europe de l’Est, entre la Pologne et la Russie.",
+		mnemonic: "Minsk est un pont blanc entre Pologne et Russie, dans la grande plaine de l’Est."
+	},
+	{
+		name: "Bosnie-Herzégovine",
+		capital: "Sarajevo",
+		continent: "Europe",
+		geography: "Un pays des Balkans, à l’intérieur des terres avec une petite côte adriatique.",
+		mnemonic: "Sarajevo est une maison dans les Balkans avec une minuscule fenêtre sur l’Adriatique."
+	},
+	{
+		name: "Bulgarie",
+		capital: "Sofia",
+		continent: "Europe",
+		geography: "Un pays des Balkans, au bord de la mer Noire.",
+		mnemonic: "La Bulgarie est un balcon du sud-est européen qui regarde la mer Noire."
+	},
+	{
+		name: "Chypre",
+		capital: "Nicosie",
+		continent: "Europe",
+		geography: "Une île de Méditerranée orientale, au sud de la Turquie.",
+		mnemonic: "Chypre est une noix en Méditerranée orientale, juste sous la Turquie."
+	},
+	{
+		name: "Croatie",
+		capital: "Zagreb",
+		continent: "Europe",
+		geography: "Un pays des Balkans avec une longue côte sur l’Adriatique.",
+		mnemonic: "Imagine Zagreb tenant une longue écharpe côtière le long de l’Adriatique."
+	},
+	{
+		name: "Danemark",
+		capital: "Copenhague",
+		continent: "Europe",
+		geography: "Un pays du nord de l’Europe, entre la mer du Nord et la mer Baltique.",
+		mnemonic: "Copenhague est une clé qui ferme le passage entre mer du Nord et Baltique."
+	},
+	{
+		name: "Espagne",
+		capital: "Madrid",
+		continent: "Europe",
+		geography: "Un pays de la péninsule Ibérique, au sud-ouest de l’Europe.",
+		mnemonic: "L’Espagne est un grand éventail au sud-ouest de l’Europe, avec Madrid au centre."
+	},
+	{
+		name: "Estonie",
+		capital: "Tallinn",
+		continent: "Europe",
+		geography: "Un pays balte au nord-est de l’Europe, au bord de la mer Baltique.",
+		mnemonic: "L’Estonie est le pays balte du haut, posé sous la Finlande."
+	},
+	{
+		name: "Finlande",
+		capital: "Helsinki",
+		continent: "Europe",
+		geography: "Un pays du nord de l’Europe, entre la Suède et la Russie.",
+		mnemonic: "La Finlande glisse comme un ski entre la Suède et la Russie, au nord de l’Europe."
+	},
+	{
+		name: "France",
+		capital: "Paris",
+		continent: "Europe",
+		geography: "Un pays d’Europe de l’Ouest avec des côtes sur l’Atlantique et la Méditerranée.",
+		mnemonic: "Paris brille entre Atlantique et Méditerranée comme une étoile au centre de la France."
+	},
+	{
+		name: "Grèce",
+		capital: "Athènes",
+		continent: "Europe",
+		geography: "Un pays du sud-est de l’Europe, composé d’une péninsule et de nombreuses îles.",
+		mnemonic: "La Grèce est une main de péninsules et d’îles qui descend dans la mer Égée."
+	},
+	{
+		name: "Hongrie",
+		capital: "Budapest",
+		continent: "Europe",
+		geography: "Un pays d’Europe centrale, traversé par le Danube.",
+		mnemonic: "La Hongrie est une cuvette au cœur de l’Europe, traversée par le Danube."
+	},
+	{
+		name: "Irlande",
+		capital: "Dublin",
+		continent: "Europe",
+		geography: "Une île à l’ouest de la Grande-Bretagne, dans l’Atlantique Nord.",
+		mnemonic: "L’Irlande est un trèfle vert posé à l’ouest de la Grande-Bretagne."
+	},
+	{
+		name: "Islande",
+		capital: "Reykjavik",
+		continent: "Europe",
+		geography: "Une île de l’Atlantique Nord, entre l’Europe et le Groenland.",
+		mnemonic: "L’Islande fume comme un glaçon volcanique isolé dans l’Atlantique Nord."
+	},
+	{
+		name: "Italie",
+		capital: "Rome",
+		continent: "Europe",
+		geography: "Une péninsule d’Europe du Sud en forme de botte.",
+		mnemonic: "La botte italienne descend dans la Méditerranée et pointe vers Rome."
+	},
+	{
+		name: "Kosovo",
+		capital: "Pristina",
+		continent: "Europe",
+		geography: "Un petit pays des Balkans, au nord de l’Albanie et de la Macédoine du Nord.",
+		mnemonic: "Le Kosovo est une petite perle enclavée au cœur des Balkans."
+	},
+	{
+		name: "Lettonie",
+		capital: "Riga",
+		continent: "Europe",
+		geography: "Un pays balte situé entre l’Estonie et la Lituanie.",
+		mnemonic: "La Lettonie est la tranche du milieu dans le sandwich des trois pays baltes."
+	},
+	{
+		name: "Liechtenstein",
+		capital: "Vaduz",
+		continent: "Europe",
+		geography: "Un très petit pays alpin entre la Suisse et l’Autriche.",
+		mnemonic: "Le Liechtenstein est un minuscule caillou alpin coincé entre Suisse et Autriche."
+	},
+	{
+		name: "Lituanie",
+		capital: "Vilnius",
+		continent: "Europe",
+		geography: "Un pays balte au sud de la Lettonie, près de la mer Baltique.",
+		mnemonic: "La Lituanie est le pays balte du bas, juste au nord de la Pologne."
+	},
+	{
+		name: "Luxembourg",
+		capital: "Luxembourg",
+		continent: "Europe",
+		geography: "Un petit pays d’Europe de l’Ouest, entre la Belgique, la France et l’Allemagne.",
+		mnemonic: "Luxembourg est une petite lampe entre Belgique, France et Allemagne."
+	},
+	{
+		name: "Macédoine du Nord",
+		capital: "Skopje",
+		continent: "Europe",
+		geography: "Un pays des Balkans, au nord de la Grèce.",
+		mnemonic: "La Macédoine du Nord est une marche des Balkans juste au-dessus de la Grèce."
+	},
+	{
+		name: "Malte",
+		capital: "La Valette",
+		continent: "Europe",
+		geography: "Un petit État insulaire de Méditerranée, au sud de la Sicile.",
+		mnemonic: "Malte est un confetti méditerranéen flottant juste sous la Sicile."
+	},
+	{
+		name: "Moldavie",
+		capital: "Chisinau",
+		continent: "Europe",
+		geography: "Un pays d’Europe de l’Est, entre la Roumanie et l’Ukraine.",
+		mnemonic: "La Moldavie est une graine enclavée entre Roumanie et Ukraine."
+	},
+	{
+		name: "Monaco",
+		capital: "Monaco",
+		continent: "Europe",
+		geography: "Un très petit État sur la côte méditerranéenne, au sud-est de la France.",
+		mnemonic: "Monaco est une pièce brillante sur la Côte d’Azur française."
+	},
+	{
+		name: "Monténégro",
+		capital: "Podgorica",
+		continent: "Europe",
+		geography: "Un pays des Balkans, entre montagnes et mer Adriatique.",
+		mnemonic: "Le Monténégro est une montagne noire qui tombe vers l’Adriatique."
+	},
+	{
+		name: "Norvège",
+		capital: "Oslo",
+		continent: "Europe",
+		geography: "Un pays long et côtier du nord de l’Europe, célèbre pour ses fjords.",
+		mnemonic: "La Norvège est une longue fermeture éclair de fjords sur la côte nord de l’Europe."
+	},
+	{
+		name: "Pays-Bas",
+		capital: "Amsterdam",
+		continent: "Europe",
+		geography: "Un pays bas et côtier d’Europe de l’Ouest, au bord de la mer du Nord.",
+		mnemonic: "Les Pays-Bas sont une terre très basse posée au bord de la mer du Nord."
+	},
+	{
+		name: "Pologne",
+		capital: "Varsovie",
+		continent: "Europe",
+		geography: "Un pays d’Europe centrale, entre l’Allemagne et la Biélorussie.",
+		mnemonic: "La Pologne est une large barre entre l’Allemagne et l’Europe de l’Est."
+	},
+	{
+		name: "Portugal",
+		capital: "Lisbonne",
+		continent: "Europe",
+		geography: "Un pays à l’ouest de la péninsule Ibérique, au bord de l’Atlantique.",
+		mnemonic: "Le Portugal est la bande atlantique tout à l’ouest de la péninsule Ibérique."
+	},
+	{
+		name: "Roumanie",
+		capital: "Bucarest",
+		continent: "Europe",
+		geography: "Un pays d’Europe du Sud-Est, près de la mer Noire.",
+		mnemonic: "La Roumanie tire un rideau vers la mer Noire, au sud-est de l’Europe."
+	},
+	{
+		name: "Royaume-Uni",
+		capital: "Londres",
+		continent: "Europe",
+		geography: "Un pays insulaire au nord-ouest de l’Europe.",
+		mnemonic: "Londres porte une couronne sur l’île au nord-ouest de l’Europe."
+	},
+	{
+		name: "Russie",
+		capital: "Moscou",
+		continent: "Europe",
+		geography: "Un très grand pays qui s’étend de l’Europe de l’Est à l’Asie.",
+		mnemonic: "Moscou marque la grande porte orientale de l’Europe vers l’Asie."
+	},
+	{
+		name: "Saint-Marin",
+		capital: "Saint-Marin",
+		continent: "Europe",
+		geography: "Un très petit État enclavé dans le nord de l’Italie.",
+		mnemonic: "Saint-Marin est une petite tour cachée dans la botte italienne."
+	},
+	{
+		name: "Serbie",
+		capital: "Belgrade",
+		continent: "Europe",
+		geography: "Un pays des Balkans, au centre de l’Europe du Sud-Est.",
+		mnemonic: "La Serbie est un tambour enclavé au centre des Balkans."
+	},
+	{
+		name: "Slovaquie",
+		capital: "Bratislava",
+		continent: "Europe",
+		geography: "Un pays d’Europe centrale, entre la Tchéquie, l’Autriche et la Hongrie.",
+		mnemonic: "La Slovaquie est un triangle central entre Tchéquie, Autriche et Hongrie."
+	},
+	{
+		name: "Slovénie",
+		capital: "Ljubljana",
+		continent: "Europe",
+		geography: "Un petit pays entre les Alpes, l’Italie, l’Autriche et la Croatie.",
+		mnemonic: "La Slovénie est un petit crochet entre les Alpes, l’Italie et l’Adriatique."
+	},
+	{
+		name: "Suède",
+		capital: "Stockholm",
+		continent: "Europe",
+		geography: "Un pays scandinave du nord de l’Europe, à l’est de la Norvège.",
+		mnemonic: "La Suède est une longue bande de neige à l’est de la Norvège."
+	},
+	{
+		name: "Suisse",
+		capital: "Berne",
+		continent: "Europe",
+		geography: "Un pays alpin d’Europe centrale, entre la France, l’Allemagne et l’Italie.",
+		mnemonic: "La Suisse est une cloche alpine entre France, Allemagne, Autriche et Italie."
+	},
+	{
+		name: "Tchéquie",
+		capital: "Prague",
+		continent: "Europe",
+		geography: "Un pays d’Europe centrale, au nord de l’Autriche.",
+		mnemonic: "La Tchéquie est une plaque centrale posée juste au nord de l’Autriche."
+	},
+	{
+		name: "Ukraine",
+		capital: "Kyiv",
+		continent: "Europe",
+		geography: "Un grand pays d’Europe de l’Est, au nord de la mer Noire.",
+		mnemonic: "L’Ukraine est un grand bouclier de plaines au nord de la mer Noire."
+	},
+	{
+		name: "Vatican",
+		capital: "Vatican",
+		continent: "Europe",
+		geography: "Un très petit État situé à l’intérieur de Rome, en Italie.",
+		mnemonic: "Le Vatican est une minuscule clé posée dans Rome."
+	},
+	{
+		name: "Égypte",
+		capital: "Le Caire",
+		continent: "Afrique",
+		geography: "Un pays du nord-est de l’Afrique traversé par le Nil.",
+		mnemonic: "L’Égypte suit le ruban du Nil jusqu’à la Méditerranée, au nord-est de l’Afrique."
+	},
+	{
+		name: "Kenya",
+		capital: "Nairobi",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Est bordé par l’océan Indien.",
+		mnemonic: "Imagine un safari qui part de Nairobi vers l’océan Indien, sur la côte est africaine."
+	},
+	{
+		name: "Maroc",
+		capital: "Rabat",
+		continent: "Afrique",
+		geography: "Un pays du nord-ouest de l’Afrique, proche de l’Atlantique et de la Méditerranée.",
+		mnemonic: "Rabat est une porte au coin nord-ouest de l’Afrique, entre Atlantique et Méditerranée."
+	},
+	{
+		name: "Afrique du Sud",
+		capital: "Pretoria",
+		continent: "Afrique",
+		geography: "Un pays situé à la pointe sud de l’Afrique, entre deux océans.",
+		mnemonic: "L’Afrique du Sud forme la pointe du continent, entre Atlantique et océan Indien."
+	},
+	{
+		name: "Algérie",
+		capital: "Alger",
+		continent: "Afrique",
+		geography: "Un grand pays du nord de l’Afrique, au bord de la Méditerranée.",
+		mnemonic: "Alger regarde la Méditerranée tout en haut du vaste désert algérien."
+	},
+	{
+		name: "Angola",
+		capital: "Luanda",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique australe, sur la côte atlantique.",
+		mnemonic: "Luanda lance une ancre sur l’Atlantique, au sud-ouest de l’Afrique."
+	},
+	{
+		name: "Bénin",
+		capital: "Porto-Novo",
+		continent: "Afrique",
+		geography: "Un pays étroit d’Afrique de l’Ouest, au bord du golfe de Guinée.",
+		mnemonic: "Imagine un ruban vertical qui descend vers Porto-Novo sur le golfe de Guinée."
+	},
+	{
+		name: "Botswana",
+		capital: "Gaborone",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique australe, au nord de l’Afrique du Sud.",
+		mnemonic: "Gaborone garde la frontière juste au nord de l’Afrique du Sud."
+	},
+	{
+		name: "Burkina Faso",
+		capital: "Ouagadougou",
+		continent: "Afrique",
+		geography: "Un pays enclavé d’Afrique de l’Ouest, au sud du Mali.",
+		mnemonic: "Ouagadougou est un tambour posé sous le Mali, loin de la mer."
+	},
+	{
+		name: "Burundi",
+		capital: "Gitega",
+		continent: "Afrique",
+		geography: "Un petit pays d’Afrique de l’Est, près du lac Tanganyika.",
+		mnemonic: "Gitega est une goutte près du lac Tanganyika, au cœur de l’Afrique de l’Est."
+	},
+	{
+		name: "Cameroun",
+		capital: "Yaoundé",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique centrale ouvert sur le golfe de Guinée.",
+		mnemonic: "Yaoundé est la poignée du Cameroun, entre golfe de Guinée et Afrique centrale."
+	},
+	{
+		name: "Cap-Vert",
+		capital: "Praia",
+		continent: "Afrique",
+		geography: "Un archipel de l’Atlantique, au large de l’Afrique de l’Ouest.",
+		mnemonic: "Praia flotte comme un point vert dans l’Atlantique, face au Sénégal."
+	},
+	{
+		name: "Comores",
+		capital: "Moroni",
+		continent: "Afrique",
+		geography: "Un archipel de l’océan Indien, entre Madagascar et l’Afrique de l’Est.",
+		mnemonic: "Moroni est une perle entre Madagascar et la côte est africaine."
+	},
+	{
+		name: "République du Congo",
+		capital: "Brazzaville",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique centrale, à l’ouest du fleuve Congo.",
+		mnemonic: "Brazzaville regarde Kinshasa de l’autre côté du fleuve Congo."
+	},
+	{
+		name: "Côte d’Ivoire",
+		capital: "Yamoussoukro",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Ouest, au bord du golfe de Guinée.",
+		mnemonic: "Yamoussoukro est une défense d’ivoire posée sur la côte ouest africaine."
+	},
+	{
+		name: "Djibouti",
+		capital: "Djibouti",
+		continent: "Afrique",
+		geography: "Un petit pays de la Corne de l’Afrique, près de la mer Rouge.",
+		mnemonic: "Djibouti est un bouton sur la Corne de l’Afrique, à l’entrée de la mer Rouge."
+	},
+	{
+		name: "Érythrée",
+		capital: "Asmara",
+		continent: "Afrique",
+		geography: "Un pays de la Corne de l’Afrique, le long de la mer Rouge.",
+		mnemonic: "Asmara suit un long ruban rouge au bord de la mer Rouge."
+	},
+	{
+		name: "Eswatini",
+		capital: "Mbabane",
+		continent: "Afrique",
+		geography: "Un petit pays enclavé en Afrique australe, près de l’Afrique du Sud.",
+		mnemonic: "Mbabane est une bille coincée entre Afrique du Sud et Mozambique."
+	},
+	{
+		name: "Éthiopie",
+		capital: "Addis-Abeba",
+		continent: "Afrique",
+		geography: "Un grand pays de la Corne de l’Afrique, sans accès à la mer.",
+		mnemonic: "Addis-Abeba est un plateau haut perché au-dessus de la Corne de l’Afrique."
+	},
+	{
+		name: "Gabon",
+		capital: "Libreville",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique centrale, sur l’équateur et l’Atlantique.",
+		mnemonic: "Libreville trace une ligne libre sur l’équateur au bord de l’Atlantique."
+	},
+	{
+		name: "Gambie",
+		capital: "Banjul",
+		continent: "Afrique",
+		geography: "Un pays très étroit d’Afrique de l’Ouest, presque entouré par le Sénégal.",
+		mnemonic: "Banjul est une fine rivière serpentant dans le Sénégal vers l’Atlantique."
+	},
+	{
+		name: "Ghana",
+		capital: "Accra",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Ouest, au bord du golfe de Guinée.",
+		mnemonic: "Accra accroche le Ghana au golfe de Guinée."
+	},
+	{
+		name: "Guinée",
+		capital: "Conakry",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Ouest, sur la côte atlantique.",
+		mnemonic: "Conakry colle la Guinée à l’Atlantique, juste au sud du Sénégal."
+	},
+	{
+		name: "Guinée-Bissau",
+		capital: "Bissau",
+		continent: "Afrique",
+		geography: "Un petit pays côtier d’Afrique de l’Ouest, au sud du Sénégal.",
+		mnemonic: "Bissau est un petit bateau sous le Sénégal, sur l’Atlantique."
+	},
+	{
+		name: "Guinée équatoriale",
+		capital: "Malabo",
+		continent: "Afrique",
+		geography: "Un petit pays d’Afrique centrale, près de l’équateur et du golfe de Guinée.",
+		mnemonic: "Malabo marque l’équateur comme une île devant le golfe de Guinée."
+	},
+	{
+		name: "Lesotho",
+		capital: "Maseru",
+		continent: "Afrique",
+		geography: "Un petit pays entièrement enclavé dans l’Afrique du Sud.",
+		mnemonic: "Maseru est un rond montagneux dessiné au milieu de l’Afrique du Sud."
+	},
+	{
+		name: "Liberia",
+		capital: "Monrovia",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Ouest, sur la côte atlantique.",
+		mnemonic: "Monrovia monte la garde sur la côte atlantique, entre Sierra Leone et Côte d’Ivoire."
+	},
+	{
+		name: "Libye",
+		capital: "Tripoli",
+		continent: "Afrique",
+		geography: "Un pays du nord de l’Afrique, au bord de la Méditerranée.",
+		mnemonic: "Tripoli pose un trépied sur la Méditerranée, au-dessus du désert libyen."
+	},
+	{
+		name: "Madagascar",
+		capital: "Antananarivo",
+		continent: "Afrique",
+		geography: "Une grande île de l’océan Indien, à l’est de l’Afrique australe.",
+		mnemonic: "Antananarivo est au centre de la grande île allongée à l’est de l’Afrique."
+	},
+	{
+		name: "Malawi",
+		capital: "Lilongwe",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique australe, le long du lac Malawi.",
+		mnemonic: "Lilongwe longe le lac Malawi comme une longue goutte verticale."
+	},
+	{
+		name: "Mali",
+		capital: "Bamako",
+		continent: "Afrique",
+		geography: "Un grand pays enclavé d’Afrique de l’Ouest, au sud du Sahara.",
+		mnemonic: "Bamako bat le tambour sous le Sahara, au cœur de l’ouest africain."
+	},
+	{
+		name: "Maurice",
+		capital: "Port-Louis",
+		continent: "Afrique",
+		geography: "Une île de l’océan Indien, à l’est de Madagascar.",
+		mnemonic: "Port-Louis est un petit port brillant à l’est de Madagascar."
+	},
+	{
+		name: "Mauritanie",
+		capital: "Nouakchott",
+		continent: "Afrique",
+		geography: "Un pays du nord-ouest de l’Afrique, entre Sahara et Atlantique.",
+		mnemonic: "Nouakchott noue le Sahara à l’Atlantique, au nord-ouest africain."
+	},
+	{
+		name: "Mozambique",
+		capital: "Maputo",
+		continent: "Afrique",
+		geography: "Un long pays côtier d’Afrique australe, au bord de l’océan Indien.",
+		mnemonic: "Maputo met un long manteau sur la côte sud-est de l’Afrique."
+	},
+	{
+		name: "Namibie",
+		capital: "Windhoek",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique australe, sur la côte atlantique désertique.",
+		mnemonic: "Windhoek souffle du vent sur les dunes atlantiques de Namibie."
+	},
+	{
+		name: "Niger",
+		capital: "Niamey",
+		continent: "Afrique",
+		geography: "Un pays enclavé d’Afrique de l’Ouest, au sud de l’Algérie.",
+		mnemonic: "Niamey nage dans le fleuve Niger, juste sous le Sahara."
+	},
+	{
+		name: "Nigeria",
+		capital: "Abuja",
+		continent: "Afrique",
+		geography: "Un pays peuplé d’Afrique de l’Ouest, au bord du golfe de Guinée.",
+		mnemonic: "Le Nigeria est un grand cœur d’Afrique de l’Ouest posé au-dessus du golfe de Guinée."
+	},
+	{
+		name: "Ouganda",
+		capital: "Kampala",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Est, au nord du lac Victoria.",
+		mnemonic: "Kampala campe au nord du lac Victoria."
+	},
+	{
+		name: "République centrafricaine",
+		capital: "Bangui",
+		continent: "Afrique",
+		geography: "Un pays enclavé au centre de l’Afrique.",
+		mnemonic: "Bangui est une cible placée presque au centre du continent africain."
+	},
+	{
+		name: "République démocratique du Congo",
+		capital: "Kinshasa",
+		continent: "Afrique",
+		geography: "Un très grand pays d’Afrique centrale, traversé par le fleuve Congo.",
+		mnemonic: "Kinshasa tient le grand bassin du Congo au centre de l’Afrique."
+	},
+	{
+		name: "Rwanda",
+		capital: "Kigali",
+		continent: "Afrique",
+		geography: "Un petit pays d’Afrique de l’Est, à l’ouest du lac Victoria.",
+		mnemonic: "Kigali est une colline juste à l’ouest du lac Victoria."
+	},
+	{
+		name: "Sao Tomé-et-Principe",
+		capital: "Sao Tomé",
+		continent: "Afrique",
+		geography: "Un petit archipel du golfe de Guinée, au large de l’Afrique centrale.",
+		mnemonic: "Sao Tomé est deux points posés dans le golfe de Guinée."
+	},
+	{
+		name: "Sénégal",
+		capital: "Dakar",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Ouest, à la pointe la plus occidentale du continent.",
+		mnemonic: "Dakar est le phare à l’extrême ouest de l’Afrique."
+	},
+	{
+		name: "Seychelles",
+		capital: "Victoria",
+		continent: "Afrique",
+		geography: "Un archipel de l’océan Indien, au nord-est de Madagascar.",
+		mnemonic: "Victoria est une étoile d’îles au nord-est de Madagascar."
+	},
+	{
+		name: "Sierra Leone",
+		capital: "Freetown",
+		continent: "Afrique",
+		geography: "Un pays côtier d’Afrique de l’Ouest, sur l’Atlantique.",
+		mnemonic: "Freetown est une ville libre sur la côte atlantique, près de la Guinée."
+	},
+	{
+		name: "Somalie",
+		capital: "Mogadiscio",
+		continent: "Afrique",
+		geography: "Un pays de la Corne de l’Afrique, au bord de l’océan Indien.",
+		mnemonic: "Mogadiscio est au bout de la Corne de l’Afrique, tournée vers l’océan Indien."
+	},
+	{
+		name: "Soudan",
+		capital: "Khartoum",
+		continent: "Afrique",
+		geography: "Un pays du nord-est de l’Afrique, au sud de l’Égypte.",
+		mnemonic: "Khartoum est juste sous les pyramides, au sud de l’Égypte."
+	},
+	{
+		name: "Soudan du Sud",
+		capital: "Djouba",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Est, au sud du Soudan.",
+		mnemonic: "Le Soudan du Sud est une marche verte juste sous le Soudan, au nord de l’Ouganda."
+	},
+	{
+		name: "Tanzanie",
+		capital: "Dodoma",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique de l’Est, entre les Grands Lacs et l’océan Indien.",
+		mnemonic: "Dodoma danse entre le lac Victoria et l’océan Indien."
+	},
+	{
+		name: "Tchad",
+		capital: "N’Djamena",
+		continent: "Afrique",
+		geography: "Un pays enclavé d’Afrique centrale, au sud de la Libye.",
+		mnemonic: "N’Djamena est près du lac Tchad, sous la Libye et loin de la mer."
+	},
+	{
+		name: "Togo",
+		capital: "Lomé",
+		continent: "Afrique",
+		geography: "Un pays étroit d’Afrique de l’Ouest, au bord du golfe de Guinée.",
+		mnemonic: "Lomé est une fine lame qui descend vers le golfe de Guinée."
+	},
+	{
+		name: "Tunisie",
+		capital: "Tunis",
+		continent: "Afrique",
+		geography: "Un pays du nord de l’Afrique, entre l’Algérie, la Libye et la Méditerranée.",
+		mnemonic: "Tunis est une petite pointe méditerranéenne entre Algérie et Libye."
+	},
+	{
+		name: "Zambie",
+		capital: "Lusaka",
+		continent: "Afrique",
+		geography: "Un pays enclavé d’Afrique australe, au nord du Zimbabwe.",
+		mnemonic: "La Zambie est un plateau enclavé posé au-dessus des chutes Victoria."
+	},
+	{
+		name: "Zimbabwe",
+		capital: "Harare",
+		continent: "Afrique",
+		geography: "Un pays d’Afrique australe, entre la Zambie et l’Afrique du Sud.",
+		mnemonic: "Le Zimbabwe est une pierre intérieure entre Zambie, Mozambique et Afrique du Sud."
+	},
+	{
+		name: "Chine",
+		capital: "Pékin",
+		continent: "Asie",
+		geography: "Un grand pays d’Asie de l’Est bordé par l’océan Pacifique.",
+		mnemonic: "Pékin tient une grande assiette d’Asie de l’Est tournée vers le Pacifique."
+	},
+	{
+		name: "Inde",
+		capital: "New Delhi",
+		continent: "Asie",
+		geography: "Un pays d’Asie du Sud formant une grande péninsule dans l’océan Indien.",
+		mnemonic: "New Delhi est au sommet de la grande péninsule qui plonge dans l’océan Indien."
+	},
+	{
+		name: "Japon",
+		capital: "Tokyo",
+		continent: "Asie",
+		geography: "Un pays insulaire situé à l’est du continent asiatique.",
+		mnemonic: "Tokyo brille comme le soleil levant sur les îles du Japon."
+	},
+	{
+		name: "Thaïlande",
+		capital: "Bangkok",
+		continent: "Asie",
+		geography: "Un pays d’Asie du Sud-Est bordé par le golfe de Thaïlande.",
+		mnemonic: "Bangkok noue un ruban autour du golfe de Thaïlande, au cœur de l’Asie du Sud-Est."
+	},
+	{
+		name: "Afghanistan",
+		capital: "Kaboul",
+		continent: "Asie",
+		geography: "Un pays montagneux d’Asie centrale et du Sud, sans accès à la mer.",
+		mnemonic: "Kaboul est une caravane coincée dans les montagnes entre Iran, Pakistan et Asie centrale."
+	},
+	{
+		name: "Arabie saoudite",
+		capital: "Riyad",
+		continent: "Asie",
+		geography: "Un grand pays de la péninsule Arabique, entre mer Rouge et golfe Persique.",
+		mnemonic: "Riyad est une oasis au centre de la grande péninsule Arabique."
+	},
+	{
+		name: "Arménie",
+		capital: "Erevan",
+		continent: "Asie",
+		geography: "Un pays montagneux du Caucase du Sud, entre Turquie et Azerbaïdjan.",
+		mnemonic: "Erevan est une pierre des montagnes du Caucase, coincée entre Turquie et Azerbaïdjan."
+	},
+	{
+		name: "Azerbaïdjan",
+		capital: "Bakou",
+		continent: "Asie",
+		geography: "Un pays du Caucase, au bord de la mer Caspienne.",
+		mnemonic: "Bakou allume une flamme sur la rive ouest de la mer Caspienne."
+	},
+	{
+		name: "Bahreïn",
+		capital: "Manama",
+		continent: "Asie",
+		geography: "Un petit État insulaire du golfe Persique, près de l’Arabie saoudite.",
+		mnemonic: "Manama est une perle posée dans le golfe Persique, près de l’Arabie."
+	},
+	{
+		name: "Bangladesh",
+		capital: "Dacca",
+		continent: "Asie",
+		geography: "Un pays d’Asie du Sud, dans le delta du Gange, à l’est de l’Inde.",
+		mnemonic: "Dacca est un bateau dans le delta, juste à l’est de l’Inde."
+	},
+	{
+		name: "Bhoutan",
+		capital: "Thimphou",
+		continent: "Asie",
+		geography: "Un petit pays himalayen, entre l’Inde et la Chine.",
+		mnemonic: "Thimphou est un nid dans l’Himalaya, posé entre Inde et Chine."
+	},
+	{
+		name: "Brunei",
+		capital: "Bandar Seri Begawan",
+		continent: "Asie",
+		geography: "Un petit pays de l’île de Bornéo, en Asie du Sud-Est.",
+		mnemonic: "Bandar Seri Begawan est une petite étoile dorée sur la côte nord de Bornéo."
+	},
+	{
+		name: "Cambodge",
+		capital: "Phnom Penh",
+		continent: "Asie",
+		geography: "Un pays d’Asie du Sud-Est, entre Thaïlande, Laos et Vietnam.",
+		mnemonic: "Phnom Penh est un temple au milieu du trio Thaïlande-Laos-Vietnam."
+	},
+	{
+		name: "Corée du Nord",
+		capital: "Pyongyang",
+		continent: "Asie",
+		geography: "Un pays d’Asie de l’Est, au nord de la péninsule coréenne.",
+		mnemonic: "Pyongyang est l’étoile du haut sur la péninsule coréenne."
+	},
+	{
+		name: "Corée du Sud",
+		capital: "Séoul",
+		continent: "Asie",
+		geography: "Un pays d’Asie de l’Est, au sud de la péninsule coréenne.",
+		mnemonic: "Séoul est la lumière du bas sur la péninsule coréenne."
+	},
+	{
+		name: "Émirats arabes unis",
+		capital: "Abou Dhabi",
+		continent: "Asie",
+		geography: "Un pays de la péninsule Arabique, au bord du golfe Persique.",
+		mnemonic: "Abou Dhabi est un phare moderne sur la rive sud du golfe Persique."
+	},
+	{
+		name: "Géorgie",
+		capital: "Tbilissi",
+		continent: "Asie",
+		geography: "Un pays du Caucase, entre la mer Noire et les montagnes.",
+		mnemonic: "Tbilissi est un pont entre mer Noire et Caucase."
+	},
+	{
+		name: "Indonésie",
+		capital: "Jakarta",
+		continent: "Asie",
+		geography: "Un grand archipel d’Asie du Sud-Est, entre océans Indien et Pacifique.",
+		mnemonic: "Jakarta est une île-boussole au milieu du long chapelet indonésien."
+	},
+	{
+		name: "Iran",
+		capital: "Téhéran",
+		continent: "Asie",
+		geography: "Un grand pays d’Asie de l’Ouest, entre golfe Persique et mer Caspienne.",
+		mnemonic: "Téhéran tient un plateau entre la Caspienne au nord et le golfe Persique au sud."
+	},
+	{
+		name: "Irak",
+		capital: "Bagdad",
+		continent: "Asie",
+		geography: "Un pays d’Asie de l’Ouest, traversé par le Tigre et l’Euphrate.",
+		mnemonic: "Bagdad est une lampe entre deux fleuves, au cœur du Croissant fertile."
+	},
+	{
+		name: "Israël",
+		capital: "Jérusalem",
+		continent: "Asie",
+		geography: "Un pays du Proche-Orient, sur la côte orientale de la Méditerranée.",
+		mnemonic: "Jérusalem est une pierre claire près de la Méditerranée orientale."
+	},
+	{
+		name: "Jordanie",
+		capital: "Amman",
+		continent: "Asie",
+		geography: "Un pays du Proche-Orient, à l’est d’Israël et de la mer Morte.",
+		mnemonic: "Amman est une tente posée juste à l’est de la mer Morte."
+	},
+	{
+		name: "Kazakhstan",
+		capital: "Astana",
+		continent: "Asie",
+		geography: "Un très grand pays d’Asie centrale, au sud de la Russie.",
+		mnemonic: "Astana est une étoile dans la grande steppe au sud de la Russie."
+	},
+	{
+		name: "Kirghizistan",
+		capital: "Bichkek",
+		continent: "Asie",
+		geography: "Un pays montagneux d’Asie centrale, près de la Chine.",
+		mnemonic: "Bichkek est un camp de montagne entre Kazakhstan et Chine."
+	},
+	{
+		name: "Koweït",
+		capital: "Koweït",
+		continent: "Asie",
+		geography: "Un petit pays du golfe Persique, entre Irak et Arabie saoudite.",
+		mnemonic: "Koweït est une goutte de pétrole au coin nord du golfe Persique."
+	},
+	{
+		name: "Laos",
+		capital: "Vientiane",
+		continent: "Asie",
+		geography: "Un pays enclavé d’Asie du Sud-Est, entre Thaïlande et Vietnam.",
+		mnemonic: "Vientiane est un pont sur le Mékong, serré entre Thaïlande et Vietnam."
+	},
+	{
+		name: "Liban",
+		capital: "Beyrouth",
+		continent: "Asie",
+		geography: "Un petit pays du Proche-Orient, sur la Méditerranée.",
+		mnemonic: "Beyrouth est un cèdre posé sur la côte méditerranéenne."
+	},
+	{
+		name: "Malaisie",
+		capital: "Kuala Lumpur",
+		continent: "Asie",
+		geography: "Un pays d’Asie du Sud-Est partagé entre péninsule malaise et Bornéo.",
+		mnemonic: "Kuala Lumpur relie une péninsule à Bornéo comme deux morceaux de carte."
+	},
+	{
+		name: "Maldives",
+		capital: "Malé",
+		continent: "Asie",
+		geography: "Un archipel de l’océan Indien, au sud-ouest de l’Inde.",
+		mnemonic: "Malé est un collier d’îles sous l’Inde."
+	},
+	{
+		name: "Mongolie",
+		capital: "Oulan-Bator",
+		continent: "Asie",
+		geography: "Un grand pays enclavé d’Asie de l’Est, entre Russie et Chine.",
+		mnemonic: "Oulan-Bator est une yourte posée entre la Russie au nord et la Chine au sud."
+	},
+	{
+		name: "Myanmar",
+		capital: "Naypyidaw",
+		continent: "Asie",
+		geography: "Un pays d’Asie du Sud-Est, entre Inde, Chine et Thaïlande.",
+		mnemonic: "Naypyidaw est une pagode entre Inde, Chine et Thaïlande."
+	},
+	{
+		name: "Népal",
+		capital: "Katmandou",
+		continent: "Asie",
+		geography: "Un pays himalayen, entre l’Inde et la Chine.",
+		mnemonic: "Katmandou est un drapeau sur l’Himalaya, serré entre Inde et Chine."
+	},
+	{
+		name: "Oman",
+		capital: "Mascate",
+		continent: "Asie",
+		geography: "Un pays au sud-est de la péninsule Arabique, près de la mer d’Arabie.",
+		mnemonic: "Mascate est un masque tourné vers la mer d’Arabie, au bout de la péninsule."
+	},
+	{
+		name: "Ouzbékistan",
+		capital: "Tachkent",
+		continent: "Asie",
+		geography: "Un pays enclavé d’Asie centrale, au cœur des anciennes routes de la soie.",
+		mnemonic: "Tachkent est un tapis au centre de l’Asie centrale."
+	},
+	{
+		name: "Pakistan",
+		capital: "Islamabad",
+		continent: "Asie",
+		geography: "Un pays d’Asie du Sud, à l’ouest de l’Inde.",
+		mnemonic: "Islamabad est un portail à l’ouest de l’Inde, vers montagnes et désert."
+	},
+	{
+		name: "Palestine",
+		capital: "Ramallah",
+		continent: "Asie",
+		geography: "Un territoire du Proche-Orient, près de la Méditerranée orientale.",
+		mnemonic: "Ramallah est une olive près de la Méditerranée orientale."
+	},
+	{
+		name: "Philippines",
+		capital: "Manille",
+		continent: "Asie",
+		geography: "Un archipel d’Asie du Sud-Est, dans l’océan Pacifique.",
+		mnemonic: "Manille est une perle dans le chapelet d’îles à l’est de l’Asie du Sud-Est."
+	},
+	{
+		name: "Qatar",
+		capital: "Doha",
+		continent: "Asie",
+		geography: "Un petit pays de la péninsule Arabique, avançant dans le golfe Persique.",
+		mnemonic: "Doha est un doigt qui pointe dans le golfe Persique."
+	},
+	{
+		name: "Singapour",
+		capital: "Singapour",
+		continent: "Asie",
+		geography: "Une cité-État insulaire au sud de la péninsule malaise.",
+		mnemonic: "Singapour est un petit port-lion au bout sud de la péninsule malaise."
+	},
+	{
+		name: "Sri Lanka",
+		capital: "Sri Jayawardenapura Kotte",
+		continent: "Asie",
+		geography: "Une île de l’océan Indien, au sud-est de l’Inde.",
+		mnemonic: "Sri Lanka est une larme d’île sous l’Inde."
+	},
+	{
+		name: "Syrie",
+		capital: "Damas",
+		continent: "Asie",
+		geography: "Un pays du Proche-Orient, entre Turquie, Irak, Jordanie et Méditerranée.",
+		mnemonic: "Damas est une rose entre Turquie, Irak et Méditerranée."
+	},
+	{
+		name: "Tadjikistan",
+		capital: "Douchanbé",
+		continent: "Asie",
+		geography: "Un pays montagneux d’Asie centrale, au nord de l’Afghanistan.",
+		mnemonic: "Douchanbé est une douche de neige au nord de l’Afghanistan."
+	},
+	{
+		name: "Taïwan",
+		capital: "Taipei",
+		continent: "Asie",
+		geography: "Une île d’Asie de l’Est, au large de la Chine.",
+		mnemonic: "Taipei est une lanterne sur une île à l’est de la Chine."
+	},
+	{
+		name: "Timor oriental",
+		capital: "Dili",
+		continent: "Asie",
+		geography: "Un petit pays insulaire d’Asie du Sud-Est, à l’est de l’Indonésie.",
+		mnemonic: "Dili est le point final à l’est de l’archipel indonésien."
+	},
+	{
+		name: "Turkménistan",
+		capital: "Achgabat",
+		continent: "Asie",
+		geography: "Un pays d’Asie centrale, entre mer Caspienne et désert du Karakoum.",
+		mnemonic: "Achgabat est une tente blanche entre Caspienne et désert."
+	},
+	{
+		name: "Turquie",
+		capital: "Ankara",
+		continent: "Asie",
+		geography: "Un pays entre Europe et Asie, largement situé en Anatolie.",
+		mnemonic: "Ankara est un pont qui relie Europe et Asie par l’Anatolie."
+	},
+	{
+		name: "Vietnam",
+		capital: "Hanoï",
+		continent: "Asie",
+		geography: "Un pays long et côtier d’Asie du Sud-Est, au bord de la mer de Chine méridionale.",
+		mnemonic: "Le Vietnam est un long ruban côtier en forme de S le long de la mer de Chine."
+	},
+	{
+		name: "Yémen",
+		capital: "Sanaa",
+		continent: "Asie",
+		geography: "Un pays au sud de la péninsule Arabique, près de la mer Rouge et du golfe d’Aden.",
+		mnemonic: "Sanaa est une sentinelle au coin sud de la péninsule Arabique."
+	},
+	{
+		name: "Brésil",
+		capital: "Brasilia",
+		continent: "Amérique",
+		geography: "Le plus grand pays d’Amérique du Sud, avec une grande partie de l’Amazonie.",
+		mnemonic: "Brasilia est une étoile au centre du grand Brésil, sous l’Amazonie."
+	},
+	{
+		name: "Canada",
+		capital: "Ottawa",
+		continent: "Amérique",
+		geography: "Un pays du nord de l’Amérique du Nord, connu pour ses forêts et ses lacs.",
+		mnemonic: "Ottawa est une cabane au sud du vaste Canada, juste au-dessus des États-Unis."
+	},
+	{
+		name: "Mexique",
+		capital: "Mexico",
+		continent: "Amérique",
+		geography: "Un pays d’Amérique du Nord situé au sud des États-Unis.",
+		mnemonic: "Mexico est un soleil sous les États-Unis, avant le pont de l’Amérique centrale."
+	},
+	{
+		name: "Pérou",
+		capital: "Lima",
+		continent: "Amérique",
+		geography: "Un pays de l’ouest de l’Amérique du Sud, entre les Andes et le Pacifique.",
+		mnemonic: "Lima aligne un lama le long du Pacifique, sur le flanc ouest des Andes."
+	},
+	{
+		name: "Antigua-et-Barbuda",
+		capital: "Saint John’s",
+		continent: "Amérique",
+		geography: "Un petit État insulaire des Caraïbes orientales.",
+		mnemonic: "Saint John’s est une ancre posée sur deux petites îles à l’est des Caraïbes."
+	},
+	{
+		name: "Argentine",
+		capital: "Buenos Aires",
+		continent: "Amérique",
+		geography: "Un grand pays du sud de l’Amérique du Sud, entre Andes et Atlantique.",
+		mnemonic: "Buenos Aires souffle tout au sud-est du continent, face à l’Atlantique."
+	},
+	{
+		name: "Bahamas",
+		capital: "Nassau",
+		continent: "Amérique",
+		geography: "Un archipel des Caraïbes, au nord de Cuba.",
+		mnemonic: "Nassau est un collier d’îles posé au-dessus de Cuba."
+	},
+	{
+		name: "Barbade",
+		capital: "Bridgetown",
+		continent: "Amérique",
+		geography: "Une île des Caraïbes orientales, à l’est des Petites Antilles.",
+		mnemonic: "Bridgetown est un petit pont tout à l’est de l’arc caraïbe."
+	},
+	{
+		name: "Belize",
+		capital: "Belmopan",
+		continent: "Amérique",
+		geography: "Un pays d’Amérique centrale, sur la mer des Caraïbes.",
+		mnemonic: "Belmopan est une perle caraïbe coincée sous le Mexique."
+	},
+	{
+		name: "Bolivie",
+		capital: "Sucre",
+		continent: "Amérique",
+		geography: "Un pays enclavé d’Amérique du Sud, au cœur des Andes.",
+		mnemonic: "Sucre est un morceau de sucre posé au centre montagneux de l’Amérique du Sud."
+	},
+	{
+		name: "Chili",
+		capital: "Santiago",
+		continent: "Amérique",
+		geography: "Un pays très long et étroit sur la côte pacifique de l’Amérique du Sud.",
+		mnemonic: "Santiago tient un long ruban chilien entre Andes et Pacifique."
+	},
+	{
+		name: "Colombie",
+		capital: "Bogota",
+		continent: "Amérique",
+		geography: "Un pays du nord-ouest de l’Amérique du Sud, ouvert sur deux océans.",
+		mnemonic: "Bogota est un balcon au coin nord-ouest de l’Amérique du Sud."
+	},
+	{
+		name: "Costa Rica",
+		capital: "San José",
+		continent: "Amérique",
+		geography: "Un pays d’Amérique centrale, entre Nicaragua et Panama.",
+		mnemonic: "San José est une côte riche serrée entre Nicaragua et Panama."
+	},
+	{
+		name: "Cuba",
+		capital: "La Havane",
+		continent: "Amérique",
+		geography: "Une grande île des Caraïbes, au sud de la Floride.",
+		mnemonic: "La Havane est un long cigare flottant sous la Floride."
+	},
+	{
+		name: "Dominique",
+		capital: "Roseau",
+		continent: "Amérique",
+		geography: "Une île des Petites Antilles, entre Guadeloupe et Martinique.",
+		mnemonic: "Roseau est une tige verte entre deux îles françaises des Antilles."
+	},
+	{
+		name: "Équateur",
+		capital: "Quito",
+		continent: "Amérique",
+		geography: "Un pays du nord-ouest de l’Amérique du Sud, traversé par l’équateur.",
+		mnemonic: "Quito est cloué sur la ligne de l’équateur, près du Pacifique."
+	},
+	{
+		name: "États-Unis",
+		capital: "Washington",
+		continent: "Amérique",
+		geography: "Un grand pays d’Amérique du Nord, entre Atlantique et Pacifique.",
+		mnemonic: "Washington tient une étoile entre les deux océans de l’Amérique du Nord."
+	},
+	{
+		name: "Grenade",
+		capital: "Saint George’s",
+		continent: "Amérique",
+		geography: "Une île des Caraïbes du Sud, près du Venezuela.",
+		mnemonic: "Saint George’s garde une petite grenade au sud de l’arc caraïbe."
+	},
+	{
+		name: "Guatemala",
+		capital: "Guatemala",
+		continent: "Amérique",
+		geography: "Un pays d’Amérique centrale, au sud du Mexique.",
+		mnemonic: "Le Guatemala est une marche volcanique juste sous le Mexique, côté Pacifique."
+	},
+	{
+		name: "Guyana",
+		capital: "Georgetown",
+		continent: "Amérique",
+		geography: "Un pays du nord de l’Amérique du Sud, sur la côte atlantique.",
+		mnemonic: "Georgetown est une porte verte sur l’Atlantique, au nord du continent sud-américain."
+	},
+	{
+		name: "Haïti",
+		capital: "Port-au-Prince",
+		continent: "Amérique",
+		geography: "Un pays des Caraïbes occupant l’ouest de l’île d’Hispaniola.",
+		mnemonic: "Port-au-Prince est une couronne à l’ouest d’Hispaniola."
+	},
+	{
+		name: "Honduras",
+		capital: "Tegucigalpa",
+		continent: "Amérique",
+		geography: "Un pays d’Amérique centrale, entre Guatemala, Salvador et Nicaragua.",
+		mnemonic: "Tegucigalpa est un hamac tendu au milieu de l’Amérique centrale."
+	},
+	{
+		name: "Jamaïque",
+		capital: "Kingston",
+		continent: "Amérique",
+		geography: "Une île des Caraïbes, au sud de Cuba.",
+		mnemonic: "Kingston est une couronne posée sous Cuba."
+	},
+	{
+		name: "Nicaragua",
+		capital: "Managua",
+		continent: "Amérique",
+		geography: "Un pays d’Amérique centrale, entre Honduras et Costa Rica.",
+		mnemonic: "Managua est un grand lac au centre du passage entre Honduras et Costa Rica."
+	},
+	{
+		name: "Panama",
+		capital: "Panama",
+		continent: "Amérique",
+		geography: "Un pays d’Amérique centrale reliant l’Amérique centrale à l’Amérique du Sud.",
+		mnemonic: "Panama est un cadenas qui ferme et ouvre le passage entre les deux Amériques."
+	},
+	{
+		name: "Paraguay",
+		capital: "Asuncion",
+		continent: "Amérique",
+		geography: "Un pays enclavé d’Amérique du Sud, entre Brésil, Bolivie et Argentine.",
+		mnemonic: "Le Paraguay est une île sans mer au centre du sud américain."
+	},
+	{
+		name: "République dominicaine",
+		capital: "Saint-Domingue",
+		continent: "Amérique",
+		geography: "Un pays des Caraïbes occupant l’est de l’île d’Hispaniola.",
+		mnemonic: "Saint-Domingue est le soleil à l’est d’Hispaniola."
+	},
+	{
+		name: "Saint-Christophe-et-Niévès",
+		capital: "Basseterre",
+		continent: "Amérique",
+		geography: "Un petit État de deux îles dans les Caraïbes orientales.",
+		mnemonic: "Basseterre est une basse note sur deux îles au nord des Petites Antilles."
+	},
+	{
+		name: "Sainte-Lucie",
+		capital: "Castries",
+		continent: "Amérique",
+		geography: "Une île des Caraïbes orientales, au nord de Saint-Vincent.",
+		mnemonic: "Castries allume une luciole dans l’arc des Petites Antilles."
+	},
+	{
+		name: "Saint-Vincent-et-les-Grenadines",
+		capital: "Kingstown",
+		continent: "Amérique",
+		geography: "Un État insulaire des Caraïbes orientales, au sud de Sainte-Lucie.",
+		mnemonic: "Kingstown porte une couronne sur une chaîne d’îles au sud de Sainte-Lucie."
+	},
+	{
+		name: "Salvador",
+		capital: "San Salvador",
+		continent: "Amérique",
+		geography: "Un petit pays d’Amérique centrale, sur la côte pacifique.",
+		mnemonic: "Le Salvador est un petit soleil sur la côte pacifique, sous le Guatemala."
+	},
+	{
+		name: "Suriname",
+		capital: "Paramaribo",
+		continent: "Amérique",
+		geography: "Un petit pays du nord de l’Amérique du Sud, sur l’Atlantique.",
+		mnemonic: "Paramaribo est une pirogue entre Guyana et Guyane, au nord amazonien."
+	},
+	{
+		name: "Trinité-et-Tobago",
+		capital: "Port-d’Espagne",
+		continent: "Amérique",
+		geography: "Un État insulaire des Caraïbes, juste au large du Venezuela.",
+		mnemonic: "Port-d’Espagne est une paire d’îles posée devant le Venezuela."
+	},
+	{
+		name: "Uruguay",
+		capital: "Montevideo",
+		continent: "Amérique",
+		geography: "Un petit pays du sud-est de l’Amérique du Sud, entre Brésil et Argentine.",
+		mnemonic: "Montevideo est une colline vidéo entre Brésil et Argentine, face à l’Atlantique."
+	},
+	{
+		name: "Venezuela",
+		capital: "Caracas",
+		continent: "Amérique",
+		geography: "Un pays du nord de l’Amérique du Sud, sur la mer des Caraïbes.",
+		mnemonic: "Caracas est un carrosse sur la côte caraïbe du nord sud-américain."
+	},
+	{
+		name: "Australie",
+		capital: "Canberra",
+		continent: "Océanie",
+		geography: "Un grand pays insulaire entouré par les océans Indien et Pacifique.",
+		mnemonic: "Canberra est une boussole au sud-est de la grande île australienne."
+	},
+	{
+		name: "Fidji",
+		capital: "Suva",
+		continent: "Océanie",
+		geography: "Un pays insulaire de l’océan Pacifique Sud.",
+		mnemonic: "Suva pétille dans le Pacifique Sud, à l’est de l’Australie et au nord de la Nouvelle-Zélande."
+	},
+	{
+		name: "Nouvelle-Zélande",
+		capital: "Wellington",
+		continent: "Océanie",
+		geography: "Un pays insulaire situé au sud-est de l’Australie.",
+		mnemonic: "Wellington veille sur deux longues îles au sud-est de l’Australie."
+	},
+	{
+		name: "Papouasie-Nouvelle-Guinée",
+		capital: "Port Moresby",
+		continent: "Océanie",
+		geography: "Un pays au nord de l’Australie qui partage l’île de Nouvelle-Guinée.",
+		mnemonic: "La Papouasie-Nouvelle-Guinée coiffe le nord de l’Australie, sur la grande île de Nouvelle-Guinée."
+	},
+	{
+		name: "Kiribati",
+		capital: "Tarawa",
+		continent: "Océanie",
+		geography: "Un pays d’atolls du Pacifique central, réparti près de l’équateur.",
+		mnemonic: "Tarawa est un collier d’atolls posé sur l’équateur au milieu du Pacifique."
+	},
+	{
+		name: "Îles Marshall",
+		capital: "Majuro",
+		continent: "Océanie",
+		geography: "Un pays d’atolls du Pacifique Nord, au nord de Kiribati.",
+		mnemonic: "Majuro marche sur une ligne d’atolls au nord de Kiribati."
+	},
+	{
+		name: "Micronésie",
+		capital: "Palikir",
+		continent: "Océanie",
+		geography: "Un ensemble d’îles du Pacifique Nord, à l’est des Philippines.",
+		mnemonic: "Palikir est un petit point micro dans le Pacifique, à l’est des Philippines."
+	},
+	{
+		name: "Nauru",
+		capital: "Yaren",
+		continent: "Océanie",
+		geography: "Une très petite île du Pacifique central, au sud de l’équateur.",
+		mnemonic: "Yaren est un minuscule caillou rond juste sous l’équateur."
+	},
+	{
+		name: "Palaos",
+		capital: "Ngerulmud",
+		continent: "Océanie",
+		geography: "Un archipel du Pacifique occidental, à l’est des Philippines.",
+		mnemonic: "Ngerulmud est une palette d’îles bleues à l’est des Philippines."
+	},
+	{
+		name: "Samoa",
+		capital: "Apia",
+		continent: "Océanie",
+		geography: "Un pays insulaire du Pacifique Sud, au nord-est de Fidji.",
+		mnemonic: "Apia est une fleur posée au nord-est de Fidji."
+	},
+	{
+		name: "Îles Salomon",
+		capital: "Honiara",
+		continent: "Océanie",
+		geography: "Un archipel du Pacifique Sud, à l’est de la Papouasie-Nouvelle-Guinée.",
+		mnemonic: "Honiara est une chaîne d’îles qui prolonge la Papouasie vers l’est."
+	},
+	{
+		name: "Tonga",
+		capital: "Nuku’alofa",
+		continent: "Océanie",
+		geography: "Un archipel du Pacifique Sud, au sud-est de Fidji.",
+		mnemonic: "Nuku’alofa est une ancre au sud-est de Fidji."
+	},
+	{
+		name: "Tuvalu",
+		capital: "Funafuti",
+		continent: "Océanie",
+		geography: "Un petit pays d’atolls du Pacifique Sud, entre Kiribati et Fidji.",
+		mnemonic: "Funafuti flotte comme un fin radeau entre Kiribati et Fidji."
+	},
+	{
+		name: "Vanuatu",
+		capital: "Port-Vila",
+		continent: "Océanie",
+		geography: "Un archipel du Pacifique Sud, entre Fidji et l’Australie.",
+		mnemonic: "Port-Vila est une voile entre Fidji et l’Australie."
+	}
+];
+
+//# sourceMappingURL=data:application/json;base64,eyJtYXBwaW5ncyI6IkFBQUEsT0FBTyxNQUFNLFlBQVk7Q0FDdkI7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0Q7RUFDRSxNQUFNO0VBQ04sU0FBUztFQUNULFdBQVc7RUFDWCxXQUFXO0VBQ1gsVUFBVTtFQUNYO0NBQ0YiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiY291bnRyaWVzLmpzIl0sInZlcnNpb24iOjMsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBjb3VudHJpZXMgPSBbXG4gIHtcbiAgICBuYW1lOiAnQWxiYW5pZScsXG4gICAgY2FwaXRhbDogJ1RpcmFuYScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGRlcyBCYWxrYW5zLCBhdSBib3JkIGRlIGxhIG1lciBBZHJpYXRpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdJbWFnaW5lIHVuIGFpZ2xlIHF1aSBkZXNjZW5kIGxlcyBCYWxrYW5zIGp1c3F14oCZw6AgVGlyYW5hLCBwcsOocyBkZSBs4oCZQWRyaWF0aXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0FsbGVtYWduZScsXG4gICAgY2FwaXRhbDogJ0JlcmxpbicsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlFdXJvcGUgY2VudHJhbGUgZW50b3Vyw6kgZGUgbm9tYnJldXggdm9pc2lucy4nLFxuICAgIG1uZW1vbmljOiAnSW1hZ2luZSBs4oCZQWxsZW1hZ25lIGNvbW1lIHVuIGJvdXRvbiBhdSBjZW50cmUgZGUgbOKAmUV1cm9wZSwgZW50b3Vyw6kgZGUgbm9tYnJldXggdm9pc2lucy4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0FuZG9ycmUnLFxuICAgIGNhcGl0YWw6ICdBbmRvcnJlLWxhLVZpZWlsbGUnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBkYW5zIGxlcyBQeXLDqW7DqWVzLCBlbnRyZSBsYSBGcmFuY2UgZXQgbOKAmUVzcGFnbmUuJyxcbiAgICBtbmVtb25pYzogJ0ltYWdpbmUgdW5lIHBvcnRlIGRhbnMgbGVzIFB5csOpbsOpZXMgOiBlbGxlIHPigJlvdXZyZSBlbnRyZSBGcmFuY2UgZXQgRXNwYWduZSBzdXIgQW5kb3JyZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0F1dHJpY2hlJyxcbiAgICBjYXBpdGFsOiAnVmllbm5lJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgYWxwaW4gZOKAmUV1cm9wZSBjZW50cmFsZSwgc2FucyBhY2PDqHMgw6AgbGEgbWVyLicsXG4gICAgbW5lbW9uaWM6ICdWb2lzIGzigJlBdXRyaWNoZSBjb21tZSB1biB2aW9sb24gcG9zw6kgZGFucyBsZXMgQWxwZXMsIGp1c3RlIMOgIGzigJllc3QgZGUgbGEgU3Vpc3NlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQmVsZ2lxdWUnLFxuICAgIGNhcGl0YWw6ICdCcnV4ZWxsZXMnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZRXVyb3BlIGRlIGzigJlPdWVzdCwgZW50cmUgbGEgRnJhbmNlLCBsZXMgUGF5cy1CYXMgZXQgbOKAmUFsbGVtYWduZS4nLFxuICAgIG1uZW1vbmljOiAnQnJ1eGVsbGVzIGVzdCBjb21tZSB1bmUgZ2F1ZnJlIHBvc8OpZSBlbnRyZSBGcmFuY2UsIFBheXMtQmFzIGV0IEFsbGVtYWduZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0Jpw6lsb3J1c3NpZScsXG4gICAgY2FwaXRhbDogJ01pbnNrJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUV1cm9wZSBkZSBs4oCZRXN0LCBlbnRyZSBsYSBQb2xvZ25lIGV0IGxhIFJ1c3NpZS4nLFxuICAgIG1uZW1vbmljOiAnTWluc2sgZXN0IHVuIHBvbnQgYmxhbmMgZW50cmUgUG9sb2duZSBldCBSdXNzaWUsIGRhbnMgbGEgZ3JhbmRlIHBsYWluZSBkZSBs4oCZRXN0LicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQm9zbmllLUhlcnrDqWdvdmluZScsXG4gICAgY2FwaXRhbDogJ1NhcmFqZXZvJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZGVzIEJhbGthbnMsIMOgIGzigJlpbnTDqXJpZXVyIGRlcyB0ZXJyZXMgYXZlYyB1bmUgcGV0aXRlIGPDtHRlIGFkcmlhdGlxdWUuJyxcbiAgICBtbmVtb25pYzogJ1NhcmFqZXZvIGVzdCB1bmUgbWFpc29uIGRhbnMgbGVzIEJhbGthbnMgYXZlYyB1bmUgbWludXNjdWxlIGZlbsOqdHJlIHN1ciBs4oCZQWRyaWF0aXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0J1bGdhcmllJyxcbiAgICBjYXBpdGFsOiAnU29maWEnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkZXMgQmFsa2FucywgYXUgYm9yZCBkZSBsYSBtZXIgTm9pcmUuJyxcbiAgICBtbmVtb25pYzogJ0xhIEJ1bGdhcmllIGVzdCB1biBiYWxjb24gZHUgc3VkLWVzdCBldXJvcMOpZW4gcXVpIHJlZ2FyZGUgbGEgbWVyIE5vaXJlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQ2h5cHJlJyxcbiAgICBjYXBpdGFsOiAnTmljb3NpZScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbmUgw65sZSBkZSBNw6lkaXRlcnJhbsOpZSBvcmllbnRhbGUsIGF1IHN1ZCBkZSBsYSBUdXJxdWllLicsXG4gICAgbW5lbW9uaWM6ICdDaHlwcmUgZXN0IHVuZSBub2l4IGVuIE3DqWRpdGVycmFuw6llIG9yaWVudGFsZSwganVzdGUgc291cyBsYSBUdXJxdWllLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQ3JvYXRpZScsXG4gICAgY2FwaXRhbDogJ1phZ3JlYicsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGRlcyBCYWxrYW5zIGF2ZWMgdW5lIGxvbmd1ZSBjw7R0ZSBzdXIgbOKAmUFkcmlhdGlxdWUuJyxcbiAgICBtbmVtb25pYzogJ0ltYWdpbmUgWmFncmViIHRlbmFudCB1bmUgbG9uZ3VlIMOpY2hhcnBlIGPDtHRpw6hyZSBsZSBsb25nIGRlIGzigJlBZHJpYXRpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnRGFuZW1hcmsnLFxuICAgIGNhcGl0YWw6ICdDb3BlbmhhZ3VlJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZHUgbm9yZCBkZSBs4oCZRXVyb3BlLCBlbnRyZSBsYSBtZXIgZHUgTm9yZCBldCBsYSBtZXIgQmFsdGlxdWUuJyxcbiAgICBtbmVtb25pYzogJ0NvcGVuaGFndWUgZXN0IHVuZSBjbMOpIHF1aSBmZXJtZSBsZSBwYXNzYWdlIGVudHJlIG1lciBkdSBOb3JkIGV0IEJhbHRpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnRXNwYWduZScsXG4gICAgY2FwaXRhbDogJ01hZHJpZCcsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGRlIGxhIHDDqW5pbnN1bGUgSWLDqXJpcXVlLCBhdSBzdWQtb3Vlc3QgZGUgbOKAmUV1cm9wZS4nLFxuICAgIG1uZW1vbmljOiAnTOKAmUVzcGFnbmUgZXN0IHVuIGdyYW5kIMOpdmVudGFpbCBhdSBzdWQtb3Vlc3QgZGUgbOKAmUV1cm9wZSwgYXZlYyBNYWRyaWQgYXUgY2VudHJlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnRXN0b25pZScsXG4gICAgY2FwaXRhbDogJ1RhbGxpbm4nLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBiYWx0ZSBhdSBub3JkLWVzdCBkZSBs4oCZRXVyb3BlLCBhdSBib3JkIGRlIGxhIG1lciBCYWx0aXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnTOKAmUVzdG9uaWUgZXN0IGxlIHBheXMgYmFsdGUgZHUgaGF1dCwgcG9zw6kgc291cyBsYSBGaW5sYW5kZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0ZpbmxhbmRlJyxcbiAgICBjYXBpdGFsOiAnSGVsc2lua2knLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBub3JkIGRlIGzigJlFdXJvcGUsIGVudHJlIGxhIFN1w6hkZSBldCBsYSBSdXNzaWUuJyxcbiAgICBtbmVtb25pYzogJ0xhIEZpbmxhbmRlIGdsaXNzZSBjb21tZSB1biBza2kgZW50cmUgbGEgU3XDqGRlIGV0IGxhIFJ1c3NpZSwgYXUgbm9yZCBkZSBs4oCZRXVyb3BlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnRnJhbmNlJyxcbiAgICBjYXBpdGFsOiAnUGFyaXMnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZRXVyb3BlIGRlIGzigJlPdWVzdCBhdmVjIGRlcyBjw7R0ZXMgc3VyIGzigJlBdGxhbnRpcXVlIGV0IGxhIE3DqWRpdGVycmFuw6llLicsXG4gICAgbW5lbW9uaWM6ICdQYXJpcyBicmlsbGUgZW50cmUgQXRsYW50aXF1ZSBldCBNw6lkaXRlcnJhbsOpZSBjb21tZSB1bmUgw6l0b2lsZSBhdSBjZW50cmUgZGUgbGEgRnJhbmNlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnR3LDqGNlJyxcbiAgICBjYXBpdGFsOiAnQXRow6huZXMnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBzdWQtZXN0IGRlIGzigJlFdXJvcGUsIGNvbXBvc8OpIGTigJl1bmUgcMOpbmluc3VsZSBldCBkZSBub21icmV1c2VzIMOubGVzLicsXG4gICAgbW5lbW9uaWM6ICdMYSBHcsOoY2UgZXN0IHVuZSBtYWluIGRlIHDDqW5pbnN1bGVzIGV0IGTigJnDrmxlcyBxdWkgZGVzY2VuZCBkYW5zIGxhIG1lciDDiWfDqWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdIb25ncmllJyxcbiAgICBjYXBpdGFsOiAnQnVkYXBlc3QnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZRXVyb3BlIGNlbnRyYWxlLCB0cmF2ZXJzw6kgcGFyIGxlIERhbnViZS4nLFxuICAgIG1uZW1vbmljOiAnTGEgSG9uZ3JpZSBlc3QgdW5lIGN1dmV0dGUgYXUgY8WTdXIgZGUgbOKAmUV1cm9wZSwgdHJhdmVyc8OpZSBwYXIgbGUgRGFudWJlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnSXJsYW5kZScsXG4gICAgY2FwaXRhbDogJ0R1YmxpbicsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbmUgw65sZSDDoCBs4oCZb3Vlc3QgZGUgbGEgR3JhbmRlLUJyZXRhZ25lLCBkYW5zIGzigJlBdGxhbnRpcXVlIE5vcmQuJyxcbiAgICBtbmVtb25pYzogJ0zigJlJcmxhbmRlIGVzdCB1biB0csOoZmxlIHZlcnQgcG9zw6kgw6AgbOKAmW91ZXN0IGRlIGxhIEdyYW5kZS1CcmV0YWduZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0lzbGFuZGUnLFxuICAgIGNhcGl0YWw6ICdSZXlramF2aWsnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW5lIMOubGUgZGUgbOKAmUF0bGFudGlxdWUgTm9yZCwgZW50cmUgbOKAmUV1cm9wZSBldCBsZSBHcm9lbmxhbmQuJyxcbiAgICBtbmVtb25pYzogJ0zigJlJc2xhbmRlIGZ1bWUgY29tbWUgdW4gZ2xhw6dvbiB2b2xjYW5pcXVlIGlzb2zDqSBkYW5zIGzigJlBdGxhbnRpcXVlIE5vcmQuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdJdGFsaWUnLFxuICAgIGNhcGl0YWw6ICdSb21lJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuZSBww6luaW5zdWxlIGTigJlFdXJvcGUgZHUgU3VkIGVuIGZvcm1lIGRlIGJvdHRlLicsXG4gICAgbW5lbW9uaWM6ICdMYSBib3R0ZSBpdGFsaWVubmUgZGVzY2VuZCBkYW5zIGxhIE3DqWRpdGVycmFuw6llIGV0IHBvaW50ZSB2ZXJzIFJvbWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdLb3Nvdm8nLFxuICAgIGNhcGl0YWw6ICdQcmlzdGluYScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwZXRpdCBwYXlzIGRlcyBCYWxrYW5zLCBhdSBub3JkIGRlIGzigJlBbGJhbmllIGV0IGRlIGxhIE1hY8OpZG9pbmUgZHUgTm9yZC4nLFxuICAgIG1uZW1vbmljOiAnTGUgS29zb3ZvIGVzdCB1bmUgcGV0aXRlIHBlcmxlIGVuY2xhdsOpZSBhdSBjxZN1ciBkZXMgQmFsa2Fucy4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0xldHRvbmllJyxcbiAgICBjYXBpdGFsOiAnUmlnYScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGJhbHRlIHNpdHXDqSBlbnRyZSBs4oCZRXN0b25pZSBldCBsYSBMaXR1YW5pZS4nLFxuICAgIG1uZW1vbmljOiAnTGEgTGV0dG9uaWUgZXN0IGxhIHRyYW5jaGUgZHUgbWlsaWV1IGRhbnMgbGUgc2FuZHdpY2ggZGVzIHRyb2lzIHBheXMgYmFsdGVzLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTGllY2h0ZW5zdGVpbicsXG4gICAgY2FwaXRhbDogJ1ZhZHV6JyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHRyw6hzIHBldGl0IHBheXMgYWxwaW4gZW50cmUgbGEgU3Vpc3NlIGV0IGzigJlBdXRyaWNoZS4nLFxuICAgIG1uZW1vbmljOiAnTGUgTGllY2h0ZW5zdGVpbiBlc3QgdW4gbWludXNjdWxlIGNhaWxsb3UgYWxwaW4gY29pbmPDqSBlbnRyZSBTdWlzc2UgZXQgQXV0cmljaGUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdMaXR1YW5pZScsXG4gICAgY2FwaXRhbDogJ1ZpbG5pdXMnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBiYWx0ZSBhdSBzdWQgZGUgbGEgTGV0dG9uaWUsIHByw6hzIGRlIGxhIG1lciBCYWx0aXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnTGEgTGl0dWFuaWUgZXN0IGxlIHBheXMgYmFsdGUgZHUgYmFzLCBqdXN0ZSBhdSBub3JkIGRlIGxhIFBvbG9nbmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdMdXhlbWJvdXJnJyxcbiAgICBjYXBpdGFsOiAnTHV4ZW1ib3VyZycsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwZXRpdCBwYXlzIGTigJlFdXJvcGUgZGUgbOKAmU91ZXN0LCBlbnRyZSBsYSBCZWxnaXF1ZSwgbGEgRnJhbmNlIGV0IGzigJlBbGxlbWFnbmUuJyxcbiAgICBtbmVtb25pYzogJ0x1eGVtYm91cmcgZXN0IHVuZSBwZXRpdGUgbGFtcGUgZW50cmUgQmVsZ2lxdWUsIEZyYW5jZSBldCBBbGxlbWFnbmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdNYWPDqWRvaW5lIGR1IE5vcmQnLFxuICAgIGNhcGl0YWw6ICdTa29wamUnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkZXMgQmFsa2FucywgYXUgbm9yZCBkZSBsYSBHcsOoY2UuJyxcbiAgICBtbmVtb25pYzogJ0xhIE1hY8OpZG9pbmUgZHUgTm9yZCBlc3QgdW5lIG1hcmNoZSBkZXMgQmFsa2FucyBqdXN0ZSBhdS1kZXNzdXMgZGUgbGEgR3LDqGNlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTWFsdGUnLFxuICAgIGNhcGl0YWw6ICdMYSBWYWxldHRlJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IMOJdGF0IGluc3VsYWlyZSBkZSBNw6lkaXRlcnJhbsOpZSwgYXUgc3VkIGRlIGxhIFNpY2lsZS4nLFxuICAgIG1uZW1vbmljOiAnTWFsdGUgZXN0IHVuIGNvbmZldHRpIG3DqWRpdGVycmFuw6llbiBmbG90dGFudCBqdXN0ZSBzb3VzIGxhIFNpY2lsZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ01vbGRhdmllJyxcbiAgICBjYXBpdGFsOiAnQ2hpc2luYXUnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZRXVyb3BlIGRlIGzigJlFc3QsIGVudHJlIGxhIFJvdW1hbmllIGV0IGzigJlVa3JhaW5lLicsXG4gICAgbW5lbW9uaWM6ICdMYSBNb2xkYXZpZSBlc3QgdW5lIGdyYWluZSBlbmNsYXbDqWUgZW50cmUgUm91bWFuaWUgZXQgVWtyYWluZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ01vbmFjbycsXG4gICAgY2FwaXRhbDogJ01vbmFjbycsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiB0csOocyBwZXRpdCDDiXRhdCBzdXIgbGEgY8O0dGUgbcOpZGl0ZXJyYW7DqWVubmUsIGF1IHN1ZC1lc3QgZGUgbGEgRnJhbmNlLicsXG4gICAgbW5lbW9uaWM6ICdNb25hY28gZXN0IHVuZSBwacOoY2UgYnJpbGxhbnRlIHN1ciBsYSBDw7R0ZSBk4oCZQXp1ciBmcmFuw6dhaXNlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTW9udMOpbsOpZ3JvJyxcbiAgICBjYXBpdGFsOiAnUG9kZ29yaWNhJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZGVzIEJhbGthbnMsIGVudHJlIG1vbnRhZ25lcyBldCBtZXIgQWRyaWF0aXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnTGUgTW9udMOpbsOpZ3JvIGVzdCB1bmUgbW9udGFnbmUgbm9pcmUgcXVpIHRvbWJlIHZlcnMgbOKAmUFkcmlhdGlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdOb3J2w6hnZScsXG4gICAgY2FwaXRhbDogJ09zbG8nLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBsb25nIGV0IGPDtHRpZXIgZHUgbm9yZCBkZSBs4oCZRXVyb3BlLCBjw6lsw6hicmUgcG91ciBzZXMgZmpvcmRzLicsXG4gICAgbW5lbW9uaWM6ICdMYSBOb3J2w6hnZSBlc3QgdW5lIGxvbmd1ZSBmZXJtZXR1cmUgw6ljbGFpciBkZSBmam9yZHMgc3VyIGxhIGPDtHRlIG5vcmQgZGUgbOKAmUV1cm9wZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1BheXMtQmFzJyxcbiAgICBjYXBpdGFsOiAnQW1zdGVyZGFtJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgYmFzIGV0IGPDtHRpZXIgZOKAmUV1cm9wZSBkZSBs4oCZT3Vlc3QsIGF1IGJvcmQgZGUgbGEgbWVyIGR1IE5vcmQuJyxcbiAgICBtbmVtb25pYzogJ0xlcyBQYXlzLUJhcyBzb250IHVuZSB0ZXJyZSB0csOocyBiYXNzZSBwb3PDqWUgYXUgYm9yZCBkZSBsYSBtZXIgZHUgTm9yZC4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1BvbG9nbmUnLFxuICAgIGNhcGl0YWw6ICdWYXJzb3ZpZScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlFdXJvcGUgY2VudHJhbGUsIGVudHJlIGzigJlBbGxlbWFnbmUgZXQgbGEgQmnDqWxvcnVzc2llLicsXG4gICAgbW5lbW9uaWM6ICdMYSBQb2xvZ25lIGVzdCB1bmUgbGFyZ2UgYmFycmUgZW50cmUgbOKAmUFsbGVtYWduZSBldCBs4oCZRXVyb3BlIGRlIGzigJlFc3QuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdQb3J0dWdhbCcsXG4gICAgY2FwaXRhbDogJ0xpc2Jvbm5lJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgw6AgbOKAmW91ZXN0IGRlIGxhIHDDqW5pbnN1bGUgSWLDqXJpcXVlLCBhdSBib3JkIGRlIGzigJlBdGxhbnRpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdMZSBQb3J0dWdhbCBlc3QgbGEgYmFuZGUgYXRsYW50aXF1ZSB0b3V0IMOgIGzigJlvdWVzdCBkZSBsYSBww6luaW5zdWxlIEliw6lyaXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1JvdW1hbmllJyxcbiAgICBjYXBpdGFsOiAnQnVjYXJlc3QnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZRXVyb3BlIGR1IFN1ZC1Fc3QsIHByw6hzIGRlIGxhIG1lciBOb2lyZS4nLFxuICAgIG1uZW1vbmljOiAnTGEgUm91bWFuaWUgdGlyZSB1biByaWRlYXUgdmVycyBsYSBtZXIgTm9pcmUsIGF1IHN1ZC1lc3QgZGUgbOKAmUV1cm9wZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1JveWF1bWUtVW5pJyxcbiAgICBjYXBpdGFsOiAnTG9uZHJlcycsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGluc3VsYWlyZSBhdSBub3JkLW91ZXN0IGRlIGzigJlFdXJvcGUuJyxcbiAgICBtbmVtb25pYzogJ0xvbmRyZXMgcG9ydGUgdW5lIGNvdXJvbm5lIHN1ciBs4oCZw65sZSBhdSBub3JkLW91ZXN0IGRlIGzigJlFdXJvcGUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdSdXNzaWUnLFxuICAgIGNhcGl0YWw6ICdNb3Njb3UnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gdHLDqHMgZ3JhbmQgcGF5cyBxdWkgc+KAmcOpdGVuZCBkZSBs4oCZRXVyb3BlIGRlIGzigJlFc3Qgw6AgbOKAmUFzaWUuJyxcbiAgICBtbmVtb25pYzogJ01vc2NvdSBtYXJxdWUgbGEgZ3JhbmRlIHBvcnRlIG9yaWVudGFsZSBkZSBs4oCZRXVyb3BlIHZlcnMgbOKAmUFzaWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTYWludC1NYXJpbicsXG4gICAgY2FwaXRhbDogJ1NhaW50LU1hcmluJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHRyw6hzIHBldGl0IMOJdGF0IGVuY2xhdsOpIGRhbnMgbGUgbm9yZCBkZSBs4oCZSXRhbGllLicsXG4gICAgbW5lbW9uaWM6ICdTYWludC1NYXJpbiBlc3QgdW5lIHBldGl0ZSB0b3VyIGNhY2jDqWUgZGFucyBsYSBib3R0ZSBpdGFsaWVubmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTZXJiaWUnLFxuICAgIGNhcGl0YWw6ICdCZWxncmFkZScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGRlcyBCYWxrYW5zLCBhdSBjZW50cmUgZGUgbOKAmUV1cm9wZSBkdSBTdWQtRXN0LicsXG4gICAgbW5lbW9uaWM6ICdMYSBTZXJiaWUgZXN0IHVuIHRhbWJvdXIgZW5jbGF2w6kgYXUgY2VudHJlIGRlcyBCYWxrYW5zLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU2xvdmFxdWllJyxcbiAgICBjYXBpdGFsOiAnQnJhdGlzbGF2YScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlFdXJvcGUgY2VudHJhbGUsIGVudHJlIGxhIFRjaMOpcXVpZSwgbOKAmUF1dHJpY2hlIGV0IGxhIEhvbmdyaWUuJyxcbiAgICBtbmVtb25pYzogJ0xhIFNsb3ZhcXVpZSBlc3QgdW4gdHJpYW5nbGUgY2VudHJhbCBlbnRyZSBUY2jDqXF1aWUsIEF1dHJpY2hlIGV0IEhvbmdyaWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTbG92w6luaWUnLFxuICAgIGNhcGl0YWw6ICdManVibGphbmEnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBlbnRyZSBsZXMgQWxwZXMsIGzigJlJdGFsaWUsIGzigJlBdXRyaWNoZSBldCBsYSBDcm9hdGllLicsXG4gICAgbW5lbW9uaWM6ICdMYSBTbG92w6luaWUgZXN0IHVuIHBldGl0IGNyb2NoZXQgZW50cmUgbGVzIEFscGVzLCBs4oCZSXRhbGllIGV0IGzigJlBZHJpYXRpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU3XDqGRlJyxcbiAgICBjYXBpdGFsOiAnU3RvY2tob2xtJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgc2NhbmRpbmF2ZSBkdSBub3JkIGRlIGzigJlFdXJvcGUsIMOgIGzigJllc3QgZGUgbGEgTm9ydsOoZ2UuJyxcbiAgICBtbmVtb25pYzogJ0xhIFN1w6hkZSBlc3QgdW5lIGxvbmd1ZSBiYW5kZSBkZSBuZWlnZSDDoCBs4oCZZXN0IGRlIGxhIE5vcnbDqGdlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU3Vpc3NlJyxcbiAgICBjYXBpdGFsOiAnQmVybmUnLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBhbHBpbiBk4oCZRXVyb3BlIGNlbnRyYWxlLCBlbnRyZSBsYSBGcmFuY2UsIGzigJlBbGxlbWFnbmUgZXQgbOKAmUl0YWxpZS4nLFxuICAgIG1uZW1vbmljOiAnTGEgU3Vpc3NlIGVzdCB1bmUgY2xvY2hlIGFscGluZSBlbnRyZSBGcmFuY2UsIEFsbGVtYWduZSwgQXV0cmljaGUgZXQgSXRhbGllLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnVGNow6lxdWllJyxcbiAgICBjYXBpdGFsOiAnUHJhZ3VlJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUV1cm9wZSBjZW50cmFsZSwgYXUgbm9yZCBkZSBs4oCZQXV0cmljaGUuJyxcbiAgICBtbmVtb25pYzogJ0xhIFRjaMOpcXVpZSBlc3QgdW5lIHBsYXF1ZSBjZW50cmFsZSBwb3PDqWUganVzdGUgYXUgbm9yZCBkZSBs4oCZQXV0cmljaGUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdVa3JhaW5lJyxcbiAgICBjYXBpdGFsOiAnS3lpdicsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBncmFuZCBwYXlzIGTigJlFdXJvcGUgZGUgbOKAmUVzdCwgYXUgbm9yZCBkZSBsYSBtZXIgTm9pcmUuJyxcbiAgICBtbmVtb25pYzogJ0zigJlVa3JhaW5lIGVzdCB1biBncmFuZCBib3VjbGllciBkZSBwbGFpbmVzIGF1IG5vcmQgZGUgbGEgbWVyIE5vaXJlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnVmF0aWNhbicsXG4gICAgY2FwaXRhbDogJ1ZhdGljYW4nLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gdHLDqHMgcGV0aXQgw4l0YXQgc2l0dcOpIMOgIGzigJlpbnTDqXJpZXVyIGRlIFJvbWUsIGVuIEl0YWxpZS4nLFxuICAgIG1uZW1vbmljOiAnTGUgVmF0aWNhbiBlc3QgdW5lIG1pbnVzY3VsZSBjbMOpIHBvc8OpZSBkYW5zIFJvbWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICfDiWd5cHRlJyxcbiAgICBjYXBpdGFsOiAnTGUgQ2FpcmUnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZHUgbm9yZC1lc3QgZGUgbOKAmUFmcmlxdWUgdHJhdmVyc8OpIHBhciBsZSBOaWwuJyxcbiAgICBtbmVtb25pYzogJ0zigJnDiWd5cHRlIHN1aXQgbGUgcnViYW4gZHUgTmlsIGp1c3F14oCZw6AgbGEgTcOpZGl0ZXJyYW7DqWUsIGF1IG5vcmQtZXN0IGRlIGzigJlBZnJpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnS2VueWEnLFxuICAgIGNhcGl0YWw6ICdOYWlyb2JpJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBZnJpcXVlIGRlIGzigJlFc3QgYm9yZMOpIHBhciBs4oCZb2PDqWFuIEluZGllbi4nLFxuICAgIG1uZW1vbmljOiAnSW1hZ2luZSB1biBzYWZhcmkgcXVpIHBhcnQgZGUgTmFpcm9iaSB2ZXJzIGzigJlvY8OpYW4gSW5kaWVuLCBzdXIgbGEgY8O0dGUgZXN0IGFmcmljYWluZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ01hcm9jJyxcbiAgICBjYXBpdGFsOiAnUmFiYXQnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZHUgbm9yZC1vdWVzdCBkZSBs4oCZQWZyaXF1ZSwgcHJvY2hlIGRlIGzigJlBdGxhbnRpcXVlIGV0IGRlIGxhIE3DqWRpdGVycmFuw6llLicsXG4gICAgbW5lbW9uaWM6ICdSYWJhdCBlc3QgdW5lIHBvcnRlIGF1IGNvaW4gbm9yZC1vdWVzdCBkZSBs4oCZQWZyaXF1ZSwgZW50cmUgQXRsYW50aXF1ZSBldCBNw6lkaXRlcnJhbsOpZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0FmcmlxdWUgZHUgU3VkJyxcbiAgICBjYXBpdGFsOiAnUHJldG9yaWEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgc2l0dcOpIMOgIGxhIHBvaW50ZSBzdWQgZGUgbOKAmUFmcmlxdWUsIGVudHJlIGRldXggb2PDqWFucy4nLFxuICAgIG1uZW1vbmljOiAnTOKAmUFmcmlxdWUgZHUgU3VkIGZvcm1lIGxhIHBvaW50ZSBkdSBjb250aW5lbnQsIGVudHJlIEF0bGFudGlxdWUgZXQgb2PDqWFuIEluZGllbi4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0FsZ8OpcmllJyxcbiAgICBjYXBpdGFsOiAnQWxnZXInLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGdyYW5kIHBheXMgZHUgbm9yZCBkZSBs4oCZQWZyaXF1ZSwgYXUgYm9yZCBkZSBsYSBNw6lkaXRlcnJhbsOpZS4nLFxuICAgIG1uZW1vbmljOiAnQWxnZXIgcmVnYXJkZSBsYSBNw6lkaXRlcnJhbsOpZSB0b3V0IGVuIGhhdXQgZHUgdmFzdGUgZMOpc2VydCBhbGfDqXJpZW4uJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdBbmdvbGEnLFxuICAgIGNhcGl0YWw6ICdMdWFuZGEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgYXVzdHJhbGUsIHN1ciBsYSBjw7R0ZSBhdGxhbnRpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdMdWFuZGEgbGFuY2UgdW5lIGFuY3JlIHN1ciBs4oCZQXRsYW50aXF1ZSwgYXUgc3VkLW91ZXN0IGRlIGzigJlBZnJpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQsOpbmluJyxcbiAgICBjYXBpdGFsOiAnUG9ydG8tTm92bycsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyDDqXRyb2l0IGTigJlBZnJpcXVlIGRlIGzigJlPdWVzdCwgYXUgYm9yZCBkdSBnb2xmZSBkZSBHdWluw6llLicsXG4gICAgbW5lbW9uaWM6ICdJbWFnaW5lIHVuIHJ1YmFuIHZlcnRpY2FsIHF1aSBkZXNjZW5kIHZlcnMgUG9ydG8tTm92byBzdXIgbGUgZ29sZmUgZGUgR3VpbsOpZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0JvdHN3YW5hJyxcbiAgICBjYXBpdGFsOiAnR2Fib3JvbmUnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgYXVzdHJhbGUsIGF1IG5vcmQgZGUgbOKAmUFmcmlxdWUgZHUgU3VkLicsXG4gICAgbW5lbW9uaWM6ICdHYWJvcm9uZSBnYXJkZSBsYSBmcm9udGnDqHJlIGp1c3RlIGF1IG5vcmQgZGUgbOKAmUFmcmlxdWUgZHUgU3VkLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQnVya2luYSBGYXNvJyxcbiAgICBjYXBpdGFsOiAnT3VhZ2Fkb3Vnb3UnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZW5jbGF2w6kgZOKAmUFmcmlxdWUgZGUgbOKAmU91ZXN0LCBhdSBzdWQgZHUgTWFsaS4nLFxuICAgIG1uZW1vbmljOiAnT3VhZ2Fkb3Vnb3UgZXN0IHVuIHRhbWJvdXIgcG9zw6kgc291cyBsZSBNYWxpLCBsb2luIGRlIGxhIG1lci4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0J1cnVuZGknLFxuICAgIGNhcGl0YWw6ICdHaXRlZ2EnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IHBheXMgZOKAmUFmcmlxdWUgZGUgbOKAmUVzdCwgcHLDqHMgZHUgbGFjIFRhbmdhbnlpa2EuJyxcbiAgICBtbmVtb25pYzogJ0dpdGVnYSBlc3QgdW5lIGdvdXR0ZSBwcsOocyBkdSBsYWMgVGFuZ2FueWlrYSwgYXUgY8WTdXIgZGUgbOKAmUFmcmlxdWUgZGUgbOKAmUVzdC4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0NhbWVyb3VuJyxcbiAgICBjYXBpdGFsOiAnWWFvdW5kw6knLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgY2VudHJhbGUgb3V2ZXJ0IHN1ciBsZSBnb2xmZSBkZSBHdWluw6llLicsXG4gICAgbW5lbW9uaWM6ICdZYW91bmTDqSBlc3QgbGEgcG9pZ27DqWUgZHUgQ2FtZXJvdW4sIGVudHJlIGdvbGZlIGRlIEd1aW7DqWUgZXQgQWZyaXF1ZSBjZW50cmFsZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0NhcC1WZXJ0JyxcbiAgICBjYXBpdGFsOiAnUHJhaWEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGFyY2hpcGVsIGRlIGzigJlBdGxhbnRpcXVlLCBhdSBsYXJnZSBkZSBs4oCZQWZyaXF1ZSBkZSBs4oCZT3Vlc3QuJyxcbiAgICBtbmVtb25pYzogJ1ByYWlhIGZsb3R0ZSBjb21tZSB1biBwb2ludCB2ZXJ0IGRhbnMgbOKAmUF0bGFudGlxdWUsIGZhY2UgYXUgU8OpbsOpZ2FsLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQ29tb3JlcycsXG4gICAgY2FwaXRhbDogJ01vcm9uaScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gYXJjaGlwZWwgZGUgbOKAmW9jw6lhbiBJbmRpZW4sIGVudHJlIE1hZGFnYXNjYXIgZXQgbOKAmUFmcmlxdWUgZGUgbOKAmUVzdC4nLFxuICAgIG1uZW1vbmljOiAnTW9yb25pIGVzdCB1bmUgcGVybGUgZW50cmUgTWFkYWdhc2NhciBldCBsYSBjw7R0ZSBlc3QgYWZyaWNhaW5lLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnUsOpcHVibGlxdWUgZHUgQ29uZ28nLFxuICAgIGNhcGl0YWw6ICdCcmF6emF2aWxsZScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQWZyaXF1ZSBjZW50cmFsZSwgw6AgbOKAmW91ZXN0IGR1IGZsZXV2ZSBDb25nby4nLFxuICAgIG1uZW1vbmljOiAnQnJhenphdmlsbGUgcmVnYXJkZSBLaW5zaGFzYSBkZSBs4oCZYXV0cmUgY8O0dMOpIGR1IGZsZXV2ZSBDb25nby4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0PDtHRlIGTigJlJdm9pcmUnLFxuICAgIGNhcGl0YWw6ICdZYW1vdXNzb3Vrcm8nLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgZGUgbOKAmU91ZXN0LCBhdSBib3JkIGR1IGdvbGZlIGRlIEd1aW7DqWUuJyxcbiAgICBtbmVtb25pYzogJ1lhbW91c3NvdWtybyBlc3QgdW5lIGTDqWZlbnNlIGTigJlpdm9pcmUgcG9zw6llIHN1ciBsYSBjw7R0ZSBvdWVzdCBhZnJpY2FpbmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdEamlib3V0aScsXG4gICAgY2FwaXRhbDogJ0RqaWJvdXRpJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwZXRpdCBwYXlzIGRlIGxhIENvcm5lIGRlIGzigJlBZnJpcXVlLCBwcsOocyBkZSBsYSBtZXIgUm91Z2UuJyxcbiAgICBtbmVtb25pYzogJ0RqaWJvdXRpIGVzdCB1biBib3V0b24gc3VyIGxhIENvcm5lIGRlIGzigJlBZnJpcXVlLCDDoCBs4oCZZW50csOpZSBkZSBsYSBtZXIgUm91Z2UuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICfDiXJ5dGhyw6llJyxcbiAgICBjYXBpdGFsOiAnQXNtYXJhJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGRlIGxhIENvcm5lIGRlIGzigJlBZnJpcXVlLCBsZSBsb25nIGRlIGxhIG1lciBSb3VnZS4nLFxuICAgIG1uZW1vbmljOiAnQXNtYXJhIHN1aXQgdW4gbG9uZyBydWJhbiByb3VnZSBhdSBib3JkIGRlIGxhIG1lciBSb3VnZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0Vzd2F0aW5pJyxcbiAgICBjYXBpdGFsOiAnTWJhYmFuZScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBlbmNsYXbDqSBlbiBBZnJpcXVlIGF1c3RyYWxlLCBwcsOocyBkZSBs4oCZQWZyaXF1ZSBkdSBTdWQuJyxcbiAgICBtbmVtb25pYzogJ01iYWJhbmUgZXN0IHVuZSBiaWxsZSBjb2luY8OpZSBlbnRyZSBBZnJpcXVlIGR1IFN1ZCBldCBNb3phbWJpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnw4l0aGlvcGllJyxcbiAgICBjYXBpdGFsOiAnQWRkaXMtQWJlYmEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGdyYW5kIHBheXMgZGUgbGEgQ29ybmUgZGUgbOKAmUFmcmlxdWUsIHNhbnMgYWNjw6hzIMOgIGxhIG1lci4nLFxuICAgIG1uZW1vbmljOiAnQWRkaXMtQWJlYmEgZXN0IHVuIHBsYXRlYXUgaGF1dCBwZXJjaMOpIGF1LWRlc3N1cyBkZSBsYSBDb3JuZSBkZSBs4oCZQWZyaXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0dhYm9uJyxcbiAgICBjYXBpdGFsOiAnTGlicmV2aWxsZScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQWZyaXF1ZSBjZW50cmFsZSwgc3VyIGzigJnDqXF1YXRldXIgZXQgbOKAmUF0bGFudGlxdWUuJyxcbiAgICBtbmVtb25pYzogJ0xpYnJldmlsbGUgdHJhY2UgdW5lIGxpZ25lIGxpYnJlIHN1ciBs4oCZw6lxdWF0ZXVyIGF1IGJvcmQgZGUgbOKAmUF0bGFudGlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdHYW1iaWUnLFxuICAgIGNhcGl0YWw6ICdCYW5qdWwnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgdHLDqHMgw6l0cm9pdCBk4oCZQWZyaXF1ZSBkZSBs4oCZT3Vlc3QsIHByZXNxdWUgZW50b3Vyw6kgcGFyIGxlIFPDqW7DqWdhbC4nLFxuICAgIG1uZW1vbmljOiAnQmFuanVsIGVzdCB1bmUgZmluZSByaXZpw6hyZSBzZXJwZW50YW50IGRhbnMgbGUgU8OpbsOpZ2FsIHZlcnMgbOKAmUF0bGFudGlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdHaGFuYScsXG4gICAgY2FwaXRhbDogJ0FjY3JhJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBZnJpcXVlIGRlIGzigJlPdWVzdCwgYXUgYm9yZCBkdSBnb2xmZSBkZSBHdWluw6llLicsXG4gICAgbW5lbW9uaWM6ICdBY2NyYSBhY2Nyb2NoZSBsZSBHaGFuYSBhdSBnb2xmZSBkZSBHdWluw6llLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnR3VpbsOpZScsXG4gICAgY2FwaXRhbDogJ0NvbmFrcnknLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgZGUgbOKAmU91ZXN0LCBzdXIgbGEgY8O0dGUgYXRsYW50aXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnQ29uYWtyeSBjb2xsZSBsYSBHdWluw6llIMOgIGzigJlBdGxhbnRpcXVlLCBqdXN0ZSBhdSBzdWQgZHUgU8OpbsOpZ2FsLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnR3VpbsOpZS1CaXNzYXUnLFxuICAgIGNhcGl0YWw6ICdCaXNzYXUnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IHBheXMgY8O0dGllciBk4oCZQWZyaXF1ZSBkZSBs4oCZT3Vlc3QsIGF1IHN1ZCBkdSBTw6luw6lnYWwuJyxcbiAgICBtbmVtb25pYzogJ0Jpc3NhdSBlc3QgdW4gcGV0aXQgYmF0ZWF1IHNvdXMgbGUgU8OpbsOpZ2FsLCBzdXIgbOKAmUF0bGFudGlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdHdWluw6llIMOpcXVhdG9yaWFsZScsXG4gICAgY2FwaXRhbDogJ01hbGFibycsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBk4oCZQWZyaXF1ZSBjZW50cmFsZSwgcHLDqHMgZGUgbOKAmcOpcXVhdGV1ciBldCBkdSBnb2xmZSBkZSBHdWluw6llLicsXG4gICAgbW5lbW9uaWM6ICdNYWxhYm8gbWFycXVlIGzigJnDqXF1YXRldXIgY29tbWUgdW5lIMOubGUgZGV2YW50IGxlIGdvbGZlIGRlIEd1aW7DqWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdMZXNvdGhvJyxcbiAgICBjYXBpdGFsOiAnTWFzZXJ1JyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwZXRpdCBwYXlzIGVudGnDqHJlbWVudCBlbmNsYXbDqSBkYW5zIGzigJlBZnJpcXVlIGR1IFN1ZC4nLFxuICAgIG1uZW1vbmljOiAnTWFzZXJ1IGVzdCB1biByb25kIG1vbnRhZ25ldXggZGVzc2luw6kgYXUgbWlsaWV1IGRlIGzigJlBZnJpcXVlIGR1IFN1ZC4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0xpYmVyaWEnLFxuICAgIGNhcGl0YWw6ICdNb25yb3ZpYScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQWZyaXF1ZSBkZSBs4oCZT3Vlc3QsIHN1ciBsYSBjw7R0ZSBhdGxhbnRpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdNb25yb3ZpYSBtb250ZSBsYSBnYXJkZSBzdXIgbGEgY8O0dGUgYXRsYW50aXF1ZSwgZW50cmUgU2llcnJhIExlb25lIGV0IEPDtHRlIGTigJlJdm9pcmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdMaWJ5ZScsXG4gICAgY2FwaXRhbDogJ1RyaXBvbGknLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZHUgbm9yZCBkZSBs4oCZQWZyaXF1ZSwgYXUgYm9yZCBkZSBsYSBNw6lkaXRlcnJhbsOpZS4nLFxuICAgIG1uZW1vbmljOiAnVHJpcG9saSBwb3NlIHVuIHRyw6lwaWVkIHN1ciBsYSBNw6lkaXRlcnJhbsOpZSwgYXUtZGVzc3VzIGR1IGTDqXNlcnQgbGlieWVuLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTWFkYWdhc2NhcicsXG4gICAgY2FwaXRhbDogJ0FudGFuYW5hcml2bycsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW5lIGdyYW5kZSDDrmxlIGRlIGzigJlvY8OpYW4gSW5kaWVuLCDDoCBs4oCZZXN0IGRlIGzigJlBZnJpcXVlIGF1c3RyYWxlLicsXG4gICAgbW5lbW9uaWM6ICdBbnRhbmFuYXJpdm8gZXN0IGF1IGNlbnRyZSBkZSBsYSBncmFuZGUgw65sZSBhbGxvbmfDqWUgw6AgbOKAmWVzdCBkZSBs4oCZQWZyaXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ01hbGF3aScsXG4gICAgY2FwaXRhbDogJ0xpbG9uZ3dlJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBZnJpcXVlIGF1c3RyYWxlLCBsZSBsb25nIGR1IGxhYyBNYWxhd2kuJyxcbiAgICBtbmVtb25pYzogJ0xpbG9uZ3dlIGxvbmdlIGxlIGxhYyBNYWxhd2kgY29tbWUgdW5lIGxvbmd1ZSBnb3V0dGUgdmVydGljYWxlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTWFsaScsXG4gICAgY2FwaXRhbDogJ0JhbWFrbycsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gZ3JhbmQgcGF5cyBlbmNsYXbDqSBk4oCZQWZyaXF1ZSBkZSBs4oCZT3Vlc3QsIGF1IHN1ZCBkdSBTYWhhcmEuJyxcbiAgICBtbmVtb25pYzogJ0JhbWFrbyBiYXQgbGUgdGFtYm91ciBzb3VzIGxlIFNhaGFyYSwgYXUgY8WTdXIgZGUgbOKAmW91ZXN0IGFmcmljYWluLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTWF1cmljZScsXG4gICAgY2FwaXRhbDogJ1BvcnQtTG91aXMnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuZSDDrmxlIGRlIGzigJlvY8OpYW4gSW5kaWVuLCDDoCBs4oCZZXN0IGRlIE1hZGFnYXNjYXIuJyxcbiAgICBtbmVtb25pYzogJ1BvcnQtTG91aXMgZXN0IHVuIHBldGl0IHBvcnQgYnJpbGxhbnQgw6AgbOKAmWVzdCBkZSBNYWRhZ2FzY2FyLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTWF1cml0YW5pZScsXG4gICAgY2FwaXRhbDogJ05vdWFrY2hvdHQnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZHUgbm9yZC1vdWVzdCBkZSBs4oCZQWZyaXF1ZSwgZW50cmUgU2FoYXJhIGV0IEF0bGFudGlxdWUuJyxcbiAgICBtbmVtb25pYzogJ05vdWFrY2hvdHQgbm91ZSBsZSBTYWhhcmEgw6AgbOKAmUF0bGFudGlxdWUsIGF1IG5vcmQtb3Vlc3QgYWZyaWNhaW4uJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdNb3phbWJpcXVlJyxcbiAgICBjYXBpdGFsOiAnTWFwdXRvJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBsb25nIHBheXMgY8O0dGllciBk4oCZQWZyaXF1ZSBhdXN0cmFsZSwgYXUgYm9yZCBkZSBs4oCZb2PDqWFuIEluZGllbi4nLFxuICAgIG1uZW1vbmljOiAnTWFwdXRvIG1ldCB1biBsb25nIG1hbnRlYXUgc3VyIGxhIGPDtHRlIHN1ZC1lc3QgZGUgbOKAmUFmcmlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdOYW1pYmllJyxcbiAgICBjYXBpdGFsOiAnV2luZGhvZWsnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgYXVzdHJhbGUsIHN1ciBsYSBjw7R0ZSBhdGxhbnRpcXVlIGTDqXNlcnRpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdXaW5kaG9layBzb3VmZmxlIGR1IHZlbnQgc3VyIGxlcyBkdW5lcyBhdGxhbnRpcXVlcyBkZSBOYW1pYmllLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTmlnZXInLFxuICAgIGNhcGl0YWw6ICdOaWFtZXknLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZW5jbGF2w6kgZOKAmUFmcmlxdWUgZGUgbOKAmU91ZXN0LCBhdSBzdWQgZGUgbOKAmUFsZ8OpcmllLicsXG4gICAgbW5lbW9uaWM6ICdOaWFtZXkgbmFnZSBkYW5zIGxlIGZsZXV2ZSBOaWdlciwganVzdGUgc291cyBsZSBTYWhhcmEuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdOaWdlcmlhJyxcbiAgICBjYXBpdGFsOiAnQWJ1amEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgcGV1cGzDqSBk4oCZQWZyaXF1ZSBkZSBs4oCZT3Vlc3QsIGF1IGJvcmQgZHUgZ29sZmUgZGUgR3VpbsOpZS4nLFxuICAgIG1uZW1vbmljOiAnTGUgTmlnZXJpYSBlc3QgdW4gZ3JhbmQgY8WTdXIgZOKAmUFmcmlxdWUgZGUgbOKAmU91ZXN0IHBvc8OpIGF1LWRlc3N1cyBkdSBnb2xmZSBkZSBHdWluw6llLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnT3VnYW5kYScsXG4gICAgY2FwaXRhbDogJ0thbXBhbGEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgZGUgbOKAmUVzdCwgYXUgbm9yZCBkdSBsYWMgVmljdG9yaWEuJyxcbiAgICBtbmVtb25pYzogJ0thbXBhbGEgY2FtcGUgYXUgbm9yZCBkdSBsYWMgVmljdG9yaWEuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdSw6lwdWJsaXF1ZSBjZW50cmFmcmljYWluZScsXG4gICAgY2FwaXRhbDogJ0Jhbmd1aScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBlbmNsYXbDqSBhdSBjZW50cmUgZGUgbOKAmUFmcmlxdWUuJyxcbiAgICBtbmVtb25pYzogJ0Jhbmd1aSBlc3QgdW5lIGNpYmxlIHBsYWPDqWUgcHJlc3F1ZSBhdSBjZW50cmUgZHUgY29udGluZW50IGFmcmljYWluLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnUsOpcHVibGlxdWUgZMOpbW9jcmF0aXF1ZSBkdSBDb25nbycsXG4gICAgY2FwaXRhbDogJ0tpbnNoYXNhJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiB0csOocyBncmFuZCBwYXlzIGTigJlBZnJpcXVlIGNlbnRyYWxlLCB0cmF2ZXJzw6kgcGFyIGxlIGZsZXV2ZSBDb25nby4nLFxuICAgIG1uZW1vbmljOiAnS2luc2hhc2EgdGllbnQgbGUgZ3JhbmQgYmFzc2luIGR1IENvbmdvIGF1IGNlbnRyZSBkZSBs4oCZQWZyaXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1J3YW5kYScsXG4gICAgY2FwaXRhbDogJ0tpZ2FsaScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBk4oCZQWZyaXF1ZSBkZSBs4oCZRXN0LCDDoCBs4oCZb3Vlc3QgZHUgbGFjIFZpY3RvcmlhLicsXG4gICAgbW5lbW9uaWM6ICdLaWdhbGkgZXN0IHVuZSBjb2xsaW5lIGp1c3RlIMOgIGzigJlvdWVzdCBkdSBsYWMgVmljdG9yaWEuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTYW8gVG9tw6ktZXQtUHJpbmNpcGUnLFxuICAgIGNhcGl0YWw6ICdTYW8gVG9tw6knLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IGFyY2hpcGVsIGR1IGdvbGZlIGRlIEd1aW7DqWUsIGF1IGxhcmdlIGRlIGzigJlBZnJpcXVlIGNlbnRyYWxlLicsXG4gICAgbW5lbW9uaWM6ICdTYW8gVG9tw6kgZXN0IGRldXggcG9pbnRzIHBvc8OpcyBkYW5zIGxlIGdvbGZlIGRlIEd1aW7DqWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTw6luw6lnYWwnLFxuICAgIGNhcGl0YWw6ICdEYWthcicsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQWZyaXF1ZSBkZSBs4oCZT3Vlc3QsIMOgIGxhIHBvaW50ZSBsYSBwbHVzIG9jY2lkZW50YWxlIGR1IGNvbnRpbmVudC4nLFxuICAgIG1uZW1vbmljOiAnRGFrYXIgZXN0IGxlIHBoYXJlIMOgIGzigJlleHRyw6ptZSBvdWVzdCBkZSBs4oCZQWZyaXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1NleWNoZWxsZXMnLFxuICAgIGNhcGl0YWw6ICdWaWN0b3JpYScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gYXJjaGlwZWwgZGUgbOKAmW9jw6lhbiBJbmRpZW4sIGF1IG5vcmQtZXN0IGRlIE1hZGFnYXNjYXIuJyxcbiAgICBtbmVtb25pYzogJ1ZpY3RvcmlhIGVzdCB1bmUgw6l0b2lsZSBk4oCZw65sZXMgYXUgbm9yZC1lc3QgZGUgTWFkYWdhc2Nhci4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1NpZXJyYSBMZW9uZScsXG4gICAgY2FwaXRhbDogJ0ZyZWV0b3duJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGPDtHRpZXIgZOKAmUFmcmlxdWUgZGUgbOKAmU91ZXN0LCBzdXIgbOKAmUF0bGFudGlxdWUuJyxcbiAgICBtbmVtb25pYzogJ0ZyZWV0b3duIGVzdCB1bmUgdmlsbGUgbGlicmUgc3VyIGxhIGPDtHRlIGF0bGFudGlxdWUsIHByw6hzIGRlIGxhIEd1aW7DqWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTb21hbGllJyxcbiAgICBjYXBpdGFsOiAnTW9nYWRpc2NpbycsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkZSBsYSBDb3JuZSBkZSBs4oCZQWZyaXF1ZSwgYXUgYm9yZCBkZSBs4oCZb2PDqWFuIEluZGllbi4nLFxuICAgIG1uZW1vbmljOiAnTW9nYWRpc2NpbyBlc3QgYXUgYm91dCBkZSBsYSBDb3JuZSBkZSBs4oCZQWZyaXF1ZSwgdG91cm7DqWUgdmVycyBs4oCZb2PDqWFuIEluZGllbi4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1NvdWRhbicsXG4gICAgY2FwaXRhbDogJ0toYXJ0b3VtJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGR1IG5vcmQtZXN0IGRlIGzigJlBZnJpcXVlLCBhdSBzdWQgZGUgbOKAmcOJZ3lwdGUuJyxcbiAgICBtbmVtb25pYzogJ0toYXJ0b3VtIGVzdCBqdXN0ZSBzb3VzIGxlcyBweXJhbWlkZXMsIGF1IHN1ZCBkZSBs4oCZw4lneXB0ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1NvdWRhbiBkdSBTdWQnLFxuICAgIGNhcGl0YWw6ICdEam91YmEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFmcmlxdWUgZGUgbOKAmUVzdCwgYXUgc3VkIGR1IFNvdWRhbi4nLFxuICAgIG1uZW1vbmljOiAnTGUgU291ZGFuIGR1IFN1ZCBlc3QgdW5lIG1hcmNoZSB2ZXJ0ZSBqdXN0ZSBzb3VzIGxlIFNvdWRhbiwgYXUgbm9yZCBkZSBs4oCZT3VnYW5kYS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1RhbnphbmllJyxcbiAgICBjYXBpdGFsOiAnRG9kb21hJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBZnJpcXVlIGRlIGzigJlFc3QsIGVudHJlIGxlcyBHcmFuZHMgTGFjcyBldCBs4oCZb2PDqWFuIEluZGllbi4nLFxuICAgIG1uZW1vbmljOiAnRG9kb21hIGRhbnNlIGVudHJlIGxlIGxhYyBWaWN0b3JpYSBldCBs4oCZb2PDqWFuIEluZGllbi4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1RjaGFkJyxcbiAgICBjYXBpdGFsOiAnTuKAmURqYW1lbmEnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZW5jbGF2w6kgZOKAmUFmcmlxdWUgY2VudHJhbGUsIGF1IHN1ZCBkZSBsYSBMaWJ5ZS4nLFxuICAgIG1uZW1vbmljOiAnTuKAmURqYW1lbmEgZXN0IHByw6hzIGR1IGxhYyBUY2hhZCwgc291cyBsYSBMaWJ5ZSBldCBsb2luIGRlIGxhIG1lci4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1RvZ28nLFxuICAgIGNhcGl0YWw6ICdMb23DqScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyDDqXRyb2l0IGTigJlBZnJpcXVlIGRlIGzigJlPdWVzdCwgYXUgYm9yZCBkdSBnb2xmZSBkZSBHdWluw6llLicsXG4gICAgbW5lbW9uaWM6ICdMb23DqSBlc3QgdW5lIGZpbmUgbGFtZSBxdWkgZGVzY2VuZCB2ZXJzIGxlIGdvbGZlIGRlIEd1aW7DqWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdUdW5pc2llJyxcbiAgICBjYXBpdGFsOiAnVHVuaXMnLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZHUgbm9yZCBkZSBs4oCZQWZyaXF1ZSwgZW50cmUgbOKAmUFsZ8OpcmllLCBsYSBMaWJ5ZSBldCBsYSBNw6lkaXRlcnJhbsOpZS4nLFxuICAgIG1uZW1vbmljOiAnVHVuaXMgZXN0IHVuZSBwZXRpdGUgcG9pbnRlIG3DqWRpdGVycmFuw6llbm5lIGVudHJlIEFsZ8OpcmllIGV0IExpYnllLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnWmFtYmllJyxcbiAgICBjYXBpdGFsOiAnTHVzYWthJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGVuY2xhdsOpIGTigJlBZnJpcXVlIGF1c3RyYWxlLCBhdSBub3JkIGR1IFppbWJhYndlLicsXG4gICAgbW5lbW9uaWM6ICdMYSBaYW1iaWUgZXN0IHVuIHBsYXRlYXUgZW5jbGF2w6kgcG9zw6kgYXUtZGVzc3VzIGRlcyBjaHV0ZXMgVmljdG9yaWEuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdaaW1iYWJ3ZScsXG4gICAgY2FwaXRhbDogJ0hhcmFyZScsXG4gICAgY29udGluZW50OiAnQWZyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQWZyaXF1ZSBhdXN0cmFsZSwgZW50cmUgbGEgWmFtYmllIGV0IGzigJlBZnJpcXVlIGR1IFN1ZC4nLFxuICAgIG1uZW1vbmljOiAnTGUgWmltYmFid2UgZXN0IHVuZSBwaWVycmUgaW50w6lyaWV1cmUgZW50cmUgWmFtYmllLCBNb3phbWJpcXVlIGV0IEFmcmlxdWUgZHUgU3VkLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQ2hpbmUnLFxuICAgIGNhcGl0YWw6ICdQw6lraW4nLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGdyYW5kIHBheXMgZOKAmUFzaWUgZGUgbOKAmUVzdCBib3Jkw6kgcGFyIGzigJlvY8OpYW4gUGFjaWZpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdQw6lraW4gdGllbnQgdW5lIGdyYW5kZSBhc3NpZXR0ZSBk4oCZQXNpZSBkZSBs4oCZRXN0IHRvdXJuw6llIHZlcnMgbGUgUGFjaWZpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnSW5kZScsXG4gICAgY2FwaXRhbDogJ05ldyBEZWxoaScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQXNpZSBkdSBTdWQgZm9ybWFudCB1bmUgZ3JhbmRlIHDDqW5pbnN1bGUgZGFucyBs4oCZb2PDqWFuIEluZGllbi4nLFxuICAgIG1uZW1vbmljOiAnTmV3IERlbGhpIGVzdCBhdSBzb21tZXQgZGUgbGEgZ3JhbmRlIHDDqW5pbnN1bGUgcXVpIHBsb25nZSBkYW5zIGzigJlvY8OpYW4gSW5kaWVuLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnSmFwb24nLFxuICAgIGNhcGl0YWw6ICdUb2t5bycsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBpbnN1bGFpcmUgc2l0dcOpIMOgIGzigJllc3QgZHUgY29udGluZW50IGFzaWF0aXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnVG9reW8gYnJpbGxlIGNvbW1lIGxlIHNvbGVpbCBsZXZhbnQgc3VyIGxlcyDDrmxlcyBkdSBKYXBvbi4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1RoYcOvbGFuZGUnLFxuICAgIGNhcGl0YWw6ICdCYW5na29rJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBc2llIGR1IFN1ZC1Fc3QgYm9yZMOpIHBhciBsZSBnb2xmZSBkZSBUaGHDr2xhbmRlLicsXG4gICAgbW5lbW9uaWM6ICdCYW5na29rIG5vdWUgdW4gcnViYW4gYXV0b3VyIGR1IGdvbGZlIGRlIFRoYcOvbGFuZGUsIGF1IGPFk3VyIGRlIGzigJlBc2llIGR1IFN1ZC1Fc3QuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdBZmdoYW5pc3RhbicsXG4gICAgY2FwaXRhbDogJ0thYm91bCcsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBtb250YWduZXV4IGTigJlBc2llIGNlbnRyYWxlIGV0IGR1IFN1ZCwgc2FucyBhY2PDqHMgw6AgbGEgbWVyLicsXG4gICAgbW5lbW9uaWM6ICdLYWJvdWwgZXN0IHVuZSBjYXJhdmFuZSBjb2luY8OpZSBkYW5zIGxlcyBtb250YWduZXMgZW50cmUgSXJhbiwgUGFraXN0YW4gZXQgQXNpZSBjZW50cmFsZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0FyYWJpZSBzYW91ZGl0ZScsXG4gICAgY2FwaXRhbDogJ1JpeWFkJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBncmFuZCBwYXlzIGRlIGxhIHDDqW5pbnN1bGUgQXJhYmlxdWUsIGVudHJlIG1lciBSb3VnZSBldCBnb2xmZSBQZXJzaXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnUml5YWQgZXN0IHVuZSBvYXNpcyBhdSBjZW50cmUgZGUgbGEgZ3JhbmRlIHDDqW5pbnN1bGUgQXJhYmlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdBcm3DqW5pZScsXG4gICAgY2FwaXRhbDogJ0VyZXZhbicsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBtb250YWduZXV4IGR1IENhdWNhc2UgZHUgU3VkLCBlbnRyZSBUdXJxdWllIGV0IEF6ZXJiYcOvZGphbi4nLFxuICAgIG1uZW1vbmljOiAnRXJldmFuIGVzdCB1bmUgcGllcnJlIGRlcyBtb250YWduZXMgZHUgQ2F1Y2FzZSwgY29pbmPDqWUgZW50cmUgVHVycXVpZSBldCBBemVyYmHDr2RqYW4uJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdBemVyYmHDr2RqYW4nLFxuICAgIGNhcGl0YWw6ICdCYWtvdScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBDYXVjYXNlLCBhdSBib3JkIGRlIGxhIG1lciBDYXNwaWVubmUuJyxcbiAgICBtbmVtb25pYzogJ0Jha291IGFsbHVtZSB1bmUgZmxhbW1lIHN1ciBsYSByaXZlIG91ZXN0IGRlIGxhIG1lciBDYXNwaWVubmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdCYWhyZcOvbicsXG4gICAgY2FwaXRhbDogJ01hbmFtYScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgw4l0YXQgaW5zdWxhaXJlIGR1IGdvbGZlIFBlcnNpcXVlLCBwcsOocyBkZSBs4oCZQXJhYmllIHNhb3VkaXRlLicsXG4gICAgbW5lbW9uaWM6ICdNYW5hbWEgZXN0IHVuZSBwZXJsZSBwb3PDqWUgZGFucyBsZSBnb2xmZSBQZXJzaXF1ZSwgcHLDqHMgZGUgbOKAmUFyYWJpZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0JhbmdsYWRlc2gnLFxuICAgIGNhcGl0YWw6ICdEYWNjYScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQXNpZSBkdSBTdWQsIGRhbnMgbGUgZGVsdGEgZHUgR2FuZ2UsIMOgIGzigJllc3QgZGUgbOKAmUluZGUuJyxcbiAgICBtbmVtb25pYzogJ0RhY2NhIGVzdCB1biBiYXRlYXUgZGFucyBsZSBkZWx0YSwganVzdGUgw6AgbOKAmWVzdCBkZSBs4oCZSW5kZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0Job3V0YW4nLFxuICAgIGNhcGl0YWw6ICdUaGltcGhvdScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBoaW1hbGF5ZW4sIGVudHJlIGzigJlJbmRlIGV0IGxhIENoaW5lLicsXG4gICAgbW5lbW9uaWM6ICdUaGltcGhvdSBlc3QgdW4gbmlkIGRhbnMgbOKAmUhpbWFsYXlhLCBwb3PDqSBlbnRyZSBJbmRlIGV0IENoaW5lLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQnJ1bmVpJyxcbiAgICBjYXBpdGFsOiAnQmFuZGFyIFNlcmkgQmVnYXdhbicsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBkZSBs4oCZw65sZSBkZSBCb3Juw6lvLCBlbiBBc2llIGR1IFN1ZC1Fc3QuJyxcbiAgICBtbmVtb25pYzogJ0JhbmRhciBTZXJpIEJlZ2F3YW4gZXN0IHVuZSBwZXRpdGUgw6l0b2lsZSBkb3LDqWUgc3VyIGxhIGPDtHRlIG5vcmQgZGUgQm9ybsOpby4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0NhbWJvZGdlJyxcbiAgICBjYXBpdGFsOiAnUGhub20gUGVuaCcsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQXNpZSBkdSBTdWQtRXN0LCBlbnRyZSBUaGHDr2xhbmRlLCBMYW9zIGV0IFZpZXRuYW0uJyxcbiAgICBtbmVtb25pYzogJ1Bobm9tIFBlbmggZXN0IHVuIHRlbXBsZSBhdSBtaWxpZXUgZHUgdHJpbyBUaGHDr2xhbmRlLUxhb3MtVmlldG5hbS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0NvcsOpZSBkdSBOb3JkJyxcbiAgICBjYXBpdGFsOiAnUHlvbmd5YW5nJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBc2llIGRlIGzigJlFc3QsIGF1IG5vcmQgZGUgbGEgcMOpbmluc3VsZSBjb3LDqWVubmUuJyxcbiAgICBtbmVtb25pYzogJ1B5b25neWFuZyBlc3QgbOKAmcOpdG9pbGUgZHUgaGF1dCBzdXIgbGEgcMOpbmluc3VsZSBjb3LDqWVubmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdDb3LDqWUgZHUgU3VkJyxcbiAgICBjYXBpdGFsOiAnU8Opb3VsJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBc2llIGRlIGzigJlFc3QsIGF1IHN1ZCBkZSBsYSBww6luaW5zdWxlIGNvcsOpZW5uZS4nLFxuICAgIG1uZW1vbmljOiAnU8Opb3VsIGVzdCBsYSBsdW1pw6hyZSBkdSBiYXMgc3VyIGxhIHDDqW5pbnN1bGUgY29yw6llbm5lLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnw4ltaXJhdHMgYXJhYmVzIHVuaXMnLFxuICAgIGNhcGl0YWw6ICdBYm91IERoYWJpJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGRlIGxhIHDDqW5pbnN1bGUgQXJhYmlxdWUsIGF1IGJvcmQgZHUgZ29sZmUgUGVyc2lxdWUuJyxcbiAgICBtbmVtb25pYzogJ0Fib3UgRGhhYmkgZXN0IHVuIHBoYXJlIG1vZGVybmUgc3VyIGxhIHJpdmUgc3VkIGR1IGdvbGZlIFBlcnNpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnR8Opb3JnaWUnLFxuICAgIGNhcGl0YWw6ICdUYmlsaXNzaScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBDYXVjYXNlLCBlbnRyZSBsYSBtZXIgTm9pcmUgZXQgbGVzIG1vbnRhZ25lcy4nLFxuICAgIG1uZW1vbmljOiAnVGJpbGlzc2kgZXN0IHVuIHBvbnQgZW50cmUgbWVyIE5vaXJlIGV0IENhdWNhc2UuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdJbmRvbsOpc2llJyxcbiAgICBjYXBpdGFsOiAnSmFrYXJ0YScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gZ3JhbmQgYXJjaGlwZWwgZOKAmUFzaWUgZHUgU3VkLUVzdCwgZW50cmUgb2PDqWFucyBJbmRpZW4gZXQgUGFjaWZpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdKYWthcnRhIGVzdCB1bmUgw65sZS1ib3Vzc29sZSBhdSBtaWxpZXUgZHUgbG9uZyBjaGFwZWxldCBpbmRvbsOpc2llbi4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0lyYW4nLFxuICAgIGNhcGl0YWw6ICdUw6low6lyYW4nLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGdyYW5kIHBheXMgZOKAmUFzaWUgZGUgbOKAmU91ZXN0LCBlbnRyZSBnb2xmZSBQZXJzaXF1ZSBldCBtZXIgQ2FzcGllbm5lLicsXG4gICAgbW5lbW9uaWM6ICdUw6low6lyYW4gdGllbnQgdW4gcGxhdGVhdSBlbnRyZSBsYSBDYXNwaWVubmUgYXUgbm9yZCBldCBsZSBnb2xmZSBQZXJzaXF1ZSBhdSBzdWQuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdJcmFrJyxcbiAgICBjYXBpdGFsOiAnQmFnZGFkJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBc2llIGRlIGzigJlPdWVzdCwgdHJhdmVyc8OpIHBhciBsZSBUaWdyZSBldCBs4oCZRXVwaHJhdGUuJyxcbiAgICBtbmVtb25pYzogJ0JhZ2RhZCBlc3QgdW5lIGxhbXBlIGVudHJlIGRldXggZmxldXZlcywgYXUgY8WTdXIgZHUgQ3JvaXNzYW50IGZlcnRpbGUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdJc3Jhw6tsJyxcbiAgICBjYXBpdGFsOiAnSsOpcnVzYWxlbScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBQcm9jaGUtT3JpZW50LCBzdXIgbGEgY8O0dGUgb3JpZW50YWxlIGRlIGxhIE3DqWRpdGVycmFuw6llLicsXG4gICAgbW5lbW9uaWM6ICdKw6lydXNhbGVtIGVzdCB1bmUgcGllcnJlIGNsYWlyZSBwcsOocyBkZSBsYSBNw6lkaXRlcnJhbsOpZSBvcmllbnRhbGUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdKb3JkYW5pZScsXG4gICAgY2FwaXRhbDogJ0FtbWFuJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGR1IFByb2NoZS1PcmllbnQsIMOgIGzigJllc3QgZOKAmUlzcmHDq2wgZXQgZGUgbGEgbWVyIE1vcnRlLicsXG4gICAgbW5lbW9uaWM6ICdBbW1hbiBlc3QgdW5lIHRlbnRlIHBvc8OpZSBqdXN0ZSDDoCBs4oCZZXN0IGRlIGxhIG1lciBNb3J0ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0themFraHN0YW4nLFxuICAgIGNhcGl0YWw6ICdBc3RhbmEnLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHRyw6hzIGdyYW5kIHBheXMgZOKAmUFzaWUgY2VudHJhbGUsIGF1IHN1ZCBkZSBsYSBSdXNzaWUuJyxcbiAgICBtbmVtb25pYzogJ0FzdGFuYSBlc3QgdW5lIMOpdG9pbGUgZGFucyBsYSBncmFuZGUgc3RlcHBlIGF1IHN1ZCBkZSBsYSBSdXNzaWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdLaXJnaGl6aXN0YW4nLFxuICAgIGNhcGl0YWw6ICdCaWNoa2VrJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIG1vbnRhZ25ldXggZOKAmUFzaWUgY2VudHJhbGUsIHByw6hzIGRlIGxhIENoaW5lLicsXG4gICAgbW5lbW9uaWM6ICdCaWNoa2VrIGVzdCB1biBjYW1wIGRlIG1vbnRhZ25lIGVudHJlIEthemFraHN0YW4gZXQgQ2hpbmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdLb3dlw690JyxcbiAgICBjYXBpdGFsOiAnS293ZcOvdCcsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBkdSBnb2xmZSBQZXJzaXF1ZSwgZW50cmUgSXJhayBldCBBcmFiaWUgc2FvdWRpdGUuJyxcbiAgICBtbmVtb25pYzogJ0tvd2XDr3QgZXN0IHVuZSBnb3V0dGUgZGUgcMOpdHJvbGUgYXUgY29pbiBub3JkIGR1IGdvbGZlIFBlcnNpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTGFvcycsXG4gICAgY2FwaXRhbDogJ1ZpZW50aWFuZScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBlbmNsYXbDqSBk4oCZQXNpZSBkdSBTdWQtRXN0LCBlbnRyZSBUaGHDr2xhbmRlIGV0IFZpZXRuYW0uJyxcbiAgICBtbmVtb25pYzogJ1ZpZW50aWFuZSBlc3QgdW4gcG9udCBzdXIgbGUgTcOpa29uZywgc2VycsOpIGVudHJlIFRoYcOvbGFuZGUgZXQgVmlldG5hbS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0xpYmFuJyxcbiAgICBjYXBpdGFsOiAnQmV5cm91dGgnLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IHBheXMgZHUgUHJvY2hlLU9yaWVudCwgc3VyIGxhIE3DqWRpdGVycmFuw6llLicsXG4gICAgbW5lbW9uaWM6ICdCZXlyb3V0aCBlc3QgdW4gY8OoZHJlIHBvc8OpIHN1ciBsYSBjw7R0ZSBtw6lkaXRlcnJhbsOpZW5uZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ01hbGFpc2llJyxcbiAgICBjYXBpdGFsOiAnS3VhbGEgTHVtcHVyJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBc2llIGR1IFN1ZC1Fc3QgcGFydGFnw6kgZW50cmUgcMOpbmluc3VsZSBtYWxhaXNlIGV0IEJvcm7DqW8uJyxcbiAgICBtbmVtb25pYzogJ0t1YWxhIEx1bXB1ciByZWxpZSB1bmUgcMOpbmluc3VsZSDDoCBCb3Juw6lvIGNvbW1lIGRldXggbW9yY2VhdXggZGUgY2FydGUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdNYWxkaXZlcycsXG4gICAgY2FwaXRhbDogJ01hbMOpJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBhcmNoaXBlbCBkZSBs4oCZb2PDqWFuIEluZGllbiwgYXUgc3VkLW91ZXN0IGRlIGzigJlJbmRlLicsXG4gICAgbW5lbW9uaWM6ICdNYWzDqSBlc3QgdW4gY29sbGllciBk4oCZw65sZXMgc291cyBs4oCZSW5kZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ01vbmdvbGllJyxcbiAgICBjYXBpdGFsOiAnT3VsYW4tQmF0b3InLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGdyYW5kIHBheXMgZW5jbGF2w6kgZOKAmUFzaWUgZGUgbOKAmUVzdCwgZW50cmUgUnVzc2llIGV0IENoaW5lLicsXG4gICAgbW5lbW9uaWM6ICdPdWxhbi1CYXRvciBlc3QgdW5lIHlvdXJ0ZSBwb3PDqWUgZW50cmUgbGEgUnVzc2llIGF1IG5vcmQgZXQgbGEgQ2hpbmUgYXUgc3VkLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTXlhbm1hcicsXG4gICAgY2FwaXRhbDogJ05heXB5aWRhdycsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQXNpZSBkdSBTdWQtRXN0LCBlbnRyZSBJbmRlLCBDaGluZSBldCBUaGHDr2xhbmRlLicsXG4gICAgbW5lbW9uaWM6ICdOYXlweWlkYXcgZXN0IHVuZSBwYWdvZGUgZW50cmUgSW5kZSwgQ2hpbmUgZXQgVGhhw69sYW5kZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ07DqXBhbCcsXG4gICAgY2FwaXRhbDogJ0thdG1hbmRvdScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBoaW1hbGF5ZW4sIGVudHJlIGzigJlJbmRlIGV0IGxhIENoaW5lLicsXG4gICAgbW5lbW9uaWM6ICdLYXRtYW5kb3UgZXN0IHVuIGRyYXBlYXUgc3VyIGzigJlIaW1hbGF5YSwgc2VycsOpIGVudHJlIEluZGUgZXQgQ2hpbmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdPbWFuJyxcbiAgICBjYXBpdGFsOiAnTWFzY2F0ZScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBhdSBzdWQtZXN0IGRlIGxhIHDDqW5pbnN1bGUgQXJhYmlxdWUsIHByw6hzIGRlIGxhIG1lciBk4oCZQXJhYmllLicsXG4gICAgbW5lbW9uaWM6ICdNYXNjYXRlIGVzdCB1biBtYXNxdWUgdG91cm7DqSB2ZXJzIGxhIG1lciBk4oCZQXJhYmllLCBhdSBib3V0IGRlIGxhIHDDqW5pbnN1bGUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdPdXpiw6lraXN0YW4nLFxuICAgIGNhcGl0YWw6ICdUYWNoa2VudCcsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBlbmNsYXbDqSBk4oCZQXNpZSBjZW50cmFsZSwgYXUgY8WTdXIgZGVzIGFuY2llbm5lcyByb3V0ZXMgZGUgbGEgc29pZS4nLFxuICAgIG1uZW1vbmljOiAnVGFjaGtlbnQgZXN0IHVuIHRhcGlzIGF1IGNlbnRyZSBkZSBs4oCZQXNpZSBjZW50cmFsZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1Bha2lzdGFuJyxcbiAgICBjYXBpdGFsOiAnSXNsYW1hYmFkJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBc2llIGR1IFN1ZCwgw6AgbOKAmW91ZXN0IGRlIGzigJlJbmRlLicsXG4gICAgbW5lbW9uaWM6ICdJc2xhbWFiYWQgZXN0IHVuIHBvcnRhaWwgw6AgbOKAmW91ZXN0IGRlIGzigJlJbmRlLCB2ZXJzIG1vbnRhZ25lcyBldCBkw6lzZXJ0LicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnUGFsZXN0aW5lJyxcbiAgICBjYXBpdGFsOiAnUmFtYWxsYWgnLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHRlcnJpdG9pcmUgZHUgUHJvY2hlLU9yaWVudCwgcHLDqHMgZGUgbGEgTcOpZGl0ZXJyYW7DqWUgb3JpZW50YWxlLicsXG4gICAgbW5lbW9uaWM6ICdSYW1hbGxhaCBlc3QgdW5lIG9saXZlIHByw6hzIGRlIGxhIE3DqWRpdGVycmFuw6llIG9yaWVudGFsZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1BoaWxpcHBpbmVzJyxcbiAgICBjYXBpdGFsOiAnTWFuaWxsZScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gYXJjaGlwZWwgZOKAmUFzaWUgZHUgU3VkLUVzdCwgZGFucyBs4oCZb2PDqWFuIFBhY2lmaXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnTWFuaWxsZSBlc3QgdW5lIHBlcmxlIGRhbnMgbGUgY2hhcGVsZXQgZOKAmcOubGVzIMOgIGzigJllc3QgZGUgbOKAmUFzaWUgZHUgU3VkLUVzdC4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1FhdGFyJyxcbiAgICBjYXBpdGFsOiAnRG9oYScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBkZSBsYSBww6luaW5zdWxlIEFyYWJpcXVlLCBhdmFuw6dhbnQgZGFucyBsZSBnb2xmZSBQZXJzaXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnRG9oYSBlc3QgdW4gZG9pZ3QgcXVpIHBvaW50ZSBkYW5zIGxlIGdvbGZlIFBlcnNpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU2luZ2Fwb3VyJyxcbiAgICBjYXBpdGFsOiAnU2luZ2Fwb3VyJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbmUgY2l0w6ktw4l0YXQgaW5zdWxhaXJlIGF1IHN1ZCBkZSBsYSBww6luaW5zdWxlIG1hbGFpc2UuJyxcbiAgICBtbmVtb25pYzogJ1NpbmdhcG91ciBlc3QgdW4gcGV0aXQgcG9ydC1saW9uIGF1IGJvdXQgc3VkIGRlIGxhIHDDqW5pbnN1bGUgbWFsYWlzZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1NyaSBMYW5rYScsXG4gICAgY2FwaXRhbDogJ1NyaSBKYXlhd2FyZGVuYXB1cmEgS290dGUnLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuZSDDrmxlIGRlIGzigJlvY8OpYW4gSW5kaWVuLCBhdSBzdWQtZXN0IGRlIGzigJlJbmRlLicsXG4gICAgbW5lbW9uaWM6ICdTcmkgTGFua2EgZXN0IHVuZSBsYXJtZSBk4oCZw65sZSBzb3VzIGzigJlJbmRlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU3lyaWUnLFxuICAgIGNhcGl0YWw6ICdEYW1hcycsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBQcm9jaGUtT3JpZW50LCBlbnRyZSBUdXJxdWllLCBJcmFrLCBKb3JkYW5pZSBldCBNw6lkaXRlcnJhbsOpZS4nLFxuICAgIG1uZW1vbmljOiAnRGFtYXMgZXN0IHVuZSByb3NlIGVudHJlIFR1cnF1aWUsIElyYWsgZXQgTcOpZGl0ZXJyYW7DqWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdUYWRqaWtpc3RhbicsXG4gICAgY2FwaXRhbDogJ0RvdWNoYW5iw6knLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgbW9udGFnbmV1eCBk4oCZQXNpZSBjZW50cmFsZSwgYXUgbm9yZCBkZSBs4oCZQWZnaGFuaXN0YW4uJyxcbiAgICBtbmVtb25pYzogJ0RvdWNoYW5iw6kgZXN0IHVuZSBkb3VjaGUgZGUgbmVpZ2UgYXUgbm9yZCBkZSBs4oCZQWZnaGFuaXN0YW4uJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdUYcOvd2FuJyxcbiAgICBjYXBpdGFsOiAnVGFpcGVpJyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbmUgw65sZSBk4oCZQXNpZSBkZSBs4oCZRXN0LCBhdSBsYXJnZSBkZSBsYSBDaGluZS4nLFxuICAgIG1uZW1vbmljOiAnVGFpcGVpIGVzdCB1bmUgbGFudGVybmUgc3VyIHVuZSDDrmxlIMOgIGzigJllc3QgZGUgbGEgQ2hpbmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdUaW1vciBvcmllbnRhbCcsXG4gICAgY2FwaXRhbDogJ0RpbGknLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IHBheXMgaW5zdWxhaXJlIGTigJlBc2llIGR1IFN1ZC1Fc3QsIMOgIGzigJllc3QgZGUgbOKAmUluZG9uw6lzaWUuJyxcbiAgICBtbmVtb25pYzogJ0RpbGkgZXN0IGxlIHBvaW50IGZpbmFsIMOgIGzigJllc3QgZGUgbOKAmWFyY2hpcGVsIGluZG9uw6lzaWVuLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnVHVya23DqW5pc3RhbicsXG4gICAgY2FwaXRhbDogJ0FjaGdhYmF0JyxcbiAgICBjb250aW5lbnQ6ICdBc2llJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBc2llIGNlbnRyYWxlLCBlbnRyZSBtZXIgQ2FzcGllbm5lIGV0IGTDqXNlcnQgZHUgS2FyYWtvdW0uJyxcbiAgICBtbmVtb25pYzogJ0FjaGdhYmF0IGVzdCB1bmUgdGVudGUgYmxhbmNoZSBlbnRyZSBDYXNwaWVubmUgZXQgZMOpc2VydC4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1R1cnF1aWUnLFxuICAgIGNhcGl0YWw6ICdBbmthcmEnLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZW50cmUgRXVyb3BlIGV0IEFzaWUsIGxhcmdlbWVudCBzaXR1w6kgZW4gQW5hdG9saWUuJyxcbiAgICBtbmVtb25pYzogJ0Fua2FyYSBlc3QgdW4gcG9udCBxdWkgcmVsaWUgRXVyb3BlIGV0IEFzaWUgcGFyIGzigJlBbmF0b2xpZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1ZpZXRuYW0nLFxuICAgIGNhcGl0YWw6ICdIYW5vw68nLFxuICAgIGNvbnRpbmVudDogJ0FzaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgbG9uZyBldCBjw7R0aWVyIGTigJlBc2llIGR1IFN1ZC1Fc3QsIGF1IGJvcmQgZGUgbGEgbWVyIGRlIENoaW5lIG3DqXJpZGlvbmFsZS4nLFxuICAgIG1uZW1vbmljOiAnTGUgVmlldG5hbSBlc3QgdW4gbG9uZyBydWJhbiBjw7R0aWVyIGVuIGZvcm1lIGRlIFMgbGUgbG9uZyBkZSBsYSBtZXIgZGUgQ2hpbmUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdZw6ltZW4nLFxuICAgIGNhcGl0YWw6ICdTYW5hYScsXG4gICAgY29udGluZW50OiAnQXNpZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBhdSBzdWQgZGUgbGEgcMOpbmluc3VsZSBBcmFiaXF1ZSwgcHLDqHMgZGUgbGEgbWVyIFJvdWdlIGV0IGR1IGdvbGZlIGTigJlBZGVuLicsXG4gICAgbW5lbW9uaWM6ICdTYW5hYSBlc3QgdW5lIHNlbnRpbmVsbGUgYXUgY29pbiBzdWQgZGUgbGEgcMOpbmluc3VsZSBBcmFiaXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0Jyw6lzaWwnLFxuICAgIGNhcGl0YWw6ICdCcmFzaWxpYScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdMZSBwbHVzIGdyYW5kIHBheXMgZOKAmUFtw6lyaXF1ZSBkdSBTdWQsIGF2ZWMgdW5lIGdyYW5kZSBwYXJ0aWUgZGUgbOKAmUFtYXpvbmllLicsXG4gICAgbW5lbW9uaWM6ICdCcmFzaWxpYSBlc3QgdW5lIMOpdG9pbGUgYXUgY2VudHJlIGR1IGdyYW5kIEJyw6lzaWwsIHNvdXMgbOKAmUFtYXpvbmllLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQ2FuYWRhJyxcbiAgICBjYXBpdGFsOiAnT3R0YXdhJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZHUgbm9yZCBkZSBs4oCZQW3DqXJpcXVlIGR1IE5vcmQsIGNvbm51IHBvdXIgc2VzIGZvcsOqdHMgZXQgc2VzIGxhY3MuJyxcbiAgICBtbmVtb25pYzogJ090dGF3YSBlc3QgdW5lIGNhYmFuZSBhdSBzdWQgZHUgdmFzdGUgQ2FuYWRhLCBqdXN0ZSBhdS1kZXNzdXMgZGVzIMOJdGF0cy1VbmlzLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTWV4aXF1ZScsXG4gICAgY2FwaXRhbDogJ01leGljbycsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBbcOpcmlxdWUgZHUgTm9yZCBzaXR1w6kgYXUgc3VkIGRlcyDDiXRhdHMtVW5pcy4nLFxuICAgIG1uZW1vbmljOiAnTWV4aWNvIGVzdCB1biBzb2xlaWwgc291cyBsZXMgw4l0YXRzLVVuaXMsIGF2YW50IGxlIHBvbnQgZGUgbOKAmUFtw6lyaXF1ZSBjZW50cmFsZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1DDqXJvdScsXG4gICAgY2FwaXRhbDogJ0xpbWEnLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkZSBs4oCZb3Vlc3QgZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQsIGVudHJlIGxlcyBBbmRlcyBldCBsZSBQYWNpZmlxdWUuJyxcbiAgICBtbmVtb25pYzogJ0xpbWEgYWxpZ25lIHVuIGxhbWEgbGUgbG9uZyBkdSBQYWNpZmlxdWUsIHN1ciBsZSBmbGFuYyBvdWVzdCBkZXMgQW5kZXMuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdBbnRpZ3VhLWV0LUJhcmJ1ZGEnLFxuICAgIGNhcGl0YWw6ICdTYWludCBKb2hu4oCZcycsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwZXRpdCDDiXRhdCBpbnN1bGFpcmUgZGVzIENhcmHDr2JlcyBvcmllbnRhbGVzLicsXG4gICAgbW5lbW9uaWM6ICdTYWludCBKb2hu4oCZcyBlc3QgdW5lIGFuY3JlIHBvc8OpZSBzdXIgZGV1eCBwZXRpdGVzIMOubGVzIMOgIGzigJllc3QgZGVzIENhcmHDr2Jlcy4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0FyZ2VudGluZScsXG4gICAgY2FwaXRhbDogJ0J1ZW5vcyBBaXJlcycsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBncmFuZCBwYXlzIGR1IHN1ZCBkZSBs4oCZQW3DqXJpcXVlIGR1IFN1ZCwgZW50cmUgQW5kZXMgZXQgQXRsYW50aXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnQnVlbm9zIEFpcmVzIHNvdWZmbGUgdG91dCBhdSBzdWQtZXN0IGR1IGNvbnRpbmVudCwgZmFjZSDDoCBs4oCZQXRsYW50aXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0JhaGFtYXMnLFxuICAgIGNhcGl0YWw6ICdOYXNzYXUnLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gYXJjaGlwZWwgZGVzIENhcmHDr2JlcywgYXUgbm9yZCBkZSBDdWJhLicsXG4gICAgbW5lbW9uaWM6ICdOYXNzYXUgZXN0IHVuIGNvbGxpZXIgZOKAmcOubGVzIHBvc8OpIGF1LWRlc3N1cyBkZSBDdWJhLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQmFyYmFkZScsXG4gICAgY2FwaXRhbDogJ0JyaWRnZXRvd24nLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW5lIMOubGUgZGVzIENhcmHDr2JlcyBvcmllbnRhbGVzLCDDoCBs4oCZZXN0IGRlcyBQZXRpdGVzIEFudGlsbGVzLicsXG4gICAgbW5lbW9uaWM6ICdCcmlkZ2V0b3duIGVzdCB1biBwZXRpdCBwb250IHRvdXQgw6AgbOKAmWVzdCBkZSBs4oCZYXJjIGNhcmHDr2JlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQmVsaXplJyxcbiAgICBjYXBpdGFsOiAnQmVsbW9wYW4nLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQW3DqXJpcXVlIGNlbnRyYWxlLCBzdXIgbGEgbWVyIGRlcyBDYXJhw69iZXMuJyxcbiAgICBtbmVtb25pYzogJ0JlbG1vcGFuIGVzdCB1bmUgcGVybGUgY2FyYcOvYmUgY29pbmPDqWUgc291cyBsZSBNZXhpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQm9saXZpZScsXG4gICAgY2FwaXRhbDogJ1N1Y3JlJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZW5jbGF2w6kgZOKAmUFtw6lyaXF1ZSBkdSBTdWQsIGF1IGPFk3VyIGRlcyBBbmRlcy4nLFxuICAgIG1uZW1vbmljOiAnU3VjcmUgZXN0IHVuIG1vcmNlYXUgZGUgc3VjcmUgcG9zw6kgYXUgY2VudHJlIG1vbnRhZ25ldXggZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdDaGlsaScsXG4gICAgY2FwaXRhbDogJ1NhbnRpYWdvJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgdHLDqHMgbG9uZyBldCDDqXRyb2l0IHN1ciBsYSBjw7R0ZSBwYWNpZmlxdWUgZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQuJyxcbiAgICBtbmVtb25pYzogJ1NhbnRpYWdvIHRpZW50IHVuIGxvbmcgcnViYW4gY2hpbGllbiBlbnRyZSBBbmRlcyBldCBQYWNpZmlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdDb2xvbWJpZScsXG4gICAgY2FwaXRhbDogJ0JvZ290YScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGR1IG5vcmQtb3Vlc3QgZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQsIG91dmVydCBzdXIgZGV1eCBvY8OpYW5zLicsXG4gICAgbW5lbW9uaWM6ICdCb2dvdGEgZXN0IHVuIGJhbGNvbiBhdSBjb2luIG5vcmQtb3Vlc3QgZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdDb3N0YSBSaWNhJyxcbiAgICBjYXBpdGFsOiAnU2FuIEpvc8OpJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFtw6lyaXF1ZSBjZW50cmFsZSwgZW50cmUgTmljYXJhZ3VhIGV0IFBhbmFtYS4nLFxuICAgIG1uZW1vbmljOiAnU2FuIEpvc8OpIGVzdCB1bmUgY8O0dGUgcmljaGUgc2VycsOpZSBlbnRyZSBOaWNhcmFndWEgZXQgUGFuYW1hLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQ3ViYScsXG4gICAgY2FwaXRhbDogJ0xhIEhhdmFuZScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbmUgZ3JhbmRlIMOubGUgZGVzIENhcmHDr2JlcywgYXUgc3VkIGRlIGxhIEZsb3JpZGUuJyxcbiAgICBtbmVtb25pYzogJ0xhIEhhdmFuZSBlc3QgdW4gbG9uZyBjaWdhcmUgZmxvdHRhbnQgc291cyBsYSBGbG9yaWRlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnRG9taW5pcXVlJyxcbiAgICBjYXBpdGFsOiAnUm9zZWF1JyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuZSDDrmxlIGRlcyBQZXRpdGVzIEFudGlsbGVzLCBlbnRyZSBHdWFkZWxvdXBlIGV0IE1hcnRpbmlxdWUuJyxcbiAgICBtbmVtb25pYzogJ1Jvc2VhdSBlc3QgdW5lIHRpZ2UgdmVydGUgZW50cmUgZGV1eCDDrmxlcyBmcmFuw6dhaXNlcyBkZXMgQW50aWxsZXMuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICfDiXF1YXRldXInLFxuICAgIGNhcGl0YWw6ICdRdWl0bycsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGR1IG5vcmQtb3Vlc3QgZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQsIHRyYXZlcnPDqSBwYXIgbOKAmcOpcXVhdGV1ci4nLFxuICAgIG1uZW1vbmljOiAnUXVpdG8gZXN0IGNsb3XDqSBzdXIgbGEgbGlnbmUgZGUgbOKAmcOpcXVhdGV1ciwgcHLDqHMgZHUgUGFjaWZpcXVlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnw4l0YXRzLVVuaXMnLFxuICAgIGNhcGl0YWw6ICdXYXNoaW5ndG9uJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGdyYW5kIHBheXMgZOKAmUFtw6lyaXF1ZSBkdSBOb3JkLCBlbnRyZSBBdGxhbnRpcXVlIGV0IFBhY2lmaXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnV2FzaGluZ3RvbiB0aWVudCB1bmUgw6l0b2lsZSBlbnRyZSBsZXMgZGV1eCBvY8OpYW5zIGRlIGzigJlBbcOpcmlxdWUgZHUgTm9yZC4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0dyZW5hZGUnLFxuICAgIGNhcGl0YWw6ICdTYWludCBHZW9yZ2XigJlzJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuZSDDrmxlIGRlcyBDYXJhw69iZXMgZHUgU3VkLCBwcsOocyBkdSBWZW5lenVlbGEuJyxcbiAgICBtbmVtb25pYzogJ1NhaW50IEdlb3JnZeKAmXMgZ2FyZGUgdW5lIHBldGl0ZSBncmVuYWRlIGF1IHN1ZCBkZSBs4oCZYXJjIGNhcmHDr2JlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnR3VhdGVtYWxhJyxcbiAgICBjYXBpdGFsOiAnR3VhdGVtYWxhJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmUFtw6lyaXF1ZSBjZW50cmFsZSwgYXUgc3VkIGR1IE1leGlxdWUuJyxcbiAgICBtbmVtb25pYzogJ0xlIEd1YXRlbWFsYSBlc3QgdW5lIG1hcmNoZSB2b2xjYW5pcXVlIGp1c3RlIHNvdXMgbGUgTWV4aXF1ZSwgY8O0dMOpIFBhY2lmaXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0d1eWFuYScsXG4gICAgY2FwaXRhbDogJ0dlb3JnZXRvd24nLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBub3JkIGRlIGzigJlBbcOpcmlxdWUgZHUgU3VkLCBzdXIgbGEgY8O0dGUgYXRsYW50aXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnR2VvcmdldG93biBlc3QgdW5lIHBvcnRlIHZlcnRlIHN1ciBs4oCZQXRsYW50aXF1ZSwgYXUgbm9yZCBkdSBjb250aW5lbnQgc3VkLWFtw6lyaWNhaW4uJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdIYcOvdGknLFxuICAgIGNhcGl0YWw6ICdQb3J0LWF1LVByaW5jZScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGRlcyBDYXJhw69iZXMgb2NjdXBhbnQgbOKAmW91ZXN0IGRlIGzigJnDrmxlIGTigJlIaXNwYW5pb2xhLicsXG4gICAgbW5lbW9uaWM6ICdQb3J0LWF1LVByaW5jZSBlc3QgdW5lIGNvdXJvbm5lIMOgIGzigJlvdWVzdCBk4oCZSGlzcGFuaW9sYS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0hvbmR1cmFzJyxcbiAgICBjYXBpdGFsOiAnVGVndWNpZ2FscGEnLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQW3DqXJpcXVlIGNlbnRyYWxlLCBlbnRyZSBHdWF0ZW1hbGEsIFNhbHZhZG9yIGV0IE5pY2FyYWd1YS4nLFxuICAgIG1uZW1vbmljOiAnVGVndWNpZ2FscGEgZXN0IHVuIGhhbWFjIHRlbmR1IGF1IG1pbGlldSBkZSBs4oCZQW3DqXJpcXVlIGNlbnRyYWxlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnSmFtYcOvcXVlJyxcbiAgICBjYXBpdGFsOiAnS2luZ3N0b24nLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW5lIMOubGUgZGVzIENhcmHDr2JlcywgYXUgc3VkIGRlIEN1YmEuJyxcbiAgICBtbmVtb25pYzogJ0tpbmdzdG9uIGVzdCB1bmUgY291cm9ubmUgcG9zw6llIHNvdXMgQ3ViYS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ05pY2FyYWd1YScsXG4gICAgY2FwaXRhbDogJ01hbmFndWEnLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBk4oCZQW3DqXJpcXVlIGNlbnRyYWxlLCBlbnRyZSBIb25kdXJhcyBldCBDb3N0YSBSaWNhLicsXG4gICAgbW5lbW9uaWM6ICdNYW5hZ3VhIGVzdCB1biBncmFuZCBsYWMgYXUgY2VudHJlIGR1IHBhc3NhZ2UgZW50cmUgSG9uZHVyYXMgZXQgQ29zdGEgUmljYS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1BhbmFtYScsXG4gICAgY2FwaXRhbDogJ1BhbmFtYScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlBbcOpcmlxdWUgY2VudHJhbGUgcmVsaWFudCBs4oCZQW3DqXJpcXVlIGNlbnRyYWxlIMOgIGzigJlBbcOpcmlxdWUgZHUgU3VkLicsXG4gICAgbW5lbW9uaWM6ICdQYW5hbWEgZXN0IHVuIGNhZGVuYXMgcXVpIGZlcm1lIGV0IG91dnJlIGxlIHBhc3NhZ2UgZW50cmUgbGVzIGRldXggQW3DqXJpcXVlcy4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1BhcmFndWF5JyxcbiAgICBjYXBpdGFsOiAnQXN1bmNpb24nLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBlbmNsYXbDqSBk4oCZQW3DqXJpcXVlIGR1IFN1ZCwgZW50cmUgQnLDqXNpbCwgQm9saXZpZSBldCBBcmdlbnRpbmUuJyxcbiAgICBtbmVtb25pYzogJ0xlIFBhcmFndWF5IGVzdCB1bmUgw65sZSBzYW5zIG1lciBhdSBjZW50cmUgZHUgc3VkIGFtw6lyaWNhaW4uJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdSw6lwdWJsaXF1ZSBkb21pbmljYWluZScsXG4gICAgY2FwaXRhbDogJ1NhaW50LURvbWluZ3VlJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZGVzIENhcmHDr2JlcyBvY2N1cGFudCBs4oCZZXN0IGRlIGzigJnDrmxlIGTigJlIaXNwYW5pb2xhLicsXG4gICAgbW5lbW9uaWM6ICdTYWludC1Eb21pbmd1ZSBlc3QgbGUgc29sZWlsIMOgIGzigJllc3QgZOKAmUhpc3BhbmlvbGEuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTYWludC1DaHJpc3RvcGhlLWV0LU5pw6l2w6hzJyxcbiAgICBjYXBpdGFsOiAnQmFzc2V0ZXJyZScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwZXRpdCDDiXRhdCBkZSBkZXV4IMOubGVzIGRhbnMgbGVzIENhcmHDr2JlcyBvcmllbnRhbGVzLicsXG4gICAgbW5lbW9uaWM6ICdCYXNzZXRlcnJlIGVzdCB1bmUgYmFzc2Ugbm90ZSBzdXIgZGV1eCDDrmxlcyBhdSBub3JkIGRlcyBQZXRpdGVzIEFudGlsbGVzLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU2FpbnRlLUx1Y2llJyxcbiAgICBjYXBpdGFsOiAnQ2FzdHJpZXMnLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW5lIMOubGUgZGVzIENhcmHDr2JlcyBvcmllbnRhbGVzLCBhdSBub3JkIGRlIFNhaW50LVZpbmNlbnQuJyxcbiAgICBtbmVtb25pYzogJ0Nhc3RyaWVzIGFsbHVtZSB1bmUgbHVjaW9sZSBkYW5zIGzigJlhcmMgZGVzIFBldGl0ZXMgQW50aWxsZXMuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdTYWludC1WaW5jZW50LWV0LWxlcy1HcmVuYWRpbmVzJyxcbiAgICBjYXBpdGFsOiAnS2luZ3N0b3duJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIMOJdGF0IGluc3VsYWlyZSBkZXMgQ2FyYcOvYmVzIG9yaWVudGFsZXMsIGF1IHN1ZCBkZSBTYWludGUtTHVjaWUuJyxcbiAgICBtbmVtb25pYzogJ0tpbmdzdG93biBwb3J0ZSB1bmUgY291cm9ubmUgc3VyIHVuZSBjaGHDrm5lIGTigJnDrmxlcyBhdSBzdWQgZGUgU2FpbnRlLUx1Y2llLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU2FsdmFkb3InLFxuICAgIGNhcGl0YWw6ICdTYW4gU2FsdmFkb3InLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGV0aXQgcGF5cyBk4oCZQW3DqXJpcXVlIGNlbnRyYWxlLCBzdXIgbGEgY8O0dGUgcGFjaWZpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdMZSBTYWx2YWRvciBlc3QgdW4gcGV0aXQgc29sZWlsIHN1ciBsYSBjw7R0ZSBwYWNpZmlxdWUsIHNvdXMgbGUgR3VhdGVtYWxhLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU3VyaW5hbWUnLFxuICAgIGNhcGl0YWw6ICdQYXJhbWFyaWJvJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IHBheXMgZHUgbm9yZCBkZSBs4oCZQW3DqXJpcXVlIGR1IFN1ZCwgc3VyIGzigJlBdGxhbnRpcXVlLicsXG4gICAgbW5lbW9uaWM6ICdQYXJhbWFyaWJvIGVzdCB1bmUgcGlyb2d1ZSBlbnRyZSBHdXlhbmEgZXQgR3V5YW5lLCBhdSBub3JkIGFtYXpvbmllbi4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1RyaW5pdMOpLWV0LVRvYmFnbycsXG4gICAgY2FwaXRhbDogJ1BvcnQtZOKAmUVzcGFnbmUnLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gw4l0YXQgaW5zdWxhaXJlIGRlcyBDYXJhw69iZXMsIGp1c3RlIGF1IGxhcmdlIGR1IFZlbmV6dWVsYS4nLFxuICAgIG1uZW1vbmljOiAnUG9ydC1k4oCZRXNwYWduZSBlc3QgdW5lIHBhaXJlIGTigJnDrmxlcyBwb3PDqWUgZGV2YW50IGxlIFZlbmV6dWVsYS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1VydWd1YXknLFxuICAgIGNhcGl0YWw6ICdNb250ZXZpZGVvJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IHBheXMgZHUgc3VkLWVzdCBkZSBs4oCZQW3DqXJpcXVlIGR1IFN1ZCwgZW50cmUgQnLDqXNpbCBldCBBcmdlbnRpbmUuJyxcbiAgICBtbmVtb25pYzogJ01vbnRldmlkZW8gZXN0IHVuZSBjb2xsaW5lIHZpZMOpbyBlbnRyZSBCcsOpc2lsIGV0IEFyZ2VudGluZSwgZmFjZSDDoCBs4oCZQXRsYW50aXF1ZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1ZlbmV6dWVsYScsXG4gICAgY2FwaXRhbDogJ0NhcmFjYXMnLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBkdSBub3JkIGRlIGzigJlBbcOpcmlxdWUgZHUgU3VkLCBzdXIgbGEgbWVyIGRlcyBDYXJhw69iZXMuJyxcbiAgICBtbmVtb25pYzogJ0NhcmFjYXMgZXN0IHVuIGNhcnJvc3NlIHN1ciBsYSBjw7R0ZSBjYXJhw69iZSBkdSBub3JkIHN1ZC1hbcOpcmljYWluLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnQXVzdHJhbGllJyxcbiAgICBjYXBpdGFsOiAnQ2FuYmVycmEnLFxuICAgIGNvbnRpbmVudDogJ09jw6lhbmllJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBncmFuZCBwYXlzIGluc3VsYWlyZSBlbnRvdXLDqSBwYXIgbGVzIG9jw6lhbnMgSW5kaWVuIGV0IFBhY2lmaXF1ZS4nLFxuICAgIG1uZW1vbmljOiAnQ2FuYmVycmEgZXN0IHVuZSBib3Vzc29sZSBhdSBzdWQtZXN0IGRlIGxhIGdyYW5kZSDDrmxlIGF1c3RyYWxpZW5uZS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ0ZpZGppJyxcbiAgICBjYXBpdGFsOiAnU3V2YScsXG4gICAgY29udGluZW50OiAnT2PDqWFuaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgaW5zdWxhaXJlIGRlIGzigJlvY8OpYW4gUGFjaWZpcXVlIFN1ZC4nLFxuICAgIG1uZW1vbmljOiAnU3V2YSBww6l0aWxsZSBkYW5zIGxlIFBhY2lmaXF1ZSBTdWQsIMOgIGzigJllc3QgZGUgbOKAmUF1c3RyYWxpZSBldCBhdSBub3JkIGRlIGxhIE5vdXZlbGxlLVrDqWxhbmRlLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnTm91dmVsbGUtWsOpbGFuZGUnLFxuICAgIGNhcGl0YWw6ICdXZWxsaW5ndG9uJyxcbiAgICBjb250aW5lbnQ6ICdPY8OpYW5pZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gcGF5cyBpbnN1bGFpcmUgc2l0dcOpIGF1IHN1ZC1lc3QgZGUgbOKAmUF1c3RyYWxpZS4nLFxuICAgIG1uZW1vbmljOiAnV2VsbGluZ3RvbiB2ZWlsbGUgc3VyIGRldXggbG9uZ3VlcyDDrmxlcyBhdSBzdWQtZXN0IGRlIGzigJlBdXN0cmFsaWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdQYXBvdWFzaWUtTm91dmVsbGUtR3VpbsOpZScsXG4gICAgY2FwaXRhbDogJ1BvcnQgTW9yZXNieScsXG4gICAgY29udGluZW50OiAnT2PDqWFuaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgYXUgbm9yZCBkZSBs4oCZQXVzdHJhbGllIHF1aSBwYXJ0YWdlIGzigJnDrmxlIGRlIE5vdXZlbGxlLUd1aW7DqWUuJyxcbiAgICBtbmVtb25pYzogJ0xhIFBhcG91YXNpZS1Ob3V2ZWxsZS1HdWluw6llIGNvaWZmZSBsZSBub3JkIGRlIGzigJlBdXN0cmFsaWUsIHN1ciBsYSBncmFuZGUgw65sZSBkZSBOb3V2ZWxsZS1HdWluw6llLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnS2lyaWJhdGknLFxuICAgIGNhcGl0YWw6ICdUYXJhd2EnLFxuICAgIGNvbnRpbmVudDogJ09jw6lhbmllJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBwYXlzIGTigJlhdG9sbHMgZHUgUGFjaWZpcXVlIGNlbnRyYWwsIHLDqXBhcnRpIHByw6hzIGRlIGzigJnDqXF1YXRldXIuJyxcbiAgICBtbmVtb25pYzogJ1RhcmF3YSBlc3QgdW4gY29sbGllciBk4oCZYXRvbGxzIHBvc8OpIHN1ciBs4oCZw6lxdWF0ZXVyIGF1IG1pbGlldSBkdSBQYWNpZmlxdWUuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICfDjmxlcyBNYXJzaGFsbCcsXG4gICAgY2FwaXRhbDogJ01hanVybycsXG4gICAgY29udGluZW50OiAnT2PDqWFuaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgZOKAmWF0b2xscyBkdSBQYWNpZmlxdWUgTm9yZCwgYXUgbm9yZCBkZSBLaXJpYmF0aS4nLFxuICAgIG1uZW1vbmljOiAnTWFqdXJvIG1hcmNoZSBzdXIgdW5lIGxpZ25lIGTigJlhdG9sbHMgYXUgbm9yZCBkZSBLaXJpYmF0aS4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ01pY3JvbsOpc2llJyxcbiAgICBjYXBpdGFsOiAnUGFsaWtpcicsXG4gICAgY29udGluZW50OiAnT2PDqWFuaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGVuc2VtYmxlIGTigJnDrmxlcyBkdSBQYWNpZmlxdWUgTm9yZCwgw6AgbOKAmWVzdCBkZXMgUGhpbGlwcGluZXMuJyxcbiAgICBtbmVtb25pYzogJ1BhbGlraXIgZXN0IHVuIHBldGl0IHBvaW50IG1pY3JvIGRhbnMgbGUgUGFjaWZpcXVlLCDDoCBs4oCZZXN0IGRlcyBQaGlsaXBwaW5lcy4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ05hdXJ1JyxcbiAgICBjYXBpdGFsOiAnWWFyZW4nLFxuICAgIGNvbnRpbmVudDogJ09jw6lhbmllJyxcbiAgICBnZW9ncmFwaHk6ICdVbmUgdHLDqHMgcGV0aXRlIMOubGUgZHUgUGFjaWZpcXVlIGNlbnRyYWwsIGF1IHN1ZCBkZSBs4oCZw6lxdWF0ZXVyLicsXG4gICAgbW5lbW9uaWM6ICdZYXJlbiBlc3QgdW4gbWludXNjdWxlIGNhaWxsb3Ugcm9uZCBqdXN0ZSBzb3VzIGzigJnDqXF1YXRldXIuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdQYWxhb3MnLFxuICAgIGNhcGl0YWw6ICdOZ2VydWxtdWQnLFxuICAgIGNvbnRpbmVudDogJ09jw6lhbmllJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBhcmNoaXBlbCBkdSBQYWNpZmlxdWUgb2NjaWRlbnRhbCwgw6AgbOKAmWVzdCBkZXMgUGhpbGlwcGluZXMuJyxcbiAgICBtbmVtb25pYzogJ05nZXJ1bG11ZCBlc3QgdW5lIHBhbGV0dGUgZOKAmcOubGVzIGJsZXVlcyDDoCBs4oCZZXN0IGRlcyBQaGlsaXBwaW5lcy4nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ1NhbW9hJyxcbiAgICBjYXBpdGFsOiAnQXBpYScsXG4gICAgY29udGluZW50OiAnT2PDqWFuaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBheXMgaW5zdWxhaXJlIGR1IFBhY2lmaXF1ZSBTdWQsIGF1IG5vcmQtZXN0IGRlIEZpZGppLicsXG4gICAgbW5lbW9uaWM6ICdBcGlhIGVzdCB1bmUgZmxldXIgcG9zw6llIGF1IG5vcmQtZXN0IGRlIEZpZGppLicsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnw45sZXMgU2Fsb21vbicsXG4gICAgY2FwaXRhbDogJ0hvbmlhcmEnLFxuICAgIGNvbnRpbmVudDogJ09jw6lhbmllJyxcbiAgICBnZW9ncmFwaHk6ICdVbiBhcmNoaXBlbCBkdSBQYWNpZmlxdWUgU3VkLCDDoCBs4oCZZXN0IGRlIGxhIFBhcG91YXNpZS1Ob3V2ZWxsZS1HdWluw6llLicsXG4gICAgbW5lbW9uaWM6ICdIb25pYXJhIGVzdCB1bmUgY2hhw65uZSBk4oCZw65sZXMgcXVpIHByb2xvbmdlIGxhIFBhcG91YXNpZSB2ZXJzIGzigJllc3QuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdUb25nYScsXG4gICAgY2FwaXRhbDogJ051a3XigJlhbG9mYScsXG4gICAgY29udGluZW50OiAnT2PDqWFuaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIGFyY2hpcGVsIGR1IFBhY2lmaXF1ZSBTdWQsIGF1IHN1ZC1lc3QgZGUgRmlkamkuJyxcbiAgICBtbmVtb25pYzogJ051a3XigJlhbG9mYSBlc3QgdW5lIGFuY3JlIGF1IHN1ZC1lc3QgZGUgRmlkamkuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdUdXZhbHUnLFxuICAgIGNhcGl0YWw6ICdGdW5hZnV0aScsXG4gICAgY29udGluZW50OiAnT2PDqWFuaWUnLFxuICAgIGdlb2dyYXBoeTogJ1VuIHBldGl0IHBheXMgZOKAmWF0b2xscyBkdSBQYWNpZmlxdWUgU3VkLCBlbnRyZSBLaXJpYmF0aSBldCBGaWRqaS4nLFxuICAgIG1uZW1vbmljOiAnRnVuYWZ1dGkgZmxvdHRlIGNvbW1lIHVuIGZpbiByYWRlYXUgZW50cmUgS2lyaWJhdGkgZXQgRmlkamkuJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdWYW51YXR1JyxcbiAgICBjYXBpdGFsOiAnUG9ydC1WaWxhJyxcbiAgICBjb250aW5lbnQ6ICdPY8OpYW5pZScsXG4gICAgZ2VvZ3JhcGh5OiAnVW4gYXJjaGlwZWwgZHUgUGFjaWZpcXVlIFN1ZCwgZW50cmUgRmlkamkgZXQgbOKAmUF1c3RyYWxpZS4nLFxuICAgIG1uZW1vbmljOiAnUG9ydC1WaWxhIGVzdCB1bmUgdm9pbGUgZW50cmUgRmlkamkgZXQgbOKAmUF1c3RyYWxpZS4nLFxuICB9LFxuXVxuIl19

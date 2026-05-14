@@ -1,0 +1,138 @@
+import { expect, test } from '@playwright/test'
+import {
+  expectNoClientErrors,
+  openHome,
+  openModule,
+  screenshot,
+  selectQuizContinent,
+  selectQuizType,
+  waitForMapReady,
+} from './helpers.js'
+
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.clear()
+  })
+})
+
+test('chargement application', async ({ page }) => {
+  await expectNoClientErrors(page, async () => {
+    await openHome(page)
+
+    await expect(page.getByText(/MNÉMOTECHNIQUE|MNEMONIC/i)).toBeVisible()
+    await expect(page.getByRole('button', { name: /Carte|Map/i })).toBeVisible()
+    await expect(page.getByRole('button', { name: /Apprendre|Learn/i })).toBeVisible()
+    await expect(page.getByRole('button', { name: /Quiz/i })).toBeVisible()
+    await screenshot(page, 'home-loaded')
+  })
+})
+
+test('changement langue FR -> EN -> FR', async ({ page }) => {
+  await openHome(page)
+
+  await expect(page.getByText('Explore, mémorise et défie ta carte du monde.')).toBeVisible()
+
+  await page.getByRole('button', { name: /Changer la langue/i }).click()
+  await expect(page.getByText('Explore, memorize, and challenge your world map.')).toBeVisible()
+  await expect(page.getByRole('button', { name: /Learn/i })).toBeVisible()
+
+  await openModule(page, /Quiz/i)
+  await expect(page.getByLabel(/Quiz type/i)).toBeVisible()
+
+  await page.getByRole('button', { name: /Back home/i }).click()
+  await page.getByRole('button', { name: /Change language/i }).click()
+
+  await expect(page.getByText('Explore, mémorise et défie ta carte du monde.')).toBeVisible()
+  await expect(page.getByRole('button', { name: /Apprendre/i })).toBeVisible()
+})
+
+test('quiz Europe carte', async ({ page }) => {
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+
+  await selectQuizType(page, 'Trouver le pays sur la carte + territoires')
+  await selectQuizContinent(page, 'Europe')
+  await page.getByRole('button', { name: /Démarrer le quiz carte/i }).click()
+
+  await expect(page.locator('.quiz-map-fullscreen')).toBeVisible()
+  await waitForMapReady(page, '.quiz-shape-map.leaflet-container')
+  await expect(
+    page.locator('.quiz-map-question').getByText(/Où se trouve/i),
+  ).toBeVisible()
+  await expect(
+    page.locator('.quiz-map-stat').filter({ hasText: /Restants/i }),
+  ).toBeVisible()
+})
+
+test('quiz Océanie centré avec marqueurs visibles', async ({ page }) => {
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+
+  await selectQuizType(page, 'Trouver le pays sur la carte + territoires')
+  await selectQuizContinent(page, 'Océanie')
+  await page.getByRole('button', { name: /Démarrer le quiz carte/i }).click()
+
+  const map = page.locator('.quiz-shape-map.leaflet-container')
+  await waitForMapReady(page, '.quiz-shape-map.leaflet-container')
+  await expect(
+    page.locator('.quiz-map-fullscreen svg path.leaflet-interactive').first(),
+  ).toBeVisible()
+
+  await page.waitForTimeout(1_200)
+  const initialTransform = await page
+    .locator('.quiz-shape-map .leaflet-map-pane')
+    .evaluate((element) => element.style.transform)
+  await page.waitForTimeout(900)
+  const settledTransform = await page
+    .locator('.quiz-shape-map .leaflet-map-pane')
+    .evaluate((element) => element.style.transform)
+  expect(settledTransform).toBe(initialTransform)
+
+  const markerCenterRatio = await map.evaluate((container) => {
+    const containerBox = container.getBoundingClientRect()
+    const markers = [...container.querySelectorAll('svg path.leaflet-interactive')]
+      .map((marker) => marker.getBoundingClientRect())
+      .filter((box) => box.width > 0 && box.height > 0)
+
+    const averageX =
+      markers.reduce((sum, box) => sum + box.left + box.width / 2, 0) /
+      markers.length
+
+    return (averageX - containerBox.left) / containerBox.width
+  })
+
+  expect(markerCenterRatio).toBeGreaterThan(0.2)
+  expect(markerCenterRatio).toBeLessThan(0.85)
+})
+
+test('quiz image', async ({ page }) => {
+  await page.route('https://**/*', async (route) => {
+    if (route.request().resourceType() === 'image') {
+      await route.fulfill({
+        body: Buffer.from(
+          'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/p9sAAAAASUVORK5CYII=',
+          'base64',
+        ),
+        contentType: 'image/png',
+      })
+      return
+    }
+
+    await route.continue()
+  })
+
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+
+  await selectQuizType(page, 'Trouver le pays avec une image')
+
+  await expect(page.locator('.quiz-image')).toBeVisible()
+  await expect(page.getByText(/Images réussies/i)).toBeVisible()
+  await expect(page.getByText(/Images restantes/i)).toBeVisible()
+
+  await page.locator('.answer-grid button').first().click()
+
+  const nextButton = page.getByRole('button', { name: /Question suivante/i })
+  await expect(nextButton).toBeVisible()
+  await expect(nextButton).toBeInViewport()
+})

@@ -1,0 +1,257 @@
+export const territoryStatusLabels = {
+	dependentTerritory: "Territoire dépendant",
+	crownDependency: "Dépendance de la Couronne",
+	autonomousTerritory: "Territoire autonome",
+	associatedTerritory: "Territoire associé",
+	specialCollectivity: "Collectivité à statut particulier"
+};
+export const dependentTerritories = [
+	{
+		id: "martinique-france",
+		name: "Martinique",
+		parentCountry: "France",
+		label: "Martinique (France)",
+		continent: "Amérique",
+		politicalStatus: "dependentTerritory",
+		geography: "Île française des Petites Antilles, dans la mer des Caraïbes.",
+		position: [14.65, -61],
+		source: {
+			shapeName: "France",
+			bounds: [
+				-61.3,
+				14.3,
+				-60.7,
+				15
+			]
+		}
+	},
+	{
+		id: "guadeloupe-france",
+		name: "Guadeloupe",
+		parentCountry: "France",
+		label: "Guadeloupe (France)",
+		continent: "Amérique",
+		politicalStatus: "dependentTerritory",
+		geography: "Archipel français des Petites Antilles.",
+		position: [16.25, -61.55],
+		source: {
+			shapeName: "France",
+			bounds: [
+				-61.9,
+				15.8,
+				-60.9,
+				16.6
+			]
+		}
+	},
+	{
+		id: "guyane-francaise-france",
+		name: "Guyane française",
+		parentCountry: "France",
+		label: "Guyane française (France)",
+		continent: "Amérique",
+		politicalStatus: "dependentTerritory",
+		geography: "Territoire français situé sur la côte nord-est de l’Amérique du Sud.",
+		position: [4, -53.1],
+		source: {
+			shapeName: "France",
+			bounds: [
+				-54.7,
+				2,
+				-51.5,
+				5.9
+			]
+		}
+	},
+	{
+		id: "la-reunion-france",
+		name: "La Réunion",
+		parentCountry: "France",
+		label: "La Réunion (France)",
+		continent: "Afrique",
+		politicalStatus: "dependentTerritory",
+		geography: "Île française de l’océan Indien, à l’est de Madagascar.",
+		position: [-21.1, 55.5],
+		source: {
+			shapeName: "France",
+			bounds: [
+				55.1,
+				-21.5,
+				56,
+				-20.7
+			]
+		}
+	},
+	{
+		id: "mayotte-france",
+		name: "Mayotte",
+		parentCountry: "France",
+		label: "Mayotte (France)",
+		continent: "Afrique",
+		politicalStatus: "dependentTerritory",
+		geography: "Archipel français du canal du Mozambique, près des Comores.",
+		position: [-12.85, 45.15],
+		source: {
+			shapeName: "France",
+			bounds: [
+				44.9,
+				-13.1,
+				45.4,
+				-12.5
+			]
+		}
+	},
+	{
+		id: "aruba-pays-bas",
+		name: "Aruba",
+		parentCountry: "Pays-Bas",
+		label: "Aruba (Pays-Bas)",
+		continent: "Amérique",
+		politicalStatus: "autonomousTerritory",
+		geography: "Île autonome du Royaume des Pays-Bas, au sud de la mer des Caraïbes.",
+		position: [12.52, -69.97],
+		shapeNames: ["Aruba"]
+	},
+	{
+		id: "curacao-pays-bas",
+		name: "Curaçao",
+		parentCountry: "Pays-Bas",
+		label: "Curaçao (Pays-Bas)",
+		continent: "Amérique",
+		politicalStatus: "autonomousTerritory",
+		geography: "Île autonome du Royaume des Pays-Bas, près du Venezuela.",
+		position: [12.17, -68.99],
+		shapeNames: ["Curaçao"]
+	},
+	{
+		id: "bonaire-pays-bas",
+		name: "Bonaire",
+		parentCountry: "Pays-Bas",
+		label: "Bonaire (Pays-Bas)",
+		continent: "Amérique",
+		politicalStatus: "specialCollectivity",
+		geography: "Île caribéenne liée aux Pays-Bas, près de Curaçao.",
+		position: [12.18, -68.27],
+		source: {
+			shapeName: "Netherlands",
+			bounds: [
+				-68.5,
+				11.9,
+				-68.1,
+				12.4
+			]
+		}
+	},
+	{
+		id: "porto-rico-etats-unis",
+		name: "Porto Rico",
+		parentCountry: "États-Unis",
+		label: "Porto Rico (États-Unis)",
+		continent: "Amérique",
+		politicalStatus: "associatedTerritory",
+		geography: "Territoire non incorporé des États-Unis dans les Grandes Antilles.",
+		position: [18.2, -66.5],
+		shapeNames: ["Puerto Rico"]
+	},
+	{
+		id: "groenland-danemark",
+		name: "Groenland",
+		parentCountry: "Danemark",
+		label: "Groenland (Danemark)",
+		continent: "Amérique",
+		politicalStatus: "autonomousTerritory",
+		geography: "Grand territoire autonome du Royaume du Danemark, dans l’Arctique.",
+		position: [72, -40],
+		shapeNames: ["Greenland"]
+	},
+	{
+		id: "nouvelle-caledonie-france",
+		name: "Nouvelle-Calédonie",
+		parentCountry: "France",
+		label: "Nouvelle-Calédonie (France)",
+		continent: "Océanie",
+		politicalStatus: "specialCollectivity",
+		geography: "Archipel français du Pacifique Sud.",
+		position: [-21.3, 165.5],
+		shapeNames: ["New Caledonia"]
+	},
+	{
+		id: "polynesie-francaise-france",
+		name: "Polynésie française",
+		parentCountry: "France",
+		label: "Polynésie française (France)",
+		continent: "Océanie",
+		politicalStatus: "specialCollectivity",
+		geography: "Ensemble d’archipels français du Pacifique central.",
+		position: [-17.7, -149.4],
+		shapeNames: ["Fr. Polynesia"]
+	},
+	{
+		id: "guam-etats-unis",
+		name: "Guam",
+		parentCountry: "États-Unis",
+		label: "Guam (États-Unis)",
+		continent: "Océanie",
+		politicalStatus: "associatedTerritory",
+		geography: "Île du Pacifique occidental rattachée aux États-Unis.",
+		position: [13.45, 144.78],
+		shapeNames: ["Guam"]
+	},
+	{
+		id: "bermudes-royaume-uni",
+		name: "Bermudes",
+		parentCountry: "Royaume-Uni",
+		label: "Bermudes (Royaume-Uni)",
+		continent: "Amérique",
+		politicalStatus: "dependentTerritory",
+		geography: "Territoire britannique d’outre-mer dans l’Atlantique Nord.",
+		position: [32.3, -64.75],
+		shapeNames: ["Bermuda"]
+	},
+	{
+		id: "gibraltar-royaume-uni",
+		name: "Gibraltar",
+		parentCountry: "Royaume-Uni",
+		label: "Gibraltar (Royaume-Uni)",
+		continent: "Europe",
+		politicalStatus: "dependentTerritory",
+		geography: "Territoire britannique situé à l’entrée de la Méditerranée.",
+		position: [36.14, -5.35],
+		shapeNames: ["Gibraltar"]
+	},
+	{
+		id: "ile-de-man-couronne-britannique",
+		name: "Île de Man",
+		parentCountry: "Couronne britannique",
+		label: "Île de Man (Couronne britannique)",
+		continent: "Europe",
+		politicalStatus: "crownDependency",
+		geography: "Dépendance de la Couronne située en mer d’Irlande.",
+		position: [54.24, -4.55],
+		shapeNames: ["Isle of Man"]
+	},
+	{
+		id: "jersey-couronne-britannique",
+		name: "Jersey",
+		parentCountry: "Couronne britannique",
+		label: "Jersey (Couronne britannique)",
+		continent: "Europe",
+		politicalStatus: "crownDependency",
+		geography: "Dépendance de la Couronne située dans les îles Anglo-Normandes.",
+		position: [49.21, -2.13],
+		shapeNames: ["Jersey"]
+	},
+	{
+		id: "guernesey-couronne-britannique",
+		name: "Guernesey",
+		parentCountry: "Couronne britannique",
+		label: "Guernesey (Couronne britannique)",
+		continent: "Europe",
+		politicalStatus: "crownDependency",
+		geography: "Dépendance de la Couronne située dans les îles Anglo-Normandes.",
+		position: [49.45, -2.58],
+		shapeNames: ["Guernsey"]
+	}
+];
+
+//# sourceMappingURL=data:application/json;base64,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O0VBQ3hCLFlBQVksQ0FBQyxTQUFTO0VBQ3ZCO0NBQ0Q7RUFDRSxJQUFJO0VBQ0osTUFBTTtFQUNOLGVBQWU7RUFDZixPQUFPO0VBQ1AsV0FBVztFQUNYLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsVUFBVSxDQUFDLE9BQU8sQ0FBQyxLQUFLO0VBQ3hCLFlBQVksQ0FBQyxXQUFXO0VBQ3pCO0NBQ0YiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiZGVwZW5kZW50VGVycml0b3JpZXMuanMiXSwidmVyc2lvbiI6Mywic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IHRlcnJpdG9yeVN0YXR1c0xhYmVscyA9IHtcbiAgZGVwZW5kZW50VGVycml0b3J5OiAnVGVycml0b2lyZSBkw6lwZW5kYW50JyxcbiAgY3Jvd25EZXBlbmRlbmN5OiAnRMOpcGVuZGFuY2UgZGUgbGEgQ291cm9ubmUnLFxuICBhdXRvbm9tb3VzVGVycml0b3J5OiAnVGVycml0b2lyZSBhdXRvbm9tZScsXG4gIGFzc29jaWF0ZWRUZXJyaXRvcnk6ICdUZXJyaXRvaXJlIGFzc29jacOpJyxcbiAgc3BlY2lhbENvbGxlY3Rpdml0eTogJ0NvbGxlY3Rpdml0w6kgw6Agc3RhdHV0IHBhcnRpY3VsaWVyJyxcbn1cblxuZXhwb3J0IGNvbnN0IGRlcGVuZGVudFRlcnJpdG9yaWVzID0gW1xuICB7XG4gICAgaWQ6ICdtYXJ0aW5pcXVlLWZyYW5jZScsXG4gICAgbmFtZTogJ01hcnRpbmlxdWUnLFxuICAgIHBhcmVudENvdW50cnk6ICdGcmFuY2UnLFxuICAgIGxhYmVsOiAnTWFydGluaXF1ZSAoRnJhbmNlKScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdkZXBlbmRlbnRUZXJyaXRvcnknLFxuICAgIGdlb2dyYXBoeTogJ8OObGUgZnJhbsOnYWlzZSBkZXMgUGV0aXRlcyBBbnRpbGxlcywgZGFucyBsYSBtZXIgZGVzIENhcmHDr2Jlcy4nLFxuICAgIHBvc2l0aW9uOiBbMTQuNjUsIC02MS4wXSxcbiAgICBzb3VyY2U6IHsgc2hhcGVOYW1lOiAnRnJhbmNlJywgYm91bmRzOiBbLTYxLjMsIDE0LjMsIC02MC43LCAxNS4wXSB9LFxuICB9LFxuICB7XG4gICAgaWQ6ICdndWFkZWxvdXBlLWZyYW5jZScsXG4gICAgbmFtZTogJ0d1YWRlbG91cGUnLFxuICAgIHBhcmVudENvdW50cnk6ICdGcmFuY2UnLFxuICAgIGxhYmVsOiAnR3VhZGVsb3VwZSAoRnJhbmNlKScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdkZXBlbmRlbnRUZXJyaXRvcnknLFxuICAgIGdlb2dyYXBoeTogJ0FyY2hpcGVsIGZyYW7Dp2FpcyBkZXMgUGV0aXRlcyBBbnRpbGxlcy4nLFxuICAgIHBvc2l0aW9uOiBbMTYuMjUsIC02MS41NV0sXG4gICAgc291cmNlOiB7IHNoYXBlTmFtZTogJ0ZyYW5jZScsIGJvdW5kczogWy02MS45LCAxNS44LCAtNjAuOSwgMTYuNl0gfSxcbiAgfSxcbiAge1xuICAgIGlkOiAnZ3V5YW5lLWZyYW5jYWlzZS1mcmFuY2UnLFxuICAgIG5hbWU6ICdHdXlhbmUgZnJhbsOnYWlzZScsXG4gICAgcGFyZW50Q291bnRyeTogJ0ZyYW5jZScsXG4gICAgbGFiZWw6ICdHdXlhbmUgZnJhbsOnYWlzZSAoRnJhbmNlKScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdkZXBlbmRlbnRUZXJyaXRvcnknLFxuICAgIGdlb2dyYXBoeTogJ1RlcnJpdG9pcmUgZnJhbsOnYWlzIHNpdHXDqSBzdXIgbGEgY8O0dGUgbm9yZC1lc3QgZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQuJyxcbiAgICBwb3NpdGlvbjogWzQuMCwgLTUzLjFdLFxuICAgIHNvdXJjZTogeyBzaGFwZU5hbWU6ICdGcmFuY2UnLCBib3VuZHM6IFstNTQuNywgMi4wLCAtNTEuNSwgNS45XSB9LFxuICB9LFxuICB7XG4gICAgaWQ6ICdsYS1yZXVuaW9uLWZyYW5jZScsXG4gICAgbmFtZTogJ0xhIFLDqXVuaW9uJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnRnJhbmNlJyxcbiAgICBsYWJlbDogJ0xhIFLDqXVuaW9uIChGcmFuY2UpJyxcbiAgICBjb250aW5lbnQ6ICdBZnJpcXVlJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdkZXBlbmRlbnRUZXJyaXRvcnknLFxuICAgIGdlb2dyYXBoeTogJ8OObGUgZnJhbsOnYWlzZSBkZSBs4oCZb2PDqWFuIEluZGllbiwgw6AgbOKAmWVzdCBkZSBNYWRhZ2FzY2FyLicsXG4gICAgcG9zaXRpb246IFstMjEuMSwgNTUuNV0sXG4gICAgc291cmNlOiB7IHNoYXBlTmFtZTogJ0ZyYW5jZScsIGJvdW5kczogWzU1LjEsIC0yMS41LCA1Ni4wLCAtMjAuN10gfSxcbiAgfSxcbiAge1xuICAgIGlkOiAnbWF5b3R0ZS1mcmFuY2UnLFxuICAgIG5hbWU6ICdNYXlvdHRlJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnRnJhbmNlJyxcbiAgICBsYWJlbDogJ01heW90dGUgKEZyYW5jZSknLFxuICAgIGNvbnRpbmVudDogJ0FmcmlxdWUnLFxuICAgIHBvbGl0aWNhbFN0YXR1czogJ2RlcGVuZGVudFRlcnJpdG9yeScsXG4gICAgZ2VvZ3JhcGh5OiAnQXJjaGlwZWwgZnJhbsOnYWlzIGR1IGNhbmFsIGR1IE1vemFtYmlxdWUsIHByw6hzIGRlcyBDb21vcmVzLicsXG4gICAgcG9zaXRpb246IFstMTIuODUsIDQ1LjE1XSxcbiAgICBzb3VyY2U6IHsgc2hhcGVOYW1lOiAnRnJhbmNlJywgYm91bmRzOiBbNDQuOSwgLTEzLjEsIDQ1LjQsIC0xMi41XSB9LFxuICB9LFxuICB7XG4gICAgaWQ6ICdhcnViYS1wYXlzLWJhcycsXG4gICAgbmFtZTogJ0FydWJhJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnUGF5cy1CYXMnLFxuICAgIGxhYmVsOiAnQXJ1YmEgKFBheXMtQmFzKScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdhdXRvbm9tb3VzVGVycml0b3J5JyxcbiAgICBnZW9ncmFwaHk6ICfDjmxlIGF1dG9ub21lIGR1IFJveWF1bWUgZGVzIFBheXMtQmFzLCBhdSBzdWQgZGUgbGEgbWVyIGRlcyBDYXJhw69iZXMuJyxcbiAgICBwb3NpdGlvbjogWzEyLjUyLCAtNjkuOTddLFxuICAgIHNoYXBlTmFtZXM6IFsnQXJ1YmEnXSxcbiAgfSxcbiAge1xuICAgIGlkOiAnY3VyYWNhby1wYXlzLWJhcycsXG4gICAgbmFtZTogJ0N1cmHDp2FvJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnUGF5cy1CYXMnLFxuICAgIGxhYmVsOiAnQ3VyYcOnYW8gKFBheXMtQmFzKScsXG4gICAgY29udGluZW50OiAnQW3DqXJpcXVlJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdhdXRvbm9tb3VzVGVycml0b3J5JyxcbiAgICBnZW9ncmFwaHk6ICfDjmxlIGF1dG9ub21lIGR1IFJveWF1bWUgZGVzIFBheXMtQmFzLCBwcsOocyBkdSBWZW5lenVlbGEuJyxcbiAgICBwb3NpdGlvbjogWzEyLjE3LCAtNjguOTldLFxuICAgIHNoYXBlTmFtZXM6IFsnQ3VyYcOnYW8nXSxcbiAgfSxcbiAge1xuICAgIGlkOiAnYm9uYWlyZS1wYXlzLWJhcycsXG4gICAgbmFtZTogJ0JvbmFpcmUnLFxuICAgIHBhcmVudENvdW50cnk6ICdQYXlzLUJhcycsXG4gICAgbGFiZWw6ICdCb25haXJlIChQYXlzLUJhcyknLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgcG9saXRpY2FsU3RhdHVzOiAnc3BlY2lhbENvbGxlY3Rpdml0eScsXG4gICAgZ2VvZ3JhcGh5OiAnw45sZSBjYXJpYsOpZW5uZSBsacOpZSBhdXggUGF5cy1CYXMsIHByw6hzIGRlIEN1cmHDp2FvLicsXG4gICAgcG9zaXRpb246IFsxMi4xOCwgLTY4LjI3XSxcbiAgICBzb3VyY2U6IHsgc2hhcGVOYW1lOiAnTmV0aGVybGFuZHMnLCBib3VuZHM6IFstNjguNSwgMTEuOSwgLTY4LjEsIDEyLjRdIH0sXG4gIH0sXG4gIHtcbiAgICBpZDogJ3BvcnRvLXJpY28tZXRhdHMtdW5pcycsXG4gICAgbmFtZTogJ1BvcnRvIFJpY28nLFxuICAgIHBhcmVudENvdW50cnk6ICfDiXRhdHMtVW5pcycsXG4gICAgbGFiZWw6ICdQb3J0byBSaWNvICjDiXRhdHMtVW5pcyknLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgcG9saXRpY2FsU3RhdHVzOiAnYXNzb2NpYXRlZFRlcnJpdG9yeScsXG4gICAgZ2VvZ3JhcGh5OiAnVGVycml0b2lyZSBub24gaW5jb3Jwb3LDqSBkZXMgw4l0YXRzLVVuaXMgZGFucyBsZXMgR3JhbmRlcyBBbnRpbGxlcy4nLFxuICAgIHBvc2l0aW9uOiBbMTguMiwgLTY2LjVdLFxuICAgIHNoYXBlTmFtZXM6IFsnUHVlcnRvIFJpY28nXSxcbiAgfSxcbiAge1xuICAgIGlkOiAnZ3JvZW5sYW5kLWRhbmVtYXJrJyxcbiAgICBuYW1lOiAnR3JvZW5sYW5kJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnRGFuZW1hcmsnLFxuICAgIGxhYmVsOiAnR3JvZW5sYW5kIChEYW5lbWFyayknLFxuICAgIGNvbnRpbmVudDogJ0Ftw6lyaXF1ZScsXG4gICAgcG9saXRpY2FsU3RhdHVzOiAnYXV0b25vbW91c1RlcnJpdG9yeScsXG4gICAgZ2VvZ3JhcGh5OiAnR3JhbmQgdGVycml0b2lyZSBhdXRvbm9tZSBkdSBSb3lhdW1lIGR1IERhbmVtYXJrLCBkYW5zIGzigJlBcmN0aXF1ZS4nLFxuICAgIHBvc2l0aW9uOiBbNzIuMCwgLTQwLjBdLFxuICAgIHNoYXBlTmFtZXM6IFsnR3JlZW5sYW5kJ10sXG4gIH0sXG4gIHtcbiAgICBpZDogJ25vdXZlbGxlLWNhbGVkb25pZS1mcmFuY2UnLFxuICAgIG5hbWU6ICdOb3V2ZWxsZS1DYWzDqWRvbmllJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnRnJhbmNlJyxcbiAgICBsYWJlbDogJ05vdXZlbGxlLUNhbMOpZG9uaWUgKEZyYW5jZSknLFxuICAgIGNvbnRpbmVudDogJ09jw6lhbmllJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdzcGVjaWFsQ29sbGVjdGl2aXR5JyxcbiAgICBnZW9ncmFwaHk6ICdBcmNoaXBlbCBmcmFuw6dhaXMgZHUgUGFjaWZpcXVlIFN1ZC4nLFxuICAgIHBvc2l0aW9uOiBbLTIxLjMsIDE2NS41XSxcbiAgICBzaGFwZU5hbWVzOiBbJ05ldyBDYWxlZG9uaWEnXSxcbiAgfSxcbiAge1xuICAgIGlkOiAncG9seW5lc2llLWZyYW5jYWlzZS1mcmFuY2UnLFxuICAgIG5hbWU6ICdQb2x5bsOpc2llIGZyYW7Dp2Fpc2UnLFxuICAgIHBhcmVudENvdW50cnk6ICdGcmFuY2UnLFxuICAgIGxhYmVsOiAnUG9seW7DqXNpZSBmcmFuw6dhaXNlIChGcmFuY2UpJyxcbiAgICBjb250aW5lbnQ6ICdPY8OpYW5pZScsXG4gICAgcG9saXRpY2FsU3RhdHVzOiAnc3BlY2lhbENvbGxlY3Rpdml0eScsXG4gICAgZ2VvZ3JhcGh5OiAnRW5zZW1ibGUgZOKAmWFyY2hpcGVscyBmcmFuw6dhaXMgZHUgUGFjaWZpcXVlIGNlbnRyYWwuJyxcbiAgICBwb3NpdGlvbjogWy0xNy43LCAtMTQ5LjRdLFxuICAgIHNoYXBlTmFtZXM6IFsnRnIuIFBvbHluZXNpYSddLFxuICB9LFxuICB7XG4gICAgaWQ6ICdndWFtLWV0YXRzLXVuaXMnLFxuICAgIG5hbWU6ICdHdWFtJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnw4l0YXRzLVVuaXMnLFxuICAgIGxhYmVsOiAnR3VhbSAow4l0YXRzLVVuaXMpJyxcbiAgICBjb250aW5lbnQ6ICdPY8OpYW5pZScsXG4gICAgcG9saXRpY2FsU3RhdHVzOiAnYXNzb2NpYXRlZFRlcnJpdG9yeScsXG4gICAgZ2VvZ3JhcGh5OiAnw45sZSBkdSBQYWNpZmlxdWUgb2NjaWRlbnRhbCByYXR0YWNow6llIGF1eCDDiXRhdHMtVW5pcy4nLFxuICAgIHBvc2l0aW9uOiBbMTMuNDUsIDE0NC43OF0sXG4gICAgc2hhcGVOYW1lczogWydHdWFtJ10sXG4gIH0sXG4gIHtcbiAgICBpZDogJ2Jlcm11ZGVzLXJveWF1bWUtdW5pJyxcbiAgICBuYW1lOiAnQmVybXVkZXMnLFxuICAgIHBhcmVudENvdW50cnk6ICdSb3lhdW1lLVVuaScsXG4gICAgbGFiZWw6ICdCZXJtdWRlcyAoUm95YXVtZS1VbmkpJyxcbiAgICBjb250aW5lbnQ6ICdBbcOpcmlxdWUnLFxuICAgIHBvbGl0aWNhbFN0YXR1czogJ2RlcGVuZGVudFRlcnJpdG9yeScsXG4gICAgZ2VvZ3JhcGh5OiAnVGVycml0b2lyZSBicml0YW5uaXF1ZSBk4oCZb3V0cmUtbWVyIGRhbnMgbOKAmUF0bGFudGlxdWUgTm9yZC4nLFxuICAgIHBvc2l0aW9uOiBbMzIuMywgLTY0Ljc1XSxcbiAgICBzaGFwZU5hbWVzOiBbJ0Jlcm11ZGEnXSxcbiAgfSxcbiAge1xuICAgIGlkOiAnZ2licmFsdGFyLXJveWF1bWUtdW5pJyxcbiAgICBuYW1lOiAnR2licmFsdGFyJyxcbiAgICBwYXJlbnRDb3VudHJ5OiAnUm95YXVtZS1VbmknLFxuICAgIGxhYmVsOiAnR2licmFsdGFyIChSb3lhdW1lLVVuaSknLFxuICAgIGNvbnRpbmVudDogJ0V1cm9wZScsXG4gICAgcG9saXRpY2FsU3RhdHVzOiAnZGVwZW5kZW50VGVycml0b3J5JyxcbiAgICBnZW9ncmFwaHk6ICdUZXJyaXRvaXJlIGJyaXRhbm5pcXVlIHNpdHXDqSDDoCBs4oCZZW50csOpZSBkZSBsYSBNw6lkaXRlcnJhbsOpZS4nLFxuICAgIHBvc2l0aW9uOiBbMzYuMTQsIC01LjM1XSxcbiAgICBzaGFwZU5hbWVzOiBbJ0dpYnJhbHRhciddLFxuICB9LFxuICB7XG4gICAgaWQ6ICdpbGUtZGUtbWFuLWNvdXJvbm5lLWJyaXRhbm5pcXVlJyxcbiAgICBuYW1lOiAnw45sZSBkZSBNYW4nLFxuICAgIHBhcmVudENvdW50cnk6ICdDb3Vyb25uZSBicml0YW5uaXF1ZScsXG4gICAgbGFiZWw6ICfDjmxlIGRlIE1hbiAoQ291cm9ubmUgYnJpdGFubmlxdWUpJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIHBvbGl0aWNhbFN0YXR1czogJ2Nyb3duRGVwZW5kZW5jeScsXG4gICAgZ2VvZ3JhcGh5OiAnRMOpcGVuZGFuY2UgZGUgbGEgQ291cm9ubmUgc2l0dcOpZSBlbiBtZXIgZOKAmUlybGFuZGUuJyxcbiAgICBwb3NpdGlvbjogWzU0LjI0LCAtNC41NV0sXG4gICAgc2hhcGVOYW1lczogWydJc2xlIG9mIE1hbiddLFxuICB9LFxuICB7XG4gICAgaWQ6ICdqZXJzZXktY291cm9ubmUtYnJpdGFubmlxdWUnLFxuICAgIG5hbWU6ICdKZXJzZXknLFxuICAgIHBhcmVudENvdW50cnk6ICdDb3Vyb25uZSBicml0YW5uaXF1ZScsXG4gICAgbGFiZWw6ICdKZXJzZXkgKENvdXJvbm5lIGJyaXRhbm5pcXVlKScsXG4gICAgY29udGluZW50OiAnRXVyb3BlJyxcbiAgICBwb2xpdGljYWxTdGF0dXM6ICdjcm93bkRlcGVuZGVuY3knLFxuICAgIGdlb2dyYXBoeTogJ0TDqXBlbmRhbmNlIGRlIGxhIENvdXJvbm5lIHNpdHXDqWUgZGFucyBsZXMgw65sZXMgQW5nbG8tTm9ybWFuZGVzLicsXG4gICAgcG9zaXRpb246IFs0OS4yMSwgLTIuMTNdLFxuICAgIHNoYXBlTmFtZXM6IFsnSmVyc2V5J10sXG4gIH0sXG4gIHtcbiAgICBpZDogJ2d1ZXJuZXNleS1jb3Vyb25uZS1icml0YW5uaXF1ZScsXG4gICAgbmFtZTogJ0d1ZXJuZXNleScsXG4gICAgcGFyZW50Q291bnRyeTogJ0NvdXJvbm5lIGJyaXRhbm5pcXVlJyxcbiAgICBsYWJlbDogJ0d1ZXJuZXNleSAoQ291cm9ubmUgYnJpdGFubmlxdWUpJyxcbiAgICBjb250aW5lbnQ6ICdFdXJvcGUnLFxuICAgIHBvbGl0aWNhbFN0YXR1czogJ2Nyb3duRGVwZW5kZW5jeScsXG4gICAgZ2VvZ3JhcGh5OiAnRMOpcGVuZGFuY2UgZGUgbGEgQ291cm9ubmUgc2l0dcOpZSBkYW5zIGxlcyDDrmxlcyBBbmdsby1Ob3JtYW5kZXMuJyxcbiAgICBwb3NpdGlvbjogWzQ5LjQ1LCAtMi41OF0sXG4gICAgc2hhcGVOYW1lczogWydHdWVybnNleSddLFxuICB9LFxuXVxuIl19

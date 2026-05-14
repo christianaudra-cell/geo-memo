@@ -1,0 +1,5 @@
+2026/05/11-19:27:02.478 4960 Creating DB C:\Users\audrachristian\Desktop\geo-memo\.edge-debug\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/05/11-19:27:02.485 4960 Reusing MANIFEST C:\Users\audrachristian\Desktop\geo-memo\.edge-debug\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/05/11-19:27:03.028 37f4 Level-0 table #5: started
+2026/05/11-19:27:03.035 37f4 Level-0 table #5: 682457 bytes OK
+2026/05/11-19:27:03.037 37f4 Delete type=0 #3

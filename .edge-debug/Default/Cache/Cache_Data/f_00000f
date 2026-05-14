@@ -1,0 +1,221 @@
+export const smartCapitalCategories = [
+	{
+		id: "all",
+		label: "Toutes"
+	},
+	{
+		id: "worldMarkers",
+		label: "Repères mondiaux"
+	},
+	{
+		id: "trickyCapitals",
+		label: "Capitales pièges"
+	},
+	{
+		id: "orientationCapitals",
+		label: "Capitales utiles"
+	}
+];
+export const smartCapitals = [
+	{
+		countryName: "France",
+		capital: "Paris",
+		category: "worldMarkers",
+		clue: "Paris sert de repère en Europe de l’Ouest, au nord de la France.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Japon",
+		capital: "Tokyo",
+		category: "worldMarkers",
+		clue: "Tokyo aide à placer le Japon sur la façade pacifique de l’Asie.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Chine",
+		capital: "Pékin",
+		category: "worldMarkers",
+		clue: "Pékin est au nord-est de la Chine, proche de la grande plaine chinoise.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Russie",
+		capital: "Moscou",
+		category: "worldMarkers",
+		clue: "Moscou rappelle que le cœur politique russe est en Europe.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Royaume-Uni",
+		capital: "Londres",
+		category: "worldMarkers",
+		clue: "Londres est un repère majeur sur les îles Britanniques.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Égypte",
+		capital: "Le Caire",
+		category: "worldMarkers",
+		clue: "Le Caire se situe près du delta du Nil, porte entre Afrique et Moyen-Orient.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Mexique",
+		capital: "Mexico",
+		category: "worldMarkers",
+		clue: "Mexico aide à placer le centre du pays entre Amérique du Nord et Amérique centrale.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Argentine",
+		capital: "Buenos Aires",
+		category: "worldMarkers",
+		clue: "Buenos Aires est sur l’Atlantique, face à l’Uruguay.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Brésil",
+		capital: "Brasilia",
+		category: "trickyCapitals",
+		clue: "Piège classique : la capitale n’est pas Rio, mais Brasilia, au centre du pays.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Australie",
+		capital: "Canberra",
+		category: "trickyCapitals",
+		clue: "Canberra est entre Sydney et Melbourne, pas sur la grande côte visible.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Canada",
+		capital: "Ottawa",
+		category: "trickyCapitals",
+		clue: "Ottawa est entre Montréal et Toronto, pas à Vancouver ni Toronto.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Suisse",
+		capital: "Berne",
+		category: "trickyCapitals",
+		clue: "Berne évite le piège Genève ou Zurich, plus connues mais non capitales.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Maroc",
+		capital: "Rabat",
+		category: "trickyCapitals",
+		clue: "Rabat est sur la côte atlantique, au nord-ouest du Maroc.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Turquie",
+		capital: "Ankara",
+		category: "trickyCapitals",
+		clue: "Ankara est au centre de l’Anatolie : ce n’est pas Istanbul.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Nigeria",
+		capital: "Abuja",
+		category: "trickyCapitals",
+		clue: "Abuja est plus centrale que Lagos, pour mieux relier nord et sud du pays.",
+		difficulty: "difficile"
+	},
+	{
+		countryName: "Tanzanie",
+		capital: "Dodoma",
+		category: "trickyCapitals",
+		clue: "Dodoma est au centre de la Tanzanie : Dar es Salaam est plus connue mais pas capitale officielle.",
+		difficulty: "difficile"
+	},
+	{
+		countryName: "Kazakhstan",
+		capital: "Astana",
+		category: "trickyCapitals",
+		clue: "Astana est au nord du Kazakhstan, loin de l’ancienne capitale Almaty.",
+		difficulty: "difficile"
+	},
+	{
+		countryName: "Bolivie",
+		capital: "Sucre / La Paz",
+		category: "trickyCapitals",
+		clue: "Sucre est la capitale constitutionnelle, La Paz le siège du gouvernement.",
+		difficulty: "difficile"
+	},
+	{
+		countryName: "Inde",
+		capital: "New Delhi",
+		category: "orientationCapitals",
+		clue: "New Delhi aide à situer le nord de l’Inde, près de la plaine du Gange.",
+		difficulty: "facile"
+	},
+	{
+		countryName: "Afrique du Sud",
+		capital: "Pretoria",
+		category: "orientationCapitals",
+		clue: "Pretoria se situe au nord-est du pays, près de Johannesburg.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Chili",
+		capital: "Santiago",
+		category: "orientationCapitals",
+		clue: "Santiago est dans la vallée centrale, entre Andes et Pacifique.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Pérou",
+		capital: "Lima",
+		category: "orientationCapitals",
+		clue: "Lima est sur la côte pacifique, utile pour lire l’ouest de l’Amérique du Sud.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Thaïlande",
+		capital: "Bangkok",
+		category: "orientationCapitals",
+		clue: "Bangkok aide à placer le centre de la péninsule indochinoise.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Indonésie",
+		capital: "Jakarta",
+		category: "orientationCapitals",
+		clue: "Jakarta est sur Java, au cœur de l’archipel indonésien.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Vietnam",
+		capital: "Hanoï",
+		category: "orientationCapitals",
+		clue: "Hanoï est au nord du Vietnam, près du delta du fleuve Rouge.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Iran",
+		capital: "Téhéran",
+		category: "orientationCapitals",
+		clue: "Téhéran est au nord de l’Iran, au pied de l’Elbourz.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Arabie saoudite",
+		capital: "Riyad",
+		category: "orientationCapitals",
+		clue: "Riyad est au centre de la péninsule Arabique.",
+		difficulty: "moyen"
+	},
+	{
+		countryName: "Éthiopie",
+		capital: "Addis-Abeba",
+		category: "orientationCapitals",
+		clue: "Addis-Abeba est sur les hauts plateaux de la Corne de l’Afrique.",
+		difficulty: "difficile"
+	}
+];
+export function getSmartCapitalCategoryLabel(categoryId) {
+	return smartCapitalCategories.find((category) => category.id === categoryId)?.label || categoryId;
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJtYXBwaW5ncyI6IkFBQUEsT0FBTyxNQUFNLHlCQUF5QjtDQUNwQztFQUNFLElBQUk7RUFDSixPQUFPO0VBQ1I7Q0FDRDtFQUNFLElBQUk7RUFDSixPQUFPO0VBQ1I7Q0FDRDtFQUNFLElBQUk7RUFDSixPQUFPO0VBQ1I7Q0FDRDtFQUNFLElBQUk7RUFDSixPQUFPO0VBQ1I7Q0FDRjtBQUVELE9BQU8sTUFBTSxnQkFBZ0I7Q0FDM0I7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Q7RUFDRSxhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixNQUFNO0VBQ04sWUFBWTtFQUNiO0NBQ0Y7QUFFRCxPQUFPLFNBQVMsNkJBQTZCLFlBQVk7QUFDdkQsUUFDRSx1QkFBdUIsTUFBTSxhQUFhLFNBQVMsT0FBTyxXQUFXLEVBQ2pFLFNBQVMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsic21hcnRDYXBpdGFscy5qcyJdLCJ2ZXJzaW9uIjozLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3Qgc21hcnRDYXBpdGFsQ2F0ZWdvcmllcyA9IFtcbiAge1xuICAgIGlkOiAnYWxsJyxcbiAgICBsYWJlbDogJ1RvdXRlcycsXG4gIH0sXG4gIHtcbiAgICBpZDogJ3dvcmxkTWFya2VycycsXG4gICAgbGFiZWw6ICdSZXDDqHJlcyBtb25kaWF1eCcsXG4gIH0sXG4gIHtcbiAgICBpZDogJ3RyaWNreUNhcGl0YWxzJyxcbiAgICBsYWJlbDogJ0NhcGl0YWxlcyBwacOoZ2VzJyxcbiAgfSxcbiAge1xuICAgIGlkOiAnb3JpZW50YXRpb25DYXBpdGFscycsXG4gICAgbGFiZWw6ICdDYXBpdGFsZXMgdXRpbGVzJyxcbiAgfSxcbl1cblxuZXhwb3J0IGNvbnN0IHNtYXJ0Q2FwaXRhbHMgPSBbXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ0ZyYW5jZScsXG4gICAgY2FwaXRhbDogJ1BhcmlzJyxcbiAgICBjYXRlZ29yeTogJ3dvcmxkTWFya2VycycsXG4gICAgY2x1ZTogJ1BhcmlzIHNlcnQgZGUgcmVww6hyZSBlbiBFdXJvcGUgZGUgbOKAmU91ZXN0LCBhdSBub3JkIGRlIGxhIEZyYW5jZS4nLFxuICAgIGRpZmZpY3VsdHk6ICdmYWNpbGUnLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdKYXBvbicsXG4gICAgY2FwaXRhbDogJ1Rva3lvJyxcbiAgICBjYXRlZ29yeTogJ3dvcmxkTWFya2VycycsXG4gICAgY2x1ZTogJ1Rva3lvIGFpZGUgw6AgcGxhY2VyIGxlIEphcG9uIHN1ciBsYSBmYcOnYWRlIHBhY2lmaXF1ZSBkZSBs4oCZQXNpZS4nLFxuICAgIGRpZmZpY3VsdHk6ICdmYWNpbGUnLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdDaGluZScsXG4gICAgY2FwaXRhbDogJ1DDqWtpbicsXG4gICAgY2F0ZWdvcnk6ICd3b3JsZE1hcmtlcnMnLFxuICAgIGNsdWU6ICdQw6lraW4gZXN0IGF1IG5vcmQtZXN0IGRlIGxhIENoaW5lLCBwcm9jaGUgZGUgbGEgZ3JhbmRlIHBsYWluZSBjaGlub2lzZS4nLFxuICAgIGRpZmZpY3VsdHk6ICdmYWNpbGUnLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdSdXNzaWUnLFxuICAgIGNhcGl0YWw6ICdNb3Njb3UnLFxuICAgIGNhdGVnb3J5OiAnd29ybGRNYXJrZXJzJyxcbiAgICBjbHVlOiAnTW9zY291IHJhcHBlbGxlIHF1ZSBsZSBjxZN1ciBwb2xpdGlxdWUgcnVzc2UgZXN0IGVuIEV1cm9wZS4nLFxuICAgIGRpZmZpY3VsdHk6ICdmYWNpbGUnLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdSb3lhdW1lLVVuaScsXG4gICAgY2FwaXRhbDogJ0xvbmRyZXMnLFxuICAgIGNhdGVnb3J5OiAnd29ybGRNYXJrZXJzJyxcbiAgICBjbHVlOiAnTG9uZHJlcyBlc3QgdW4gcmVww6hyZSBtYWpldXIgc3VyIGxlcyDDrmxlcyBCcml0YW5uaXF1ZXMuJyxcbiAgICBkaWZmaWN1bHR5OiAnZmFjaWxlJyxcbiAgfSxcbiAge1xuICAgIGNvdW50cnlOYW1lOiAnw4lneXB0ZScsXG4gICAgY2FwaXRhbDogJ0xlIENhaXJlJyxcbiAgICBjYXRlZ29yeTogJ3dvcmxkTWFya2VycycsXG4gICAgY2x1ZTogJ0xlIENhaXJlIHNlIHNpdHVlIHByw6hzIGR1IGRlbHRhIGR1IE5pbCwgcG9ydGUgZW50cmUgQWZyaXF1ZSBldCBNb3llbi1PcmllbnQuJyxcbiAgICBkaWZmaWN1bHR5OiAnZmFjaWxlJyxcbiAgfSxcbiAge1xuICAgIGNvdW50cnlOYW1lOiAnTWV4aXF1ZScsXG4gICAgY2FwaXRhbDogJ01leGljbycsXG4gICAgY2F0ZWdvcnk6ICd3b3JsZE1hcmtlcnMnLFxuICAgIGNsdWU6ICdNZXhpY28gYWlkZSDDoCBwbGFjZXIgbGUgY2VudHJlIGR1IHBheXMgZW50cmUgQW3DqXJpcXVlIGR1IE5vcmQgZXQgQW3DqXJpcXVlIGNlbnRyYWxlLicsXG4gICAgZGlmZmljdWx0eTogJ2ZhY2lsZScsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ0FyZ2VudGluZScsXG4gICAgY2FwaXRhbDogJ0J1ZW5vcyBBaXJlcycsXG4gICAgY2F0ZWdvcnk6ICd3b3JsZE1hcmtlcnMnLFxuICAgIGNsdWU6ICdCdWVub3MgQWlyZXMgZXN0IHN1ciBs4oCZQXRsYW50aXF1ZSwgZmFjZSDDoCBs4oCZVXJ1Z3VheS4nLFxuICAgIGRpZmZpY3VsdHk6ICdtb3llbicsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ0Jyw6lzaWwnLFxuICAgIGNhcGl0YWw6ICdCcmFzaWxpYScsXG4gICAgY2F0ZWdvcnk6ICd0cmlja3lDYXBpdGFscycsXG4gICAgY2x1ZTogJ1Bpw6hnZSBjbGFzc2lxdWUgOiBsYSBjYXBpdGFsZSBu4oCZZXN0IHBhcyBSaW8sIG1haXMgQnJhc2lsaWEsIGF1IGNlbnRyZSBkdSBwYXlzLicsXG4gICAgZGlmZmljdWx0eTogJ21veWVuJyxcbiAgfSxcbiAge1xuICAgIGNvdW50cnlOYW1lOiAnQXVzdHJhbGllJyxcbiAgICBjYXBpdGFsOiAnQ2FuYmVycmEnLFxuICAgIGNhdGVnb3J5OiAndHJpY2t5Q2FwaXRhbHMnLFxuICAgIGNsdWU6ICdDYW5iZXJyYSBlc3QgZW50cmUgU3lkbmV5IGV0IE1lbGJvdXJuZSwgcGFzIHN1ciBsYSBncmFuZGUgY8O0dGUgdmlzaWJsZS4nLFxuICAgIGRpZmZpY3VsdHk6ICdtb3llbicsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ0NhbmFkYScsXG4gICAgY2FwaXRhbDogJ090dGF3YScsXG4gICAgY2F0ZWdvcnk6ICd0cmlja3lDYXBpdGFscycsXG4gICAgY2x1ZTogJ090dGF3YSBlc3QgZW50cmUgTW9udHLDqWFsIGV0IFRvcm9udG8sIHBhcyDDoCBWYW5jb3V2ZXIgbmkgVG9yb250by4nLFxuICAgIGRpZmZpY3VsdHk6ICdtb3llbicsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ1N1aXNzZScsXG4gICAgY2FwaXRhbDogJ0Jlcm5lJyxcbiAgICBjYXRlZ29yeTogJ3RyaWNreUNhcGl0YWxzJyxcbiAgICBjbHVlOiAnQmVybmUgw6l2aXRlIGxlIHBpw6hnZSBHZW7DqHZlIG91IFp1cmljaCwgcGx1cyBjb25udWVzIG1haXMgbm9uIGNhcGl0YWxlcy4nLFxuICAgIGRpZmZpY3VsdHk6ICdtb3llbicsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ01hcm9jJyxcbiAgICBjYXBpdGFsOiAnUmFiYXQnLFxuICAgIGNhdGVnb3J5OiAndHJpY2t5Q2FwaXRhbHMnLFxuICAgIGNsdWU6ICdSYWJhdCBlc3Qgc3VyIGxhIGPDtHRlIGF0bGFudGlxdWUsIGF1IG5vcmQtb3Vlc3QgZHUgTWFyb2MuJyxcbiAgICBkaWZmaWN1bHR5OiAnbW95ZW4nLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdUdXJxdWllJyxcbiAgICBjYXBpdGFsOiAnQW5rYXJhJyxcbiAgICBjYXRlZ29yeTogJ3RyaWNreUNhcGl0YWxzJyxcbiAgICBjbHVlOiAnQW5rYXJhIGVzdCBhdSBjZW50cmUgZGUgbOKAmUFuYXRvbGllIDogY2UgbuKAmWVzdCBwYXMgSXN0YW5idWwuJyxcbiAgICBkaWZmaWN1bHR5OiAnbW95ZW4nLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdOaWdlcmlhJyxcbiAgICBjYXBpdGFsOiAnQWJ1amEnLFxuICAgIGNhdGVnb3J5OiAndHJpY2t5Q2FwaXRhbHMnLFxuICAgIGNsdWU6ICdBYnVqYSBlc3QgcGx1cyBjZW50cmFsZSBxdWUgTGFnb3MsIHBvdXIgbWlldXggcmVsaWVyIG5vcmQgZXQgc3VkIGR1IHBheXMuJyxcbiAgICBkaWZmaWN1bHR5OiAnZGlmZmljaWxlJyxcbiAgfSxcbiAge1xuICAgIGNvdW50cnlOYW1lOiAnVGFuemFuaWUnLFxuICAgIGNhcGl0YWw6ICdEb2RvbWEnLFxuICAgIGNhdGVnb3J5OiAndHJpY2t5Q2FwaXRhbHMnLFxuICAgIGNsdWU6ICdEb2RvbWEgZXN0IGF1IGNlbnRyZSBkZSBsYSBUYW56YW5pZSA6IERhciBlcyBTYWxhYW0gZXN0IHBsdXMgY29ubnVlIG1haXMgcGFzIGNhcGl0YWxlIG9mZmljaWVsbGUuJyxcbiAgICBkaWZmaWN1bHR5OiAnZGlmZmljaWxlJyxcbiAgfSxcbiAge1xuICAgIGNvdW50cnlOYW1lOiAnS2F6YWtoc3RhbicsXG4gICAgY2FwaXRhbDogJ0FzdGFuYScsXG4gICAgY2F0ZWdvcnk6ICd0cmlja3lDYXBpdGFscycsXG4gICAgY2x1ZTogJ0FzdGFuYSBlc3QgYXUgbm9yZCBkdSBLYXpha2hzdGFuLCBsb2luIGRlIGzigJlhbmNpZW5uZSBjYXBpdGFsZSBBbG1hdHkuJyxcbiAgICBkaWZmaWN1bHR5OiAnZGlmZmljaWxlJyxcbiAgfSxcbiAge1xuICAgIGNvdW50cnlOYW1lOiAnQm9saXZpZScsXG4gICAgY2FwaXRhbDogJ1N1Y3JlIC8gTGEgUGF6JyxcbiAgICBjYXRlZ29yeTogJ3RyaWNreUNhcGl0YWxzJyxcbiAgICBjbHVlOiAnU3VjcmUgZXN0IGxhIGNhcGl0YWxlIGNvbnN0aXR1dGlvbm5lbGxlLCBMYSBQYXogbGUgc2nDqGdlIGR1IGdvdXZlcm5lbWVudC4nLFxuICAgIGRpZmZpY3VsdHk6ICdkaWZmaWNpbGUnLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdJbmRlJyxcbiAgICBjYXBpdGFsOiAnTmV3IERlbGhpJyxcbiAgICBjYXRlZ29yeTogJ29yaWVudGF0aW9uQ2FwaXRhbHMnLFxuICAgIGNsdWU6ICdOZXcgRGVsaGkgYWlkZSDDoCBzaXR1ZXIgbGUgbm9yZCBkZSBs4oCZSW5kZSwgcHLDqHMgZGUgbGEgcGxhaW5lIGR1IEdhbmdlLicsXG4gICAgZGlmZmljdWx0eTogJ2ZhY2lsZScsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ0FmcmlxdWUgZHUgU3VkJyxcbiAgICBjYXBpdGFsOiAnUHJldG9yaWEnLFxuICAgIGNhdGVnb3J5OiAnb3JpZW50YXRpb25DYXBpdGFscycsXG4gICAgY2x1ZTogJ1ByZXRvcmlhIHNlIHNpdHVlIGF1IG5vcmQtZXN0IGR1IHBheXMsIHByw6hzIGRlIEpvaGFubmVzYnVyZy4nLFxuICAgIGRpZmZpY3VsdHk6ICdtb3llbicsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ0NoaWxpJyxcbiAgICBjYXBpdGFsOiAnU2FudGlhZ28nLFxuICAgIGNhdGVnb3J5OiAnb3JpZW50YXRpb25DYXBpdGFscycsXG4gICAgY2x1ZTogJ1NhbnRpYWdvIGVzdCBkYW5zIGxhIHZhbGzDqWUgY2VudHJhbGUsIGVudHJlIEFuZGVzIGV0IFBhY2lmaXF1ZS4nLFxuICAgIGRpZmZpY3VsdHk6ICdtb3llbicsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ1DDqXJvdScsXG4gICAgY2FwaXRhbDogJ0xpbWEnLFxuICAgIGNhdGVnb3J5OiAnb3JpZW50YXRpb25DYXBpdGFscycsXG4gICAgY2x1ZTogJ0xpbWEgZXN0IHN1ciBsYSBjw7R0ZSBwYWNpZmlxdWUsIHV0aWxlIHBvdXIgbGlyZSBs4oCZb3Vlc3QgZGUgbOKAmUFtw6lyaXF1ZSBkdSBTdWQuJyxcbiAgICBkaWZmaWN1bHR5OiAnbW95ZW4nLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdUaGHDr2xhbmRlJyxcbiAgICBjYXBpdGFsOiAnQmFuZ2tvaycsXG4gICAgY2F0ZWdvcnk6ICdvcmllbnRhdGlvbkNhcGl0YWxzJyxcbiAgICBjbHVlOiAnQmFuZ2tvayBhaWRlIMOgIHBsYWNlciBsZSBjZW50cmUgZGUgbGEgcMOpbmluc3VsZSBpbmRvY2hpbm9pc2UuJyxcbiAgICBkaWZmaWN1bHR5OiAnbW95ZW4nLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdJbmRvbsOpc2llJyxcbiAgICBjYXBpdGFsOiAnSmFrYXJ0YScsXG4gICAgY2F0ZWdvcnk6ICdvcmllbnRhdGlvbkNhcGl0YWxzJyxcbiAgICBjbHVlOiAnSmFrYXJ0YSBlc3Qgc3VyIEphdmEsIGF1IGPFk3VyIGRlIGzigJlhcmNoaXBlbCBpbmRvbsOpc2llbi4nLFxuICAgIGRpZmZpY3VsdHk6ICdtb3llbicsXG4gIH0sXG4gIHtcbiAgICBjb3VudHJ5TmFtZTogJ1ZpZXRuYW0nLFxuICAgIGNhcGl0YWw6ICdIYW5vw68nLFxuICAgIGNhdGVnb3J5OiAnb3JpZW50YXRpb25DYXBpdGFscycsXG4gICAgY2x1ZTogJ0hhbm/DryBlc3QgYXUgbm9yZCBkdSBWaWV0bmFtLCBwcsOocyBkdSBkZWx0YSBkdSBmbGV1dmUgUm91Z2UuJyxcbiAgICBkaWZmaWN1bHR5OiAnbW95ZW4nLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdJcmFuJyxcbiAgICBjYXBpdGFsOiAnVMOpaMOpcmFuJyxcbiAgICBjYXRlZ29yeTogJ29yaWVudGF0aW9uQ2FwaXRhbHMnLFxuICAgIGNsdWU6ICdUw6low6lyYW4gZXN0IGF1IG5vcmQgZGUgbOKAmUlyYW4sIGF1IHBpZWQgZGUgbOKAmUVsYm91cnouJyxcbiAgICBkaWZmaWN1bHR5OiAnbW95ZW4nLFxuICB9LFxuICB7XG4gICAgY291bnRyeU5hbWU6ICdBcmFiaWUgc2FvdWRpdGUnLFxuICAgIGNhcGl0YWw6ICdSaXlhZCcsXG4gICAgY2F0ZWdvcnk6ICdvcmllbnRhdGlvbkNhcGl0YWxzJyxcbiAgICBjbHVlOiAnUml5YWQgZXN0IGF1IGNlbnRyZSBkZSBsYSBww6luaW5zdWxlIEFyYWJpcXVlLicsXG4gICAgZGlmZmljdWx0eTogJ21veWVuJyxcbiAgfSxcbiAge1xuICAgIGNvdW50cnlOYW1lOiAnw4l0aGlvcGllJyxcbiAgICBjYXBpdGFsOiAnQWRkaXMtQWJlYmEnLFxuICAgIGNhdGVnb3J5OiAnb3JpZW50YXRpb25DYXBpdGFscycsXG4gICAgY2x1ZTogJ0FkZGlzLUFiZWJhIGVzdCBzdXIgbGVzIGhhdXRzIHBsYXRlYXV4IGRlIGxhIENvcm5lIGRlIGzigJlBZnJpcXVlLicsXG4gICAgZGlmZmljdWx0eTogJ2RpZmZpY2lsZScsXG4gIH0sXG5dXG5cbmV4cG9ydCBmdW5jdGlvbiBnZXRTbWFydENhcGl0YWxDYXRlZ29yeUxhYmVsKGNhdGVnb3J5SWQpIHtcbiAgcmV0dXJuIChcbiAgICBzbWFydENhcGl0YWxDYXRlZ29yaWVzLmZpbmQoKGNhdGVnb3J5KSA9PiBjYXRlZ29yeS5pZCA9PT0gY2F0ZWdvcnlJZClcbiAgICAgID8ubGFiZWwgfHwgY2F0ZWdvcnlJZFxuICApXG59XG4iXX0=
