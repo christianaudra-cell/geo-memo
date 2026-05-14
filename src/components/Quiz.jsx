@@ -346,12 +346,16 @@ function getAnswerPool(countries, continents, quizType) {
   return countries.map((country) => country.name)
 }
 
-function makeQuestion(items, countries, continents, quizType) {
+function makeQuestion(items, countries, continents, quizType, excludeItemId = null) {
   if (items.length === 0) {
     return null
   }
 
-  const item = items[Math.floor(Math.random() * items.length)]
+  const availableItems = excludeItemId
+    ? items.filter((item) => getItemId(item) !== excludeItemId)
+    : items
+  const selectableItems = availableItems.length > 0 ? availableItems : items
+  const item = selectableItems[Math.floor(Math.random() * selectableItems.length)]
   const correctAnswer = getCorrectAnswer(item, quizType)
 
   if (isMapQuizType(quizType)) {
@@ -1186,12 +1190,15 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
       return
     }
 
+    const currentQuestionId = question?.item ? getItemId(question.item) : null
+
     setQuestion(
       makeQuestion(
         nextItems,
         quizCountries,
         continents,
         quizType,
+        currentQuestionId,
       ),
     )
     setSelectedAnswer('')

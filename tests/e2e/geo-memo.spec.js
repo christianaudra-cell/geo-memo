@@ -264,6 +264,53 @@ test('quiz image', async ({ page }) => {
   await expect(nextButton).toBeInViewport()
 })
 
+test('quiz image sans répétition immédiate sur 10 questions', async ({ page }) => {
+  await page.route('https://**/*', async (route) => {
+    if (route.request().resourceType() === 'image') {
+      await route.fulfill({
+        body: Buffer.from(
+          'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/p9sAAAAASUVORK5CYII=',
+          'base64',
+        ),
+        contentType: 'image/png',
+      })
+      return
+    }
+
+    await route.continue()
+  })
+
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+  await selectQuizType(page, 'Trouver le pays avec une image')
+
+  await expect(page.getByText(/Images réussies/i)).toBeVisible()
+  await expect(page.getByText(/Images restantes/i)).toBeVisible()
+
+  let previousAlt = null
+
+  for (let questionIndex = 0; questionIndex < 10; questionIndex += 1) {
+    const image = page.locator('.quiz-image').first()
+    await expect(image).toBeVisible()
+
+    const imageAlt = await image.getAttribute('alt')
+    await expect(imageAlt).not.toBeNull()
+
+    if (previousAlt !== null) {
+      expect(imageAlt).not.toBe(previousAlt)
+    }
+
+    await page.locator('.answer-grid button').first().click()
+
+    if (questionIndex < 9) {
+      const nextButton = page.getByRole('button', { name: /Question suivante/i })
+      await expect(nextButton).toBeVisible()
+      await nextButton.click()
+      previousAlt = imageAlt
+    }
+  }
+})
+
 test('drapeaux visibles sur fond clair', async ({ page }) => {
   await openHome(page)
   await openModule(page, /Quiz/i)
