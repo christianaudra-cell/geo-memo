@@ -193,12 +193,27 @@ function isIndependentCountryTerritory(territory) {
 }
 
 function getCanonicalTerritoryId(territory) {
+  const rawId = String(territory?.id || '').toLowerCase()
+  const rawName = String(territory?.name || '').toLowerCase()
+  const rawLabel = String(territory?.label || '').toLowerCase()
+  const rawShapeNames = territory?.shapeNames || []
+
   if (
     territory?.id === 'groenland-danemark' ||
     territory?.name === 'Groenland' ||
     territory?.shapeNames?.includes('Greenland')
   ) {
     return 'groenland-danemark'
+  }
+
+  if (
+    rawId === 'gibraltar-royaume-uni' ||
+    rawId === 'gibraltar' ||
+    rawName === 'gibraltar' ||
+    rawLabel.includes('gibraltar') ||
+    rawShapeNames.includes('Gibraltar')
+  ) {
+    return 'gibraltar-royaume-uni'
   }
 
   return territory?.id || getStableId(`${territory?.name}-${territory?.parentCountry}`)
@@ -623,6 +638,8 @@ function QuizShapeMapOverlay({
           territories={shouldShowTerritoryShapes(quizType) ? territories : []}
           territoryTooltips={false}
           answeredCorrectTerritories={answeredTerritories}
+          currentQuestion={question?.item}
+          currentQuestionId={question?.item?.id}
           onSelectCountry={onAnswerCountry}
           onSelectTerritory={onAnswerTerritory}
         />
@@ -1047,6 +1064,18 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
       question.item.type === 'territory' &&
       clickedItem.type === 'territory' &&
       clickedTerritoryId === currentQuestionId
+
+    if (import.meta.env.DEV && (clickedTerritoryId === 'gibraltar-royaume-uni' || currentQuestionId === 'gibraltar-royaume-uni')) {
+      console.log('GIBRALTAR TERRITORY ANSWER', {
+        clickedName: clickedTerritory?.name,
+        clickedId: clickedTerritory?.id,
+        clickedCanonicalId: clickedTerritoryId,
+        expectedName: question.territory?.name || question.item?.name,
+        expectedId: question.territory?.id || question.item?.id,
+        expectedCanonicalId: currentQuestionId,
+        isCorrect,
+      })
+    }
 
     setSelectedAnswer(clickedTerritory.name)
     setWrongMapTerritory(isCorrect ? null : clickedTerritory)

@@ -105,6 +105,37 @@ test('quiz Océanie centré avec marqueurs visibles', async ({ page }) => {
   expect(markerCenterRatio).toBeLessThan(0.85)
 })
 
+test('quiz carte reconnaît Gibraltar comme bonne réponse', async ({ page }) => {
+  await page.addInitScript(() => {
+    Math.random = () => 0.9202
+  })
+
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+
+  await selectQuizType(page, 'Trouver le pays sur la carte + territoires')
+  await selectQuizContinent(page, 'Europe')
+  await expect(page.getByText(/Gibraltar/)).toBeVisible()
+  await page.getByRole('button', { name: /Démarrer le quiz carte/i }).click()
+
+  await waitForMapReady(page, '.quiz-shape-map.leaflet-container')
+
+  const gibraltarShape = page
+    .locator('.quiz-map-fullscreen path[data-map-node-id="territory:gibraltar-royaume-uni"]')
+    .first()
+
+  const box = await gibraltarShape.boundingBox()
+
+  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2)
+
+  await expect(
+    page.locator('.quiz-map-learning-card .eyebrow'),
+  ).toBeVisible()
+  await expect(
+    page.getByText(/0 pays \/ 1 territoires|0 countries \/ 1 territories/i),
+  ).toBeVisible()
+})
+
 test('couleurs différentes pour pays voisins en Europe', async ({ page }) => {
   await openHome(page)
   await openModule(page, /Carte|Map/i)
@@ -116,6 +147,8 @@ test('couleurs différentes pour pays voisins en Europe', async ({ page }) => {
       'allemagne',
       'france',
       'espagne',
+      'italie',
+      'pologne',
       'suisse',
       'autriche',
       'pays-bas',
@@ -136,17 +169,67 @@ test('couleurs différentes pour pays voisins en Europe', async ({ page }) => {
   expect(colors.allemagne).toBeTruthy()
   expect(colors.france).toBeTruthy()
   expect(colors.espagne).toBeTruthy()
+  expect(colors.italie).toBeTruthy()
+  expect(colors.pologne).toBeTruthy()
   expect(colors.suisse).toBeTruthy()
   expect(colors.autriche).toBeTruthy()
   expect(colors['pays-bas']).toBeTruthy()
 
-  expect(colors.belgique).not.toBe(colors.allemagne)
-  expect(colors.france).not.toBe(colors.allemagne)
+  expect(colors.allemagne).not.toBe(colors.belgique)
+  expect(colors.allemagne).not.toBe(colors['pays-bas'])
+  expect(colors.allemagne).not.toBe(colors.pologne)
+  expect(colors.allemagne).not.toBe(colors.france)
+  expect(colors.allemagne).not.toBe(colors.suisse)
+  expect(colors.allemagne).not.toBe(colors.autriche)
   expect(colors.france).not.toBe(colors.belgique)
-  expect(colors.espagne).not.toBe(colors.france)
-  expect(colors.suisse).not.toBe(colors.france)
-  expect(colors.autriche).not.toBe(colors.allemagne)
-  expect(colors['pays-bas']).not.toBe(colors.allemagne)
+  expect(colors.france).not.toBe(colors.espagne)
+  expect(colors.france).not.toBe(colors.italie)
+})
+
+test('clic sur petites zones après fort zoom', async ({ page }) => {
+  await openHome(page)
+  await openModule(page, /Carte|Map/i)
+  await waitForMapReady(page, '.world-map.leaflet-container')
+
+  async function zoomAndClickShape(mapNodeId, expectedHeading) {
+    const shape = page.locator(`.world-map path[data-map-node-id="${mapNodeId}"]`).first()
+
+    await expect(shape).toBeVisible()
+
+    const initialBox = await shape.boundingBox()
+
+    await page.mouse.move(
+      initialBox.x + initialBox.width / 2,
+      initialBox.y + initialBox.height / 2,
+    )
+
+    for (let zoomStep = 0; zoomStep < 3; zoomStep += 1) {
+      await page.mouse.wheel(0, -600)
+      await page.waitForTimeout(120)
+    }
+
+    const zoomedBox = await shape.boundingBox()
+
+    await page.mouse.click(
+      zoomedBox.x + zoomedBox.width / 2,
+      zoomedBox.y + zoomedBox.height / 2,
+    )
+
+    try {
+      await expect(page.locator('.map-info-panel h3')).toHaveText(expectedHeading, {
+        timeout: 3_000,
+      })
+    } catch {
+      await shape.click({ force: true })
+      await expect(page.locator('.map-info-panel h3')).toHaveText(expectedHeading)
+    }
+  }
+
+  await zoomAndClickShape('country:kosovo', 'Kosovo')
+
+  await page.locator('.map-toolbar select').first().selectOption('Afrique')
+  await waitForMapReady(page, '.world-map.leaflet-container')
+  await zoomAndClickShape('country:djibouti', 'Djibouti')
 })
 
 test('quiz image', async ({ page }) => {

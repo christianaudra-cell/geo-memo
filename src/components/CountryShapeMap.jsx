@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo } from 'react'
-import { CircleMarker, GeoJSON, Pane, useMap } from 'react-leaflet'
+import { CircleMarker, GeoJSON, Pane, useMap, useMapEvents } from 'react-leaflet'
 import { feature } from 'topojson-client'
 import countriesAtlas from 'world-atlas/countries-10m.json'
 import { countryShapeNames } from '../data/countryShapeNames'
@@ -122,6 +122,7 @@ const COUNTRY_PATH_STYLE = {
   className: 'country-shape',
   lineCap: 'round',
   lineJoin: 'round',
+  pointerEvents: 'auto',
 }
 const MARINE_OUTLINE_STYLE = {
   color: '#9fd0e7',
@@ -129,6 +130,7 @@ const MARINE_OUTLINE_STYLE = {
   fillOpacity: 0,
   interactive: false,
   opacity: 0.82,
+  pointerEvents: 'none',
   weight: 4.5,
 }
 const COUNTRY_VALIDATED_STYLE = {
@@ -153,6 +155,7 @@ const GUIDED_REFERENCE_HALO_STYLE = {
   fillColor: '#fbbf24',
   fillOpacity: 0.14,
   opacity: 0.75,
+  pointerEvents: 'none',
   weight: 3,
 }
 const TERRITORY_BASE_STYLE = {
@@ -250,6 +253,55 @@ function getPreferredColors(mapNodeId) {
   )
 }
 
+const MANUAL_EUROPE_ADJACENCY = [
+  ['allemagne', 'belgique'],
+  ['allemagne', 'pays-bas'],
+  ['allemagne', 'pologne'],
+  ['allemagne', 'france'],
+  ['allemagne', 'suisse'],
+  ['allemagne', 'autriche'],
+  ['france', 'belgique'],
+  ['france', 'espagne'],
+  ['france', 'italie'],
+  ['france', 'suisse'],
+  ['france', 'pays-bas'],
+  ['belgique', 'pays-bas'],
+  ['belgique', 'luxembourg'],
+  ['belgique', 'france'],
+  ['pays-bas', 'allemagne'],
+  ['pologne', 'allemagne'],
+  ['suisse', 'italie'],
+  ['suisse', 'autriche'],
+  ['suisse', 'france'],
+  ['autriche', 'italie'],
+  ['autriche', 'slovenie'],
+  ['espagne', 'portugal'],
+]
+
+function addAdjacencyEdge(adjacency, firstNodeId, secondNodeId) {
+  if (firstNodeId === secondNodeId) {
+    return
+  }
+
+  adjacency[firstNodeId] ||= new Set()
+  adjacency[secondNodeId] ||= new Set()
+  adjacency[firstNodeId].add(secondNodeId)
+  adjacency[secondNodeId].add(firstNodeId)
+}
+
+function addManualEuropeAdjacency(adjacency) {
+  for (const [firstCountryId, secondCountryId] of MANUAL_EUROPE_ADJACENCY) {
+    const firstNodeId = `country:${firstCountryId}`
+    const secondNodeId = `country:${secondCountryId}`
+
+    if (!adjacency[firstNodeId] && !adjacency[secondNodeId]) {
+      continue
+    }
+
+    addAdjacencyEdge(adjacency, firstNodeId, secondNodeId)
+  }
+}
+
 function getAreaAdjacency(shapeFeatures) {
   const adjacency = {}
   const nodeIdsBySegment = new Map()
@@ -296,13 +348,12 @@ function getAreaAdjacency(shapeFeatures) {
           continue
         }
 
-        adjacency[firstNodeId] ||= new Set()
-        adjacency[secondNodeId] ||= new Set()
-        adjacency[firstNodeId].add(secondNodeId)
-        adjacency[secondNodeId].add(firstNodeId)
+        addAdjacencyEdge(adjacency, firstNodeId, secondNodeId)
       }
     }
   }
+
+  addManualEuropeAdjacency(adjacency)
 
   return adjacency
 }
@@ -892,6 +943,201 @@ function MapClickDebugger() {
   return null
 }
 
+function markMapClickHandled(event) {
+  if (event?.originalEvent) {
+    event.originalEvent._geoMemoShapeHandled = true
+  }
+}
+
+function isMapClickHandled(event) {
+  return Boolean(event?.originalEvent?._geoMemoShapeHandled)
+}
+
+function getPointLngLat(latlng) {
+  return [latlng.lng, latlng.lat]
+}
+
+function isPointInRing(point, ring) {
+  let isInside = false
+  const [pointLng, pointLat] = point
+
+  for (let currentIndex = 0, previousIndex = ring.length - 1;
+    currentIndex < ring.length;
+    previousIndex = currentIndex, currentIndex += 1
+  ) {
+    const [currentLng, currentLat] = ring[currentIndex]
+    const [previousLng, previousLat] = ring[previousIndex]
+    const intersects =
+      currentLat > pointLat !== previousLat > pointLat &&
+      pointLng <
+        ((previousLng - currentLng) * (pointLat - currentLat)) /
+          (previousLat - currentLat || Number.EPSILON) +
+          currentLng
+
+    if (intersects) {
+      isInside = !isInside
+    }
+  }
+
+  return isInside
+}
+
+function isPointInPolygon(point, polygon) {
+  if (!polygon.length || !isPointInRing(point, polygon[0])) {
+    return false
+  }
+
+  return !polygon.slice(1).some((ring) => isPointInRing(point, ring))
+}
+
+function isPointInGeometry(point, geometry) {
+  if (!geometry) {
+    return false
+  }
+
+  if (geometry.type === 'Polygon') {
+    return isPointInPolygon(point, geometry.coordinates)
+  }
+
+  if (geometry.type === 'MultiPolygon') {
+    return geometry.coordinates.some((polygon) => isPointInPolygon(point, polygon))
+  }
+
+  return false
+}
+
+function getGeometryBounds(geometry) {
+  const rings = getGeometryRings(geometry)
+  const coordinates = rings.flat()
+
+  if (coordinates.length === 0) {
+    return null
+  }
+
+  const longitudes = coordinates.map(([lng]) => lng)
+  const latitudes = coordinates.map(([, lat]) => lat)
+
+  return {
+    maxLat: Math.max(...latitudes),
+    maxLng: Math.max(...longitudes),
+    minLat: Math.min(...latitudes),
+    minLng: Math.min(...longitudes),
+  }
+}
+
+function getGeometryAreaScore(geometry) {
+  const bounds = getGeometryBounds(geometry)
+
+  if (!bounds) {
+    return Number.MAX_SAFE_INTEGER
+  }
+
+  return Math.abs(bounds.maxLng - bounds.minLng) * Math.abs(bounds.maxLat - bounds.minLat)
+}
+
+function getProjectedBounds(map, geometry) {
+  const bounds = getGeometryBounds(geometry)
+
+  if (!bounds) {
+    return null
+  }
+
+  const northWest = map.latLngToLayerPoint([bounds.maxLat, bounds.minLng])
+  const southEast = map.latLngToLayerPoint([bounds.minLat, bounds.maxLng])
+
+  return {
+    bottom: Math.max(northWest.y, southEast.y),
+    left: Math.min(northWest.x, southEast.x),
+    right: Math.max(northWest.x, southEast.x),
+    top: Math.min(northWest.y, southEast.y),
+  }
+}
+
+function isLayerPointInPaddedBounds(layerPoint, bounds, padding) {
+  return (
+    layerPoint.x >= bounds.left - padding &&
+    layerPoint.x <= bounds.right + padding &&
+    layerPoint.y >= bounds.top - padding &&
+    layerPoint.y <= bounds.bottom + padding
+  )
+}
+
+function isMicroFeatureFallbackHit(map, layerPoint, geometry) {
+  const bounds = getProjectedBounds(map, geometry)
+
+  if (!bounds) {
+    return false
+  }
+
+  const width = bounds.right - bounds.left
+  const height = bounds.bottom - bounds.top
+  const isMicroFeature = Math.max(width, height) < 32
+
+  return isMicroFeature && isLayerPointInPaddedBounds(layerPoint, bounds, 10)
+}
+
+function getFallbackFeatureHit(map, event, featureItems) {
+  const point = getPointLngLat(event.latlng)
+  const layerPoint = event.layerPoint || map.latLngToLayerPoint(event.latlng)
+  const hits = featureItems
+    .filter(({ feature: shapeFeature }) =>
+      isPointInGeometry(point, shapeFeature.geometry) ||
+      isMicroFeatureFallbackHit(map, layerPoint, shapeFeature.geometry),
+    )
+    .sort(
+      (firstItem, secondItem) =>
+        getGeometryAreaScore(firstItem.feature.geometry) -
+        getGeometryAreaScore(secondItem.feature.geometry),
+    )
+
+  return hits[0] || null
+}
+
+function MapFeatureClickFallback({
+  answeredCorrectCountries,
+  answeredCorrectTerritories,
+  countryFeatureItems,
+  isQuizMode,
+  onSelectCountry,
+  onSelectTerritory,
+  territoryFeatureItems,
+}) {
+  const map = useMapEvents({
+    click(event) {
+      if (isMapClickHandled(event)) {
+        return
+      }
+
+      const territoryHit = getFallbackFeatureHit(map, event, territoryFeatureItems)
+
+      if (territoryHit) {
+        if (
+          !isQuizMode ||
+          !isTerritoryAnswered(territoryHit.territory, answeredCorrectTerritories)
+        ) {
+          markMapClickHandled(event)
+          onSelectTerritory?.(territoryHit.territory, territoryHit.feature)
+        }
+
+        return
+      }
+
+      const countryHit = getFallbackFeatureHit(map, event, countryFeatureItems)
+
+      if (
+        countryHit &&
+        (!isQuizMode ||
+          !isCountryAnswered(countryHit.country, answeredCorrectCountries))
+      ) {
+        markMapClickHandled(event)
+        onSelectCountry?.(countryHit.country)
+      }
+    },
+  })
+
+  return null
+}
+
 function getShapeStyle(feature, countryByShapeName, options) {
   const country = countryByShapeName[feature.properties.name]
   const isCountryInQuiz = Boolean(country)
@@ -987,6 +1233,8 @@ function getCanonicalTerritoryId(shapeFeature, territory) {
   const geoJsonName = shapeFeature?.properties?.geoJsonName
   const featureName = shapeFeature?.properties?.name
   const featureId = shapeFeature?.id || shapeFeature?.properties?.id
+  const territoryId = territory?.id || shapeFeature?.properties?.territoryId
+  const territoryName = territory?.name || shapeFeature?.properties?.territoryName
 
   if (
     geoJsonName === 'Greenland' ||
@@ -998,8 +1246,19 @@ function getCanonicalTerritoryId(shapeFeature, territory) {
     return 'groenland-danemark'
   }
 
+  if (
+    territoryId === 'gibraltar-royaume-uni' ||
+    territoryId === 'Gibraltar' ||
+    territoryName === 'Gibraltar' ||
+    geoJsonName === 'Gibraltar' ||
+    featureName === 'Gibraltar' ||
+    featureId === 'Gibraltar'
+  ) {
+    return 'gibraltar-royaume-uni'
+  }
+
   return (
-    territory?.id ||
+    territoryId ||
     shapeFeature?.properties?.territoryId ||
     shapeFeature?.properties?.id ||
     null
@@ -1198,6 +1457,16 @@ function CountryShapeMap({
       ),
     [highlightedCountryIds, visibleCountryFeatures],
   )
+  const countryFeatureItems = useMemo(
+    () =>
+      visibleCountryFeatures
+        .map((shapeFeature) => ({
+          country: countryByShapeName[shapeFeature.properties.name],
+          feature: shapeFeature,
+        }))
+        .filter(({ country }) => country),
+    [countryByShapeName, visibleCountryFeatures],
+  )
   const visibleTerritoryFeatureItems = territoryFeatureItems
     .filter(({ territory }) => territoryByName[territory.name])
     .filter(
@@ -1342,13 +1611,13 @@ function CountryShapeMap({
       type: 'territory',
     }
 
-    if (import.meta.env.DEV && isGreenlandTerritory(resolvedTerritory)) {
+    if (import.meta.env.DEV && (isGreenlandTerritory(resolvedTerritory) || resolvedTerritory.id === 'gibraltar-royaume-uni')) {
       console.log(
-        'GREENLAND CLICK HANDLER FIRED',
+        'TERRITORY CLICK HANDLER FIRED',
         shapeFeature?.properties,
         resolvedTerritory,
       )
-      console.log('GREENLAND VALIDATION TEST', {
+      console.log('TERRITORY VALIDATION TEST', {
         clickedId: resolvedTerritory.id,
         clickedType: resolvedTerritory.type,
         currentQuestionId: currentQuestion?.id || currentQuestionId,
@@ -1373,7 +1642,20 @@ function CountryShapeMap({
     <>
       {/* <MapClickDebugger /> */}
 
-      <Pane name="country-marine-outline" style={{ zIndex: 390 }}>
+      <MapFeatureClickFallback
+        answeredCorrectCountries={answeredCorrectCountries}
+        answeredCorrectTerritories={answeredCorrectTerritories}
+        countryFeatureItems={countryFeatureItems}
+        isQuizMode={isQuizMode}
+        onSelectCountry={onSelectCountry}
+        onSelectTerritory={handleTerritoryClick}
+        territoryFeatureItems={visibleTerritoryFeatureItems}
+      />
+
+      <Pane
+        name="country-marine-outline"
+        style={{ zIndex: 390, pointerEvents: 'none' }}
+      >
         <GeoJSON
           data={visibleCountryFeatures}
           interactive={false}
@@ -1401,7 +1683,9 @@ function CountryShapeMap({
                 element.dataset.mapNodeId = getCountryMapNodeId(country)
               }
             },
-            click: () => {
+            click: (event) => {
+              markMapClickHandled(event)
+
               if (import.meta.env.DEV && isUnitedStatesCountry(country)) {
                 console.log('CLICK USA', getCountryId(country), currentQuestionId)
                 console.log(
@@ -1501,7 +1785,9 @@ function CountryShapeMap({
                       : getTerritoryStyle(resolvedTerritory, areaColorById),
                   )
                 },
-                click: () => {
+                click: (event) => {
+                  markMapClickHandled(event)
+
                   if (
                     !isQuizMode ||
                     !isTerritoryAnswered(
@@ -1576,7 +1862,16 @@ function CountryShapeMap({
                   bubblingMouseEvents={false}
                   center={territory.position}
                   eventHandlers={{
-                    click: () => {
+                    add: (event) => {
+                      const element = event.target?.getElement?.()
+
+                      if (element) {
+                        element.dataset.mapNodeId = getTerritoryMapNodeId(territory)
+                      }
+                    },
+                    click: (event) => {
+                      markMapClickHandled(event)
+
                       if (!isAnsweredCorrect) {
                         handleSmallTerritoryClick(territory)
                       }
@@ -1602,7 +1897,16 @@ function CountryShapeMap({
                   bubblingMouseEvents={false}
                   center={territory.position}
                   eventHandlers={{
-                    click: () => {
+                    add: (event) => {
+                      const element = event.target?.getElement?.()
+
+                      if (element) {
+                        element.dataset.mapNodeId = getTerritoryMapNodeId(territory)
+                      }
+                    },
+                    click: (event) => {
+                      markMapClickHandled(event)
+
                       if (!isAnsweredCorrect) {
                         handleSmallTerritoryClick(territory)
                       }
@@ -1658,7 +1962,16 @@ function CountryShapeMap({
                   bubblingMouseEvents={false}
                   center={center}
                   eventHandlers={{
-                    click: () => {
+                    add: (event) => {
+                      const element = event.target?.getElement?.()
+
+                      if (element) {
+                        element.dataset.mapNodeId = getCountryMapNodeId(country)
+                      }
+                    },
+                    click: (event) => {
+                      markMapClickHandled(event)
+
                       if (!isAnsweredCorrect) {
                         onSelectCountry(country)
                       }
@@ -1678,7 +1991,16 @@ function CountryShapeMap({
                   bubblingMouseEvents={false}
                   center={center}
                   eventHandlers={{
-                    click: () => {
+                    add: (event) => {
+                      const element = event.target?.getElement?.()
+
+                      if (element) {
+                        element.dataset.mapNodeId = getCountryMapNodeId(country)
+                      }
+                    },
+                    click: (event) => {
+                      markMapClickHandled(event)
+
                       if (!isAnsweredCorrect) {
                         onSelectCountry(country)
                       }
