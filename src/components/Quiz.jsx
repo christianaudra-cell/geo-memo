@@ -3,7 +3,7 @@ import { MapContainer, useMap } from 'react-leaflet'
 import CountryShapeMap, { hasCountryShape } from './CountryShapeMap'
 import { getLearningDetails } from '../data/learningDetails'
 import { dependentTerritories } from '../data/dependentTerritories'
-import { getCountryFlag } from '../data/countryFlags'
+import { countryFlagCodes, getCountryFlag, getCountryFlagCode } from '../data/countryFlags'
 import { getCountryLandmark } from '../data/countryLandmarks'
 import { useLanguage } from '../context/LanguageContext'
 import '/node_modules/flag-icons/css/flag-icons.min.css'
@@ -22,6 +22,11 @@ const quizTypes = [
 ]
 
 const FLAG_QUIZ_MAX_QUESTIONS = 50
+const AVAILABLE_FLAG_ICON_CODES = new Set(
+  Object.values(countryFlagCodes)
+    .filter((code) => typeof code === 'string' && /^[A-Z]{2}$/i.test(code.trim()))
+    .map((code) => code.trim().toLowerCase()),
+)
 
 const mapSettingsByContinent = {
   Europe: { center: [50, 15], zoom: 4 },
@@ -143,7 +148,7 @@ function getDisplayFlag(country) {
 
   // Si pas de champ flag trouvé, chercher via le nom du pays
   if (!raw) {
-    raw = getCountryFlag(country.name)
+    raw = getCountryFlagCode(country.name) || getCountryFlag(country.name)
   }
 
   if (!raw || typeof raw !== 'string') {
@@ -180,6 +185,26 @@ function getDisplayFlag(country) {
 
   // Ne jamais retourner un code ISO brut en majuscules ou un emoji
   return null
+}
+
+function hasValidFlag(country) {
+  if (!country) {
+    return false
+  }
+
+  const flagCode = getDisplayFlag(country)
+
+  if (!flagCode || typeof flagCode !== 'string') {
+    return false
+  }
+
+  const normalizedCode = flagCode.trim().toLowerCase()
+
+  if (!/^[a-z]{2}$/.test(normalizedCode)) {
+    return false
+  }
+
+  return AVAILABLE_FLAG_ICON_CODES.has(normalizedCode)
 }
 
 function getTerritoryItem(territory) {
@@ -238,7 +263,7 @@ function getSmartCapitalItem(smartCapital, countries) {
 
 function getQuestionItems(countries, territories, quizType, failedLandmarkImages = {}) {
   if (quizType === 'flag') {
-    return countries.filter((country) => getDisplayFlag(country)).map(getCountryItem)
+    return countries.filter(hasValidFlag).map(getCountryItem)
   }
 
   if (quizType === 'landmark') {
@@ -971,7 +996,7 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
       return (
         <div className="quiz-visual flag-visual" aria-label={t('quiz.labels.flagToRecognize')}>
           {flagCode ? (
-            <span className="country-flag flag-frame">
+            <span className="country-flag flag-frame quiz-flag-frame">
               <span className={`fi fi-${flagCode}`}></span>
             </span>
           ) : (

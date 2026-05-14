@@ -282,14 +282,18 @@ test('drapeaux visibles sur fond clair', async ({ page }) => {
       borderStyle: styles.borderStyle,
       borderWidth: styles.borderWidth,
       boxShadow: styles.boxShadow,
+      hasQuizFlagFrameClass: element.classList.contains('quiz-flag-frame'),
+      padding: styles.paddingTop,
     }
   })
 
-  expect(flagStyles.backgroundColor).not.toBe('rgba(0, 0, 0, 0)')
+  expect(flagStyles.hasQuizFlagFrameClass).toBe(true)
+  expect(flagStyles.backgroundColor).toBe('rgb(219, 234, 254)')
   expect(flagStyles.borderStyle).toBe('solid')
-  expect(flagStyles.borderWidth).not.toBe('0px')
-  expect(flagStyles.borderColor).not.toBe('rgba(0, 0, 0, 0)')
+  expect(flagStyles.borderWidth).toBe('2px')
+  expect(flagStyles.borderColor).toBe('rgb(100, 116, 139)')
   expect(flagStyles.boxShadow).not.toBe('none')
+  expect(flagStyles.padding).toBe('14px')
 })
 
 test('quiz drapeaux avec session limitée sans répétition immédiate', async ({ page }) => {
@@ -312,6 +316,42 @@ test('quiz drapeaux avec session limitée sans répétition immédiate', async (
   const secondFlagClass = await page.locator('.flag-visual .fi').first().getAttribute('class')
 
   expect(secondFlagClass).not.toBe(firstFlagClass)
+})
+
+test('quiz drapeaux sans drapeau vide sur 10 questions', async ({ page }) => {
+  await openHome(page)
+  await openModule(page, /Quiz/i)
+  await selectQuizType(page, 'Trouver le pays avec son drapeau')
+
+  await expect(page.getByText(/Drapeau indisponible/i)).toHaveCount(0)
+
+  for (let questionIndex = 0; questionIndex < 10; questionIndex += 1) {
+    const flag = page.locator('.flag-visual .fi').first()
+
+    await expect(flag).toBeVisible()
+
+    const flagState = await flag.evaluate((element) => {
+      const styles = window.getComputedStyle(element)
+      const box = element.getBoundingClientRect()
+
+      return {
+        backgroundImage: styles.backgroundImage,
+        height: box.height,
+        width: box.width,
+      }
+    })
+
+    expect(flagState.backgroundImage).not.toBe('none')
+    expect(flagState.width).toBeGreaterThan(0)
+    expect(flagState.height).toBeGreaterThan(0)
+
+    await expect(page.getByText(/Drapeau indisponible/i)).toHaveCount(0)
+    await page.locator('.answer-grid button').first().click()
+
+    if (questionIndex < 9) {
+      await page.getByRole('button', { name: /Question suivante/i }).click()
+    }
+  }
 })
 
 test.describe('mobile iPhone 13', () => {

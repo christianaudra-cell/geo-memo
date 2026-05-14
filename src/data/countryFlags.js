@@ -214,6 +214,10 @@ export function countryCodeToFlagEmoji(code) {
   )
 }
 
+export function getCountryFlagCode(countryName) {
+  return countryFlagCodes[countryName] || null
+}
+
 export function getCountryFlag(countryName) {
-  return countryCodeToFlagEmoji(countryFlagCodes[countryName])
+  return countryCodeToFlagEmoji(getCountryFlagCode(countryName))
 }
