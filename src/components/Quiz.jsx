@@ -4,7 +4,7 @@ import CountryShapeMap, { hasCountryShape } from './CountryShapeMap'
 import { getLearningDetails } from '../data/learningDetails'
 import { dependentTerritories } from '../data/dependentTerritories'
 import { countryFlagCodes, getCountryFlag, getCountryFlagCode } from '../data/countryFlags'
-import { getCountryLandmark } from '../data/countryLandmarks'
+import { countryLandmarks, getCountryLandmark } from '../data/countryLandmarks'
 import { useLanguage } from '../context/LanguageContext'
 import '/node_modules/flag-icons/css/flag-icons.min.css'
 import {
@@ -22,6 +22,7 @@ const quizTypes = [
 ]
 
 const FLAG_QUIZ_MAX_QUESTIONS = 50
+const IMAGE_QUIZ_MAX_QUESTIONS = 50
 const AVAILABLE_FLAG_ICON_CODES = new Set(
   Object.values(countryFlagCodes)
     .filter((code) => typeof code === 'string' && /^[A-Z]{2}$/i.test(code.trim()))
@@ -401,6 +402,10 @@ function getUnansweredItems(items, answeredCorrectItems) {
 
 function getFlagSessionItems(items) {
   return shuffleList(items).slice(0, FLAG_QUIZ_MAX_QUESTIONS)
+}
+
+function getLandmarkSessionItems(items) {
+  return shuffleList(items).slice(0, IMAGE_QUIZ_MAX_QUESTIONS)
 }
 
 function isAnsweredCorrectItem(item, answeredCorrectItems) {
@@ -783,6 +788,7 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
   const [answeredCorrectLandmarks, setAnsweredCorrectLandmarks] = useState([])
   const [answeredFlagItems, setAnsweredFlagItems] = useState([])
   const [flagSessionItems, setFlagSessionItems] = useState([])
+  const [landmarkSessionItems, setLandmarkSessionItems] = useState([])
   const [smartCapitalCategory, setSmartCapitalCategory] = useState('all')
   const [failedLandmarkImages, setFailedLandmarkImages] = useState({})
   const [isQuizFinished, setIsQuizFinished] = useState(false)
@@ -833,7 +839,11 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     quizType,
     smartCapitalCategory,
   ])
-  const questionItems = quizType === 'flag' ? flagSessionItems : availableQuestionItems
+  const questionItems = quizType === 'flag'
+    ? flagSessionItems
+    : quizType === 'landmark'
+      ? landmarkSessionItems
+      : availableQuestionItems
   const [question, setQuestion] = useState(() =>
     makeQuestion(
       countries.map(getCountryItem),
@@ -903,12 +913,23 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
       quizType === 'flag'
         ? getFlagSessionItems(availableQuestionItems)
         : quizType === 'landmark'
-          ? getUnansweredItems(availableQuestionItems, answeredCorrectLandmarks)
+          ? getLandmarkSessionItems(availableQuestionItems)
           : availableQuestionItems
 
     if (quizType === 'flag') {
       setFlagSessionItems(nextQuestionItems)
       setAnsweredFlagItems([])
+    }
+
+    if (quizType === 'landmark') {
+      setLandmarkSessionItems(nextQuestionItems)
+      if (import.meta.env.DEV) {
+        console.log('Landmark quiz pool', {
+          totalLandmarks: countryLandmarks.length,
+          validLandmarkImages: availableQuestionItems.length,
+          sessionLandmarkCount: nextQuestionItems.length,
+        })
+      }
     }
 
     setQuestion(
@@ -942,6 +963,8 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     setAnsweredCorrectTerritories([])
     setAnsweredCorrectLandmarks([])
     setAnsweredFlagItems([])
+    setFlagSessionItems([])
+    setLandmarkSessionItems([])
     setFailedLandmarkImages({})
     setIsQuizFinished(false)
   }, [quizContinent, quizType])
@@ -1209,7 +1232,11 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
 
   function resetQuiz() {
     const nextQuestionItems =
-      quizType === 'flag' ? getFlagSessionItems(availableQuestionItems) : questionItems
+      quizType === 'flag'
+        ? getFlagSessionItems(availableQuestionItems)
+        : quizType === 'landmark'
+          ? getLandmarkSessionItems(availableQuestionItems)
+          : questionItems
 
     setCorrectAnswers(0)
     setWrongAnswers(0)
@@ -1223,6 +1250,9 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     setAnsweredFlagItems([])
     if (quizType === 'flag') {
       setFlagSessionItems(nextQuestionItems)
+    }
+    if (quizType === 'landmark') {
+      setLandmarkSessionItems(nextQuestionItems)
     }
     setFailedLandmarkImages({})
     setIsQuizFinished(false)
@@ -1259,7 +1289,11 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
 
   function changeQuiz() {
     const nextQuestionItems =
-      quizType === 'flag' ? getFlagSessionItems(availableQuestionItems) : questionItems
+      quizType === 'flag'
+        ? getFlagSessionItems(availableQuestionItems)
+        : quizType === 'landmark'
+          ? getLandmarkSessionItems(availableQuestionItems)
+          : questionItems
 
     setCorrectAnswers(0)
     setWrongAnswers(0)
@@ -1275,6 +1309,9 @@ function Quiz({ countries, continents, onBackHome = () => {} }) {
     setAnsweredFlagItems([])
     if (quizType === 'flag') {
       setFlagSessionItems(nextQuestionItems)
+    }
+    if (quizType === 'landmark') {
+      setLandmarkSessionItems(nextQuestionItems)
     }
     setFailedLandmarkImages({})
     setQuestion(

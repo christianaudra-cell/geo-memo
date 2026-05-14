@@ -284,8 +284,10 @@ test('quiz image sans répétition immédiate sur 10 questions', async ({ page }
   await openModule(page, /Quiz/i)
   await selectQuizType(page, 'Trouver le pays avec une image')
 
-  await expect(page.getByText(/Images réussies/i)).toBeVisible()
-  await expect(page.getByText(/Images restantes/i)).toBeVisible()
+  await expect(page.getByText(/Images réussies\s*:\s*0\s*\/\s*50/i)).toBeVisible()
+  await expect(page.getByText(/Images restantes\s*:\s*50/i)).toBeVisible()
+  await expect(page.getByText(/Images réussies\s*:\s*0\s*\/\s*20/i)).toHaveCount(0)
+  await expect(page.getByText(/Images restantes\s*:\s*20/i)).toHaveCount(0)
 
   let previousAlt = null
 
