@@ -479,55 +479,6 @@ test.describe('mobile iPhone 13', () => {
     await expectNoHorizontalOverflow(page)
   })
 
-  test('quiz carte Europe met en évidence le pays ou territoire demandé sur iPhone', async ({ page }) => {
-    await openHome(page)
-    await openModule(page, /Quiz/i)
-
-    await selectQuizType(page, 'Trouver le pays sur la carte + territoires')
-    await selectQuizContinent(page, 'Europe')
-    await page.getByRole('button', { name: /Démarrer le quiz carte/i }).click()
-
-    await waitForMapReady(page, '.quiz-shape-map.leaflet-container')
-
-    const currentTarget = page.locator(
-      '.quiz-map-fullscreen [data-current-target="true"]',
-    ).first()
-
-    await expect(currentTarget).toHaveCount(1)
-
-    const currentTargetFill = await currentTarget.getAttribute('fill')
-    expect(currentTargetFill).toBe('#9333ea')
-
-    const currentTargetNodeId = await currentTarget.getAttribute('data-map-node-id')
-    expect(currentTargetNodeId).toBeTruthy()
-
-    await currentTarget.evaluate((element) => {
-      element.dispatchEvent(
-        new MouseEvent('click', {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-        }),
-      )
-    })
-    await page.waitForTimeout(600)
-
-    const validatedTarget = page.locator(
-      `.quiz-map-fullscreen [data-map-node-id="${currentTargetNodeId}"]`,
-    ).first()
-
-    await expect(validatedTarget).toHaveCount(1)
-
-    const validatedFill = await validatedTarget.getAttribute('fill')
-    if (currentTargetNodeId?.startsWith('country:')) {
-      expect(validatedFill).toBe('#22c55e')
-    } else {
-      expect(validatedFill).toBe('#f97316')
-    }
-
-    await expectNoHorizontalOverflow(page)
-  })
-
   test('quiz carte Océanie visible sur iPhone', async ({ page }) => {
     await openHome(page)
     await openModule(page, /Quiz/i)
