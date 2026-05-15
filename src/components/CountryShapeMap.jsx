@@ -158,6 +158,49 @@ const GUIDED_REFERENCE_HALO_STYLE = {
   pointerEvents: 'none',
   weight: 3,
 }
+const QUIZ_TARGET_FILL_COLOR = '#9333ea'
+const QUIZ_TARGET_STROKE_COLOR = '#4c1d95'
+
+function getQuizTargetCountryStyle(isMobile) {
+  return {
+    ...COUNTRY_PATH_STYLE,
+    color: QUIZ_TARGET_STROKE_COLOR,
+    fillColor: QUIZ_TARGET_FILL_COLOR,
+    fillOpacity: isMobile ? 0.85 : 0.75,
+    opacity: 1,
+    weight: isMobile ? 4 : 3,
+  }
+}
+
+function getQuizTargetTerritoryStyle(isMobile) {
+  return {
+    ...COUNTRY_PATH_STYLE,
+    color: QUIZ_TARGET_STROKE_COLOR,
+    fillColor: QUIZ_TARGET_FILL_COLOR,
+    fillOpacity: isMobile ? 0.85 : 0.75,
+    opacity: 1,
+    weight: isMobile ? 4 : 3,
+  }
+}
+
+function isQuizCountryTarget(country, currentQuestion) {
+  return (
+    currentQuestion?.type === 'country' &&
+    getCountryId(country) === getCountryId(currentQuestion)
+  )
+}
+
+function isQuizTerritoryTarget(territory, currentQuestion) {
+  if (!currentQuestion || currentQuestion.type !== 'territory' || !territory) {
+    return false
+  }
+
+  return (
+    getCanonicalTerritoryId(territory) ===
+    getCanonicalTerritoryId(currentQuestion)
+  )
+}
+
 const TERRITORY_BASE_STYLE = {
   ...COUNTRY_PATH_STYLE,
   color: '#7c3aed',
@@ -1153,6 +1196,11 @@ function getShapeStyle(feature, countryByShapeName, options) {
     options.correctCountry && getCountryId(options.correctCountry) === countryId
   const isWrong =
     options.wrongCountry && getCountryId(options.wrongCountry) === countryId
+  const isCurrentQuizTarget =
+    options.isQuizMode &&
+    options.currentQuestion?.type === 'country' &&
+    getCountryId(options.currentQuestion) === countryId &&
+    !isAnsweredCorrect
 
   if (isAnsweredCorrect) {
     return COUNTRY_VALIDATED_STYLE
@@ -1160,6 +1208,10 @@ function getShapeStyle(feature, countryByShapeName, options) {
 
   if (isCorrect) {
     return COUNTRY_VALIDATED_STYLE
+  }
+
+  if (isCurrentQuizTarget) {
+    return getQuizTargetCountryStyle(options.isMobile)
   }
 
   if (isWrong) {
@@ -1185,12 +1237,10 @@ function getShapeStyle(feature, countryByShapeName, options) {
     return {
       ...COUNTRY_PATH_STYLE,
       color: COUNTRY_BORDER_COLOR,
-      fillColor: options.isQuizMode
-        ? getAreaColor(getCountryMapNodeId(country), options.areaColorById)
-        : getAreaColor(getCountryMapNodeId(country), options.areaColorById),
-      fillOpacity: options.isQuizMode ? 0.64 : 0.74,
+      fillColor: getAreaColor(getCountryMapNodeId(country), options.areaColorById),
+      fillOpacity: options.isQuizMode ? (options.isMobile ? 0.48 : 0.64) : 0.74,
       opacity: 0.9,
-      weight: options.isQuizMode ? 0.8 : 0.9,
+      weight: options.isQuizMode ? (options.isMobile ? 0.7 : 0.8) : 0.9,
     }
   }
 
@@ -1204,10 +1254,20 @@ function getShapeStyle(feature, countryByShapeName, options) {
   }
 }
 
-function getTerritoryStyle(territory, areaColorById) {
+function getTerritoryStyle(territory, areaColorById, options) {
+  const isCurrentQuizTarget = isQuizTerritoryTarget(
+    territory,
+    options.currentQuestion,
+  )
+
+  if (isCurrentQuizTarget) {
+    return getQuizTargetTerritoryStyle(options.isMobile)
+  }
+
   return {
     ...TERRITORY_BASE_STYLE,
     fillColor: getAreaColor(getTerritoryMapNodeId(territory), areaColorById),
+    fillOpacity: options.isMobile ? 0.44 : 0.54,
   }
 }
 
@@ -1500,6 +1560,14 @@ function CountryShapeMap({
             },
           },
     )
+  const isMobileScreen =
+    typeof window !== 'undefined' && window.innerWidth <= 768
+  const currentQuizTargetCountryId =
+    currentQuestion?.type === 'country' ? getCountryId(currentQuestion) : null
+  const currentQuizTargetTerritoryId =
+    currentQuestion?.type === 'territory'
+      ? getCanonicalTerritoryId(currentQuestion)
+      : null
   const areaColorById = useMemo(
     () =>
       getAreaColorMap([
@@ -1675,12 +1743,19 @@ function CountryShapeMap({
             return
           }
 
+          const isCurrentTarget =
+            currentQuizTargetCountryId === getCountryId(country)
+
           layer.on({
             add: () => {
               const element = layer.getElement?.()
 
               if (element) {
                 element.dataset.mapNodeId = getCountryMapNodeId(country)
+
+                if (isCurrentTarget) {
+                  element.dataset.currentTarget = 'true'
+                }
               }
             },
             click: (event) => {
@@ -1706,6 +1781,8 @@ function CountryShapeMap({
             answeredCorrectCountries,
             areaColorById,
             countryProgress,
+            currentQuestion,
+            isMobile: isMobileScreen,
             isQuizMode,
             wrongCountry,
           })
@@ -1769,6 +1846,13 @@ function CountryShapeMap({
                   if (element) {
                     element.style.pointerEvents = 'auto'
                     element.dataset.mapNodeId = getTerritoryMapNodeId(resolvedTerritory)
+
+                    if (
+                      currentQuizTargetTerritoryId ===
+                      getCanonicalTerritoryId(resolvedTerritory)
+                    ) {
+                      element.dataset.currentTarget = 'true'
+                    }
                   }
                 },
                 mouseover: () => {
@@ -1782,7 +1866,11 @@ function CountryShapeMap({
                       answeredCorrectTerritories,
                     )
                       ? getAnsweredTerritoryStyle()
-                      : getTerritoryStyle(resolvedTerritory, areaColorById),
+                      : getTerritoryStyle(resolvedTerritory, areaColorById, {
+                          currentQuestion,
+                          isMobile: isMobileScreen,
+                          isQuizMode,
+                        }),
                   )
                 },
                 click: (event) => {
@@ -1816,7 +1904,11 @@ function CountryShapeMap({
                 return getAnsweredTerritoryStyle()
               }
 
-              return getTerritoryStyle(territory, areaColorById)
+              return getTerritoryStyle(territory, areaColorById, {
+                currentQuestion,
+                isMobile: isMobileScreen,
+                isQuizMode,
+              })
             }}
           />
         </Pane>
@@ -1831,6 +1923,37 @@ function CountryShapeMap({
                 territory,
                 answeredCorrectTerritories,
               )
+            const isTargetTerritory =
+              isQuizMode &&
+              isQuizTerritoryTarget(territory, currentQuestion)
+            const territoryMarkerFillColor =
+              isAnsweredCorrect
+                ? TERRITORY_VALIDATED_STYLE.fillColor
+                : isTargetTerritory
+                  ? QUIZ_TARGET_FILL_COLOR
+                  : getAreaColor(getTerritoryMapNodeId(territory), areaColorById)
+            const territoryMarkerStrokeColor =
+              isAnsweredCorrect
+                ? TERRITORY_VALIDATED_STYLE.color
+                : isTargetTerritory
+                  ? QUIZ_TARGET_STROKE_COLOR
+                  : TERRITORY_BASE_STYLE.color
+            const territoryMarkerRadius =
+              isOceaniaMap ? 16 : isMobileScreen ? 10 : 8
+            const territoryMarkerWeight =
+              isAnsweredCorrect
+                ? 3
+                : isTargetTerritory
+                  ? isMobileScreen
+                    ? 4
+                    : 3
+                  : 1.4
+            const territoryMarkerFillOpacity =
+              isAnsweredCorrect
+                ? 0.94
+                : isTargetTerritory
+                  ? 0.9
+                  : 0.34
             const decorativeIslets =
               isOceaniaMap && isQuizMode
                 ? OCEANIA_DECORATIVE_ARCHIPELAGO_OFFSETS[territory.id] ?? []
@@ -1867,6 +1990,10 @@ function CountryShapeMap({
 
                       if (element) {
                         element.dataset.mapNodeId = getTerritoryMapNodeId(territory)
+
+                        if (isTargetTerritory) {
+                          element.dataset.currentTarget = 'true'
+                        }
                       }
                     },
                     click: (event) => {
@@ -1878,20 +2005,16 @@ function CountryShapeMap({
                     },
                     mouseover: () => handleTerritoryHover(territory),
                   }}
-                  fillColor={isAnsweredCorrect
-                    ? TERRITORY_VALIDATED_STYLE.fillColor
-                    : getAreaColor(getTerritoryMapNodeId(territory), areaColorById)}
-                  fillOpacity={isAnsweredCorrect ? 0.94 : 0.34}
+                  fillColor={territoryMarkerFillColor}
+                  fillOpacity={territoryMarkerFillOpacity}
                   fill
                   interactive
                   pane="small-territory-click-targets"
-                  radius={isOceaniaMap ? 16 : 8}
+                  radius={territoryMarkerRadius}
                   stroke
-                  color={isAnsweredCorrect
-                    ? TERRITORY_VALIDATED_STYLE.color
-                    : TERRITORY_BASE_STYLE.color}
+                  color={territoryMarkerStrokeColor}
                   opacity={isAnsweredCorrect ? 1 : 0.82}
-                  weight={isAnsweredCorrect ? 3 : 1.4}
+                  weight={territoryMarkerWeight}
                 />
                 <CircleMarker
                   bubblingMouseEvents={false}
@@ -1936,6 +2059,37 @@ function CountryShapeMap({
               : null
             const isAnsweredCorrect =
               isQuizMode && isCountryAnswered(country, answeredCorrectCountries)
+            const isTargetCountry =
+              isQuizMode &&
+              isQuizCountryTarget(country, currentQuestion)
+            const markerStrokeColor =
+              isAnsweredCorrect
+                ? COUNTRY_VALIDATED_STYLE.color
+                : isTargetCountry
+                  ? QUIZ_TARGET_STROKE_COLOR
+                  : countryStatus === 'known'
+                    ? '#14532d'
+                  : countryStatus === 'review'
+                    ? '#92400e'
+                    : COUNTRY_BORDER_COLOR
+            const markerRadius =
+              isOceaniaMap ? 16 : isMobileScreen ? 10 : 8
+            const markerWeight =
+              isAnsweredCorrect
+                ? 3
+                : isTargetCountry
+                  ? isMobileScreen
+                    ? 4
+                    : 3
+                  : 1.5
+            const markerFillOpacity =
+              isAnsweredCorrect
+                ? 0.94
+                : isTargetCountry
+                  ? 0.9
+                  : countryStatus
+                    ? 0.85
+                    : 0.68
             const markerFillColor =
               isAnsweredCorrect
                 ? COUNTRY_VALIDATED_STYLE.fillColor
@@ -1946,14 +2100,6 @@ function CountryShapeMap({
                   : isOceaniaMap
                     ? getOceaniaCountryMarkerColor(country)
                     : getAreaColor(getCountryMapNodeId(country), areaColorById)
-            const markerStrokeColor =
-              isAnsweredCorrect
-                ? COUNTRY_VALIDATED_STYLE.color
-                : countryStatus === 'known'
-                  ? '#14532d'
-                : countryStatus === 'review'
-                  ? '#92400e'
-                  : COUNTRY_BORDER_COLOR
             const center = [marker.lat, marker.lng]
 
             return (
@@ -1967,6 +2113,10 @@ function CountryShapeMap({
 
                       if (element) {
                         element.dataset.mapNodeId = getCountryMapNodeId(country)
+
+                        if (isTargetCountry) {
+                          element.dataset.currentTarget = 'true'
+                        }
                       }
                     },
                     click: (event) => {
@@ -1978,14 +2128,14 @@ function CountryShapeMap({
                     },
                   }}
                   fillColor={markerFillColor}
-                  fillOpacity={isAnsweredCorrect ? 0.94 : countryStatus ? 0.85 : 0.68}
+                  fillOpacity={markerFillOpacity}
                   interactive
                   pane="small-country-click-targets"
-                  radius={isOceaniaMap ? 16 : 8}
+                  radius={markerRadius}
                   stroke
                   color={markerStrokeColor}
                   opacity={isAnsweredCorrect ? 1 : 0.9}
-                  weight={isAnsweredCorrect ? 3 : 1.5}
+                  weight={markerWeight}
                 />
                 <CircleMarker
                   bubblingMouseEvents={false}
